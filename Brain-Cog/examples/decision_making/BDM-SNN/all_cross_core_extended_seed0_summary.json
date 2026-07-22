@@ -1,0 +1,428 @@
+{
+  "runs": [
+    {
+      "label": "Full",
+      "file": "extended_full_seed0_3000.json",
+      "frames": 3001,
+      "score": 24,
+      "reward_sum": 8513.0,
+      "traffic_proxy": null,
+      "links": {
+        "dlpfc_stn": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "strd2_gpe": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "strd1_gpi": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "gpe_stn": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "gpi_thalamus": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        }
+      }
+    },
+    {
+      "label": "All k=1",
+      "file": "extended_all_cross_core_rank1_seed0_3000.json",
+      "frames": 625,
+      "score": 5,
+      "reward_sum": 1657.0,
+      "traffic_proxy": {
+        "post_warmup_source_logical_events": 9612,
+        "post_warmup_continuous_latent_values": 6444,
+        "address_value_proxy_reduction": 0.32958801498127344
+      },
+      "links": {
+        "dlpfc_stn": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": null
+        },
+        "strd2_gpe": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": 0.7225024700164795,
+          "fitted": true,
+          "last_refit_status": null
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": null
+        },
+        "strd1_gpi": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": null
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": null
+        },
+        "gpe_stn": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": null
+        },
+        "gpi_thalamus": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 0.7589848041534424,
+          "fitted": true,
+          "last_refit_status": null
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": null
+        }
+      }
+    },
+    {
+      "label": "All k=2",
+      "file": "extended_all_cross_core_rank2_seed0_3000.json",
+      "frames": 625,
+      "score": 5,
+      "reward_sum": 1657.0,
+      "traffic_proxy": {
+        "post_warmup_source_logical_events": 7394,
+        "post_warmup_continuous_latent_values": 11040,
+        "address_value_proxy_reduction": -0.4931025155531512
+      },
+      "links": {
+        "dlpfc_stn": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": NaN,
+          "fitted": false,
+          "last_refit_status": "constant_target_fallback"
+        },
+        "strd2_gpe": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "strd1_gpi": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "gpe_stn": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "gpi_thalamus": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": NaN,
+          "fitted": false,
+          "last_refit_status": "constant_target_fallback"
+        }
+      }
+    },
+    {
+      "label": "D1+D2 k=1",
+      "file": "extended_selected_striatum_rank1_seed0_3000.json",
+      "frames": 625,
+      "score": 5,
+      "reward_sum": 1657.0,
+      "traffic_proxy": {
+        "post_warmup_source_logical_events": 2812,
+        "post_warmup_continuous_latent_values": 2400,
+        "address_value_proxy_reduction": 0.1465149359886202
+      },
+      "links": {
+        "strd2_gpe": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": 0.7225024700164795,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "strd1_gpi": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        }
+      }
+    },
+    {
+      "label": "Small loops",
+      "file": "extended_safe_small_rank1_seed0_3000.json",
+      "frames": 3001,
+      "score": 24,
+      "reward_sum": 8513.0,
+      "traffic_proxy": {
+        "post_warmup_source_logical_events": 115626,
+        "post_warmup_continuous_latent_values": 72288,
+        "address_value_proxy_reduction": 0.37481189351875877
+      },
+      "links": {
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "gpe_stn": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        }
+      }
+    },
+    {
+      "label": "Loops+Th",
+      "file": "extended_safe_plus_thalamus_rank1_seed0_3000.json",
+      "frames": 3001,
+      "score": 24,
+      "reward_sum": 8513.0,
+      "traffic_proxy": {
+        "post_warmup_source_logical_events": 135124,
+        "post_warmup_continuous_latent_values": 98396,
+        "address_value_proxy_reduction": 0.2718095971108019
+      },
+      "links": {
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "gpe_stn": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "gpi_thalamus": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 0.7823869585990906,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        }
+      }
+    },
+    {
+      "label": "Full seed 1",
+      "file": "extended_full_seed1_3000.json",
+      "frames": 3001,
+      "score": 24,
+      "reward_sum": 8311.0,
+      "traffic_proxy": null,
+      "links": {
+        "dlpfc_stn": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "strd2_gpe": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "strd1_gpi": {
+          "source_dim": 18,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "gpe_stn": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "gpi_thalamus": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 9,
+          "target_dim": 2,
+          "retained_variance": null,
+          "fitted": null,
+          "last_refit_status": null
+        }
+      }
+    },
+    {
+      "label": "Loops+Th seed 1",
+      "file": "extended_safe_plus_thalamus_rank1_seed1_3000.json",
+      "frames": 3001,
+      "score": 24,
+      "reward_sum": 8311.0,
+      "traffic_proxy": {
+        "post_warmup_source_logical_events": 133883,
+        "post_warmup_continuous_latent_values": 97244,
+        "address_value_proxy_reduction": 0.2736643188455592
+      },
+      "links": {
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "gpe_stn": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 1.0,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        },
+        "gpi_thalamus": {
+          "source_dim": 2,
+          "target_dim": 2,
+          "retained_variance": 0.7793084979057312,
+          "fitted": true,
+          "last_refit_status": "fitted"
+        }
+      }
+    }
+  ],
+  "notes": [
+    "The latent count is a continuous-value/address proxy, not AER event, packet, bit, or energy savings.",
+    "All k=1/k=2 and D1+D2 runs are intentionally lossy online RRR tests; early collision is a control failure, not a measurement error.",
+    "Small loops selects STN->GPe, STN->GPi, and GPe->STN; these rank-1 links retained 1.0 in the final fitting window and matched the full baseline for this seed."
+  ]
+}

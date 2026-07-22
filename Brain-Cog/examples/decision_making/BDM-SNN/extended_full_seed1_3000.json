@@ -1,0 +1,62 @@
+{
+  "frames": 3001,
+  "reward_updates": 1500,
+  "score": 24,
+  "reward_sum": 8311.0,
+  "communication": {
+    "rank": 0,
+    "mode": "all_cross_core",
+    "fitted": false,
+    "links": {
+      "dlpfc_stn": {
+        "source_dim": 9,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 26793
+      },
+      "strd2_gpe": {
+        "source_dim": 18,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 37652
+      },
+      "stn_gpe": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 51210
+      },
+      "strd1_gpi": {
+        "source_dim": 18,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 26941
+      },
+      "stn_gpi": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 51210
+      },
+      "gpe_stn": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 26770
+      },
+      "gpi_thalamus": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 18479
+      },
+      "dlpfc_thalamus": {
+        "source_dim": 9,
+        "target_dim": 2,
+        "samples": 26793,
+        "source_logical_events": 26793
+      }
+    }
+  },
+  "refit_history": []
+}

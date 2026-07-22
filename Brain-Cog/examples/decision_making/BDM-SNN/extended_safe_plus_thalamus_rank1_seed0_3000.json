@@ -1,0 +1,629 @@
+{
+  "frames": 3001,
+  "reward_updates": 1500,
+  "score": 24,
+  "reward_sum": 8513.0,
+  "communication": {
+    "rank": 1,
+    "mode": "all_cross_core",
+    "fitted": true,
+    "links": {
+      "stn_gpe": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true,
+        "transport": {
+          "observed_samples": 28010,
+          "observed_source_logical_events": 52700,
+          "full_fallback_samples": 3411,
+          "full_fallback_source_logical_events": 6480,
+          "latent_samples": 24599,
+          "latent_active_rank": 1,
+          "continuous_latent_scalar_values": 24599,
+          "last_refit_status": "fitted"
+        }
+      },
+      "stn_gpi": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true,
+        "transport": {
+          "observed_samples": 28010,
+          "observed_source_logical_events": 52700,
+          "full_fallback_samples": 3411,
+          "full_fallback_source_logical_events": 6480,
+          "latent_samples": 24599,
+          "latent_active_rank": 1,
+          "continuous_latent_scalar_values": 24599,
+          "last_refit_status": "fitted"
+        }
+      },
+      "gpe_stn": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true,
+        "transport": {
+          "observed_samples": 28010,
+          "observed_source_logical_events": 28683,
+          "full_fallback_samples": 3411,
+          "full_fallback_source_logical_events": 3389,
+          "latent_samples": 24599,
+          "latent_active_rank": 1,
+          "continuous_latent_scalar_values": 24599,
+          "last_refit_status": "fitted"
+        }
+      },
+      "gpi_thalamus": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 0.7823869585990906,
+        "fitted": true,
+        "transport": {
+          "observed_samples": 28010,
+          "observed_source_logical_events": 19711,
+          "full_fallback_samples": 3411,
+          "full_fallback_source_logical_events": 2321,
+          "latent_samples": 24599,
+          "latent_active_rank": 1,
+          "continuous_latent_scalar_values": 24599,
+          "last_refit_status": "fitted"
+        }
+      }
+    }
+  },
+  "refit_history": [
+    {
+      "update": 200,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "stn_gpe": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 3411,
+              "observed_source_logical_events": 6480,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 0,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 0,
+              "last_refit_status": "fitted"
+            }
+          },
+          "stn_gpi": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 3411,
+              "observed_source_logical_events": 6480,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 0,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 0,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpe_stn": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 3411,
+              "observed_source_logical_events": 3389,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 3389,
+              "latent_samples": 0,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 0,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpi_thalamus": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7589848041534424,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 3411,
+              "observed_source_logical_events": 2321,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 2321,
+              "latent_samples": 0,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 0,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "update": 400,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "stn_gpe": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 7308,
+              "observed_source_logical_events": 13826,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 3897,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 3897,
+              "last_refit_status": "fitted"
+            }
+          },
+          "stn_gpi": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 7308,
+              "observed_source_logical_events": 13826,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 3897,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 3897,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpe_stn": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 7308,
+              "observed_source_logical_events": 7286,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 3389,
+              "latent_samples": 3897,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 3897,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpi_thalamus": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7842652201652527,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 7308,
+              "observed_source_logical_events": 5137,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 2321,
+              "latent_samples": 3897,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 3897,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "update": 600,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "stn_gpe": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 11268,
+              "observed_source_logical_events": 21364,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 7857,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 7857,
+              "last_refit_status": "fitted"
+            }
+          },
+          "stn_gpi": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 11268,
+              "observed_source_logical_events": 21364,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 7857,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 7857,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpe_stn": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 11268,
+              "observed_source_logical_events": 11628,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 3389,
+              "latent_samples": 7857,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 7857,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpi_thalamus": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7721877694129944,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 11268,
+              "observed_source_logical_events": 7881,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 2321,
+              "latent_samples": 7857,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 7857,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "update": 800,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "stn_gpe": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 14696,
+              "observed_source_logical_events": 27564,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 11285,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 11285,
+              "last_refit_status": "fitted"
+            }
+          },
+          "stn_gpi": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 14696,
+              "observed_source_logical_events": 27564,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 11285,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 11285,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpe_stn": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 14696,
+              "observed_source_logical_events": 15369,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 3389,
+              "latent_samples": 11285,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 11285,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpi_thalamus": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7616835236549377,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 14696,
+              "observed_source_logical_events": 10237,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 2321,
+              "latent_samples": 11285,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 11285,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "update": 1000,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "stn_gpe": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 18575,
+              "observed_source_logical_events": 34866,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 15164,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 15164,
+              "last_refit_status": "fitted"
+            }
+          },
+          "stn_gpi": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 18575,
+              "observed_source_logical_events": 34866,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 15164,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 15164,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpe_stn": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 18575,
+              "observed_source_logical_events": 19249,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 3389,
+              "latent_samples": 15164,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 15164,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpi_thalamus": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7812334895133972,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 18575,
+              "observed_source_logical_events": 13039,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 2321,
+              "latent_samples": 15164,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 15164,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "update": 1200,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "stn_gpe": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 22289,
+              "observed_source_logical_events": 41910,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 18878,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 18878,
+              "last_refit_status": "fitted"
+            }
+          },
+          "stn_gpi": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 22289,
+              "observed_source_logical_events": 41910,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 18878,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 18878,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpe_stn": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 22289,
+              "observed_source_logical_events": 22962,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 3389,
+              "latent_samples": 18878,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 18878,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpi_thalamus": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7619028091430664,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 22289,
+              "observed_source_logical_events": 15579,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 2321,
+              "latent_samples": 18878,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 18878,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "update": 1400,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "stn_gpe": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 25907,
+              "observed_source_logical_events": 48734,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 22496,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 22496,
+              "last_refit_status": "fitted"
+            }
+          },
+          "stn_gpi": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 25907,
+              "observed_source_logical_events": 48734,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 6480,
+              "latent_samples": 22496,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 22496,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpe_stn": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 25907,
+              "observed_source_logical_events": 26581,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 3389,
+              "latent_samples": 22496,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 22496,
+              "last_refit_status": "fitted"
+            }
+          },
+          "gpi_thalamus": {
+            "source_dim": 2,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7823869585990906,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 25907,
+              "observed_source_logical_events": 18189,
+              "full_fallback_samples": 3411,
+              "full_fallback_source_logical_events": 2321,
+              "latent_samples": 22496,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 22496,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

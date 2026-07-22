@@ -1,0 +1,133 @@
+{
+  "frames": 81,
+  "reward_updates": 40,
+  "score": 0,
+  "reward_sum": 197.0,
+  "communication": {
+    "rank": 1,
+    "mode": "all_cross_core",
+    "fitted": true,
+    "links": {
+      "dlpfc_stn": {
+        "source_dim": 9,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true
+      },
+      "strd2_gpe": {
+        "source_dim": 18,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 0.7573274970054626,
+        "fitted": true
+      },
+      "stn_gpe": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true
+      },
+      "strd1_gpi": {
+        "source_dim": 18,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true
+      },
+      "stn_gpi": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true
+      },
+      "gpe_stn": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true
+      },
+      "gpi_thalamus": {
+        "source_dim": 2,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 0.5800012350082397,
+        "fitted": true
+      },
+      "dlpfc_thalamus": {
+        "source_dim": 9,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true
+      }
+    },
+    "refit_history": [
+      {
+        "update": 20,
+        "metrics": {
+          "rank": 1,
+          "mode": "all_cross_core",
+          "fitted": true,
+          "links": {
+            "dlpfc_stn": {
+              "source_dim": 9,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 1.0,
+              "fitted": true
+            },
+            "strd2_gpe": {
+              "source_dim": 18,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 0.6995980739593506,
+              "fitted": true
+            },
+            "stn_gpe": {
+              "source_dim": 2,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 1.0,
+              "fitted": true
+            },
+            "strd1_gpi": {
+              "source_dim": 18,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 0.7809887528419495,
+              "fitted": true
+            },
+            "stn_gpi": {
+              "source_dim": 2,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 1.0,
+              "fitted": true
+            },
+            "gpe_stn": {
+              "source_dim": 2,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 1.0,
+              "fitted": true
+            },
+            "gpi_thalamus": {
+              "source_dim": 2,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 0.61669921875,
+              "fitted": true
+            },
+            "dlpfc_thalamus": {
+              "source_dim": 9,
+              "target_dim": 2,
+              "rank": 1,
+              "retained_variance": 1.0,
+              "fitted": true
+            }
+          },
+          "refit_history": 

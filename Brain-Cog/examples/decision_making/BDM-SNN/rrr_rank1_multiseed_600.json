@@ -1,0 +1,50 @@
+[
+  {
+    "seed": 0,
+    "rank": 0,
+    "frames": 600,
+    "score": 4,
+    "reward_sum": 1662.0,
+    "collision_count": 0
+  },
+  {
+    "seed": 0,
+    "rank": 1,
+    "frames": 600,
+    "score": 4,
+    "reward_sum": 1662.0,
+    "collision_count": 0
+  },
+  {
+    "seed": 1,
+    "rank": 0,
+    "frames": 600,
+    "score": 4,
+    "reward_sum": 1634.0,
+    "collision_count": 0
+  },
+  {
+    "seed": 1,
+    "rank": 1,
+    "frames": 520,
+    "score": 4,
+    "reward_sum": 1208.0,
+    "collision_count": 0
+  },
+  {
+    "seed": 2,
+    "rank": 0,
+    "frames": 600,
+    "score": 4,
+    "reward_sum": 1726.0,
+    "collision_count": 0
+  },
+  {
+    "seed": 2,
+    "rank": 1,
+    "frames": 600,
+    "score": 4,
+    "reward_sum": 1729.0,
+    "collision_count": 0
+  }
+]

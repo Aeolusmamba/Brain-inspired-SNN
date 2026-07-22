@@ -1,0 +1,137 @@
+{
+  "frames": 81,
+  "reward_updates": 40,
+  "score": 0,
+  "reward_sum": 197.0,
+  "communication": {
+    "rank": 1,
+    "mode": "all_cross_core",
+    "fitted": true,
+    "links": {
+      "strd2_gpe": {
+        "source_dim": 18,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 0.7625445127487183,
+        "fitted": true,
+        "transport": {
+          "observed_samples": 354,
+          "observed_source_logical_events": 490,
+          "full_fallback_samples": 114,
+          "full_fallback_source_logical_events": 171,
+          "latent_samples": 240,
+          "latent_active_rank": 1,
+          "continuous_latent_scalar_values": 240,
+          "last_refit_status": "fitted"
+        }
+      },
+      "strd1_gpi": {
+        "source_dim": 18,
+        "target_dim": 2,
+        "rank": 1,
+        "retained_variance": 1.0,
+        "fitted": true,
+        "transport": {
+          "observed_samples": 354,
+          "observed_source_logical_events": 396,
+          "full_fallback_samples": 114,
+          "full_fallback_source_logical_events": 156,
+          "latent_samples": 240,
+          "latent_active_rank": 1,
+          "continuous_latent_scalar_values": 240,
+          "last_refit_status": "fitted"
+        }
+      }
+    }
+  },
+  "refit_history": [
+    {
+      "update": 20,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "strd2_gpe": {
+            "source_dim": 18,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.6995980739593506,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 114,
+              "observed_source_logical_events": 171,
+              "full_fallback_samples": 114,
+              "full_fallback_source_logical_events": 171,
+              "latent_samples": 0,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 0,
+              "last_refit_status": "fitted"
+            }
+          },
+          "strd1_gpi": {
+            "source_dim": 18,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7809887528419495,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 114,
+              "observed_source_logical_events": 156,
+              "full_fallback_samples": 114,
+              "full_fallback_source_logical_events": 156,
+              "latent_samples": 0,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 0,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    },
+    {
+      "update": 40,
+      "metrics": {
+        "rank": 1,
+        "mode": "all_cross_core",
+        "fitted": true,
+        "links": {
+          "strd2_gpe": {
+            "source_dim": 18,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 0.7625445127487183,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 354,
+              "observed_source_logical_events": 490,
+              "full_fallback_samples": 114,
+              "full_fallback_source_logical_events": 171,
+              "latent_samples": 240,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 240,
+              "last_refit_status": "fitted"
+            }
+          },
+          "strd1_gpi": {
+            "source_dim": 18,
+            "target_dim": 2,
+            "rank": 1,
+            "retained_variance": 1.0,
+            "fitted": true,
+            "transport": {
+              "observed_samples": 354,
+              "observed_source_logical_events": 396,
+              "full_fallback_samples": 114,
+              "full_fallback_source_logical_events": 156,
+              "latent_samples": 240,
+              "latent_active_rank": 1,
+              "continuous_latent_scalar_values": 240,
+              "last_refit_status": "fitted"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

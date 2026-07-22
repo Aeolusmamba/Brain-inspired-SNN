@@ -1,0 +1,44 @@
+[
+  {
+    "rank": 0,
+    "frames": 600,
+    "updates": 300,
+    "score": 4,
+    "reward_sum": 1662.0,
+    "collision_count": 0,
+    "pass_frames": [
+      133,
+      253,
+      373,
+      493
+    ]
+  },
+  {
+    "rank": 1,
+    "frames": 600,
+    "updates": 300,
+    "score": 4,
+    "reward_sum": 1662.0,
+    "collision_count": 0,
+    "pass_frames": [
+      133,
+      253,
+      373,
+      493
+    ]
+  },
+  {
+    "rank": 2,
+    "frames": 600,
+    "updates": 300,
+    "score": 4,
+    "reward_sum": 1662.0,
+    "collision_count": 0,
+    "pass_frames": [
+      133,
+      253,
+      373,
+      493
+    ]
+  }
+]

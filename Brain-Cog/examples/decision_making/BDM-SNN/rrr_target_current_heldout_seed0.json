@@ -1,0 +1,40 @@
+{
+  "protocol": {
+    "source": "bdm_baseline_seed0_600.npz",
+    "fit_samples": [
+      1,
+      200
+    ],
+    "heldout_samples": [
+      201,
+      300
+    ],
+    "sample_unit": "one environment decision/reward update",
+    "target_current": "striatum spike vector x fixed 18x2 structural weight",
+    "explained_variance": "1 - SSE / SST on held-out samples; pooled sums over both target channels"
+  },
+  "StrD1_to_GPi": {
+    "k1_channel_explained_variance": [
+      0.9973372596917337,
+      0.997408251426319
+    ],
+    "k1_pooled_explained_variance": 0.9973727555590263,
+    "k2_channel_explained_variance": [
+      0.9999999999999977,
+      0.9999999999999934
+    ],
+    "k2_pooled_explained_variance": 0.9999999999999956
+  },
+  "StrD2_to_GPe": {
+    "k1_channel_explained_variance": [
+      0.7774453197911745,
+      0.6974313299543504
+    ],
+    "k1_pooled_explained_variance": 0.7377575053656151,
+    "k2_channel_explained_variance": [
+      0.9999999999999958,
+      0.9999999999999893
+    ],
+    "k2_pooled_explained_variance": 0.9999999999999926
+  }
+}
