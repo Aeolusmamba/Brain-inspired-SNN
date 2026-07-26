@@ -1,0 +1,9 @@
+{
+  "representation": "lookup",
+  "teacher_labeled_rows": 25,
+  "teacher_conflicting_updates": 8,
+  "success": 1,
+  "total": 25,
+  "mean_silent": 6.04,
+  "mean_ties": 2.694545454545455
+}

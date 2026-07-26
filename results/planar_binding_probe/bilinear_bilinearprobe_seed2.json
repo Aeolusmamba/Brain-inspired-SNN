@@ -1,0 +1,9 @@
+{
+  "representation": "bilinear",
+  "teacher_labeled_rows": 25,
+  "teacher_conflicting_updates": 27,
+  "success": 1,
+  "total": 25,
+  "mean_silent": 3.4,
+  "mean_ties": 1.9963636363636363
+}

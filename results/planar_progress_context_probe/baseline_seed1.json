@@ -1,0 +1,5463 @@
+{
+  "use_context": false,
+  "num_state": 25,
+  "teacher_deployment_actions": 0,
+  "episodes": 100,
+  "context_current": 0.0,
+  "success": 76,
+  "mean_steps": 4.41,
+  "positive_progress_rate": 0.7074829931972789,
+  "pm_unique_rate": 0.6303854875283447,
+  "decision_count": 441,
+  "traces": [
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 0,
+      "trace": []
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 3,
+          "progress": 0.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 3,
+          "progress": 0.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 5,
+      "trace": [
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 1,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 5,
+      "trace": [
+        {
+          "position": [
+            2,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 2,
+          "progress": 0.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 2,
+          "progress": 0.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 7,
+      "trace": [
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 1,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "action": 3,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 0,
+      "trace": []
+    },
+    {
+      "success": true,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 5,
+      "trace": [
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 3,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 5,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 3,
+          "progress": 0.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 7,
+      "trace": [
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            2,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 7,
+      "trace": [
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 2,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 5,
+      "trace": [
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 7,
+      "trace": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 2,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            2,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 0,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 3,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 3,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 0,
+          "progress": 0.0,
+          "memory_direction": 3,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 2,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 2,
+          "progress": 1.0,
+          "memory_direction": 2,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 2,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 1,
+          "progress": -1.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "action": 1,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "action": 1,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "action": 2,
+          "progress": 0.0,
+          "memory_direction": null,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 3,
+      "trace": [
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "action": 3,
+          "progress": 1.0,
+          "memory_direction": 3,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 0,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "action": 0,
+          "progress": -1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": true,
+          "pm_unique": false
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "action": 0,
+          "progress": 1.0,
+          "memory_direction": 0,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    },
+    {
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "action": 1,
+          "progress": 1.0,
+          "memory_direction": 1,
+          "pm_silent": false,
+          "pm_unique": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "representation": "lookup",
+  "learning_mode": "incremental",
+  "teacher_labeled_rows": 24,
+  "teacher_conflicting_updates": 8,
+  "success": 1,
+  "total": 25,
+  "mean_silent": 6.6,
+  "mean_ties": 3.2327272727272724
+}

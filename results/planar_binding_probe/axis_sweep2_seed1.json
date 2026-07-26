@@ -1,0 +1,492 @@
+{
+  "representation": "axis",
+  "num_state": 10,
+  "teacher_steps": 120,
+  "teacher_labeled_rows": 10,
+  "teacher_conflicting_updates": 20,
+  "evaluation_success": 3,
+  "evaluation_total": 25,
+  "mean_evaluation_steps": 7.16,
+  "mean_pm_silent": 0.2,
+  "mean_pm_tie_count": 1.135,
+  "evaluations": [
+    {
+      "start": [
+        -2,
+        -2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "start": [
+        -2,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 4,
+      "mean_tie_count": 3.625,
+      "trace": [
+        3,
+        1,
+        1,
+        3,
+        1,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "start": [
+        -2,
+        0
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.25,
+      "trace": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "start": [
+        -2,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "start": [
+        -2,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.25,
+      "trace": [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        -1,
+        -2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 1,
+      "mean_tie_count": 1.75,
+      "trace": [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        -1,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        -1,
+        0
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.25,
+      "trace": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "start": [
+        -1,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.25,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        -1,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        0,
+        -2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        0,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        0,
+        0
+      ],
+      "success": true,
+      "steps": 0,
+      "silent": 0,
+      "mean_tie_count": 0.0,
+      "trace": []
+    },
+    {
+      "start": [
+        0,
+        1
+      ],
+      "success": true,
+      "steps": 1,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3
+      ]
+    },
+    {
+      "start": [
+        0,
+        2
+      ],
+      "success": true,
+      "steps": 2,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        1,
+        -2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        1,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        1,
+        0
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        1,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        1,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        2,
+        -2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        2,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        2,
+        0
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        2,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        2,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  ]
+}

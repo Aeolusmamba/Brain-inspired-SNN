@@ -1,0 +1,426 @@
+{
+  "representation": "lookup",
+  "num_state": 25,
+  "teacher_steps": 140,
+  "teacher_labeled_rows": 23,
+  "teacher_conflicting_updates": 0,
+  "evaluation_success": 18,
+  "evaluation_total": 25,
+  "mean_evaluation_steps": 4.52,
+  "mean_pm_silent": 1.92,
+  "mean_pm_tie_count": 1.8748571428571426,
+  "evaluations": [
+    {
+      "start": [
+        -2,
+        -2
+      ],
+      "success": true,
+      "steps": 6,
+      "silent": 2,
+      "mean_tie_count": 2.0,
+      "trace": [
+        0,
+        0,
+        2,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "start": [
+        -2,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 5,
+      "mean_tie_count": 2.875,
+      "trace": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "start": [
+        -2,
+        0
+      ],
+      "success": true,
+      "steps": 2,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        0,
+        0
+      ]
+    },
+    {
+      "start": [
+        -2,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 3,
+      "mean_tie_count": 2.125,
+      "trace": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "start": [
+        -2,
+        2
+      ],
+      "success": true,
+      "steps": 4,
+      "silent": 2,
+      "mean_tie_count": 3.25,
+      "trace": [
+        0,
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "start": [
+        -1,
+        -2
+      ],
+      "success": true,
+      "steps": 5,
+      "silent": 1,
+      "mean_tie_count": 1.6,
+      "trace": [
+        2,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "start": [
+        -1,
+        -1
+      ],
+      "success": true,
+      "steps": 4,
+      "silent": 2,
+      "mean_tie_count": 2.5,
+      "trace": [
+        0,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "start": [
+        -1,
+        0
+      ],
+      "success": true,
+      "steps": 1,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        0
+      ]
+    },
+    {
+      "start": [
+        -1,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 6,
+      "mean_tie_count": 3.25,
+      "trace": [
+        0,
+        0,
+        2,
+        2,
+        3,
+        3,
+        0,
+        0
+      ]
+    },
+    {
+      "start": [
+        -1,
+        2
+      ],
+      "success": true,
+      "steps": 3,
+      "silent": 1,
+      "mean_tie_count": 2.0,
+      "trace": [
+        3,
+        3,
+        0
+      ]
+    },
+    {
+      "start": [
+        0,
+        -2
+      ],
+      "success": true,
+      "steps": 2,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        2,
+        2
+      ]
+    },
+    {
+      "start": [
+        0,
+        -1
+      ],
+      "success": true,
+      "steps": 1,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        2
+      ]
+    },
+    {
+      "start": [
+        0,
+        0
+      ],
+      "success": true,
+      "steps": 0,
+      "silent": 0,
+      "mean_tie_count": 0.0,
+      "trace": []
+    },
+    {
+      "start": [
+        0,
+        1
+      ],
+      "success": true,
+      "steps": 1,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3
+      ]
+    },
+    {
+      "start": [
+        0,
+        2
+      ],
+      "success": true,
+      "steps": 2,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        3,
+        3
+      ]
+    },
+    {
+      "start": [
+        1,
+        -2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 4,
+      "mean_tie_count": 2.5,
+      "trace": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "start": [
+        1,
+        -1
+      ],
+      "success": true,
+      "steps": 7,
+      "silent": 3,
+      "mean_tie_count": 2.2857142857142856,
+      "trace": [
+        1,
+        1,
+        3,
+        3,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "start": [
+        1,
+        0
+      ],
+      "success": true,
+      "steps": 1,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        1
+      ]
+    },
+    {
+      "start": [
+        1,
+        1
+      ],
+      "success": true,
+      "steps": 4,
+      "silent": 2,
+      "mean_tie_count": 2.5,
+      "trace": [
+        1,
+        1,
+        0,
+        3
+      ]
+    },
+    {
+      "start": [
+        1,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 3,
+      "mean_tie_count": 2.125,
+      "trace": [
+        3,
+        3,
+        0,
+        3,
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "start": [
+        2,
+        -2
+      ],
+      "success": true,
+      "steps": 7,
+      "silent": 3,
+      "mean_tie_count": 2.2857142857142856,
+      "trace": [
+        1,
+        1,
+        3,
+        1,
+        2,
+        2,
+        0
+      ]
+    },
+    {
+      "start": [
+        2,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 5,
+      "mean_tie_count": 2.875,
+      "trace": [
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "start": [
+        2,
+        0
+      ],
+      "success": true,
+      "steps": 2,
+      "silent": 0,
+      "mean_tie_count": 1.0,
+      "trace": [
+        1,
+        1
+      ]
+    },
+    {
+      "start": [
+        2,
+        1
+      ],
+      "success": true,
+      "steps": 5,
+      "silent": 2,
+      "mean_tie_count": 2.2,
+      "trace": [
+        1,
+        1,
+        1,
+        3,
+        0
+      ]
+    },
+    {
+      "start": [
+        2,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "silent": 4,
+      "mean_tie_count": 2.5,
+      "trace": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        0,
+        3
+      ]
+    }
+  ]
+}

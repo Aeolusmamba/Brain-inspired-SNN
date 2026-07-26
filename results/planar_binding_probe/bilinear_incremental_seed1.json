@@ -1,0 +1,10 @@
+{
+  "representation": "bilinear",
+  "learning_mode": "incremental",
+  "teacher_labeled_rows": 25,
+  "teacher_conflicting_updates": 27,
+  "success": 1,
+  "total": 25,
+  "mean_silent": 0.36,
+  "mean_ties": 1.170909090909091
+}

@@ -9,9 +9,9 @@ from braincog.base.learningrule.STDP import STDP, MutliInputSTDP
 from braincog.base.connection.CustomLinear import CustomLinear
 from braincog.base.brainarea.basalganglia import basalganglia
 from braincog.model_zoo.communication_subspace import (
-    ALL_CROSS_CORE_LINK_DIMENSIONS,
     CrossCoreTrafficMonitor,
     ReducedRankCommunication,
+    cross_core_link_dimensions,
 )
 
 import pygame
@@ -26,7 +26,8 @@ class BDMSNN(nn.Module):
                  communication_rank=0, communication_window=128,
                  communication_warmup=0, communication_refit_interval=1,
                  communication_mode="striatum_to_output", communication_links=None,
-                 communication_lossless_only=False):
+                 communication_lossless_only=False, pm_threshold=None,
+                 pm_lateral_gain=None):
         """
         定义BDM-SNN网络
         :param num_state: 状态个数
@@ -109,7 +110,7 @@ class BDMSNN(nn.Module):
                 # (DLPFC, StrD1, StrD2), STN, (GPe, GPi), and (thalamus, PM).
                 # These are all eight connections crossing that partition;
                 # local plastic DLPFC-to-striatum weights stay untouched.
-                link_dimensions = ALL_CROSS_CORE_LINK_DIMENSIONS
+                link_dimensions = cross_core_link_dimensions(num_state, num_action)
                 if self.communication_link_names is not None:
                     unknown = self.communication_link_names.difference(link_dimensions)
                     if unknown:
@@ -131,7 +132,7 @@ class BDMSNN(nn.Module):
                     "striatum_to_output, or all_cross_core")
         elif communication_mode == "all_cross_core":
             self.full_traffic_monitor = CrossCoreTrafficMonitor(
-                ALL_CROSS_CORE_LINK_DIMENSIONS)
+                cross_core_link_dimensions(num_state, num_action))
         if self.node_type == "hh":
             self.node.extend([SimHHNode() for i in range(self.num_subDM - BG.num_subBG)])
             self.node[6].g_Na = torch.tensor(12)
@@ -139,6 +140,16 @@ class BDMSNN(nn.Module):
             self.node[6].g_L = torch.tensor(0.03)
         if self.node_type == "lif":
             self.node.extend([IFNode() for i in range(self.num_subDM - BG.num_subBG)])
+        # Keep the original PM dynamics unless an explicit ablation changes
+        # them.  PM is node 6 and connection 13 is its off-diagonal lateral
+        # inhibition; the thalamic feed-forward path remains untouched.
+        self.pm_threshold = (float(self.node[6].threshold.detach().cpu())
+                             if pm_threshold is None else float(pm_threshold))
+        self.pm_lateral_gain = (5 * weight_inh if pm_lateral_gain is None
+                                else float(pm_lateral_gain))
+        with torch.no_grad():
+            self.node[6].threshold.fill_(self.pm_threshold)
+            self.connection[13].weight.copy_(self.pm_lateral_gain * self.connection[13].mask)
         self.learning_rule = BG.learning_rule
         self.learning_rule.append(MutliInputSTDP(self.node[5], [self.connection[10], self.connection[12]]))  # gpi-丘脑
         self.learning_rule.append(MutliInputSTDP(self.node[6], [self.connection[11], self.connection[13]]))  # pm
@@ -281,17 +292,35 @@ class BDMSNN(nn.Module):
         :param dw:更新权重的量
         :return:
         """
+        action_slice = slice(s * num_action, (s + 1) * num_action)
+        if s < 0 or action_slice.stop > self.connection[i].weight.shape[1]:
+            raise IndexError("state/action slice is outside the DLPFC-to-striatum weight matrix")
+
+        # Only the state-action synapses used for this decision receive the
+        # reward-modulated update.  The former two-index form was tied to the
+        # Flappy Bird action space and produced NaNs for equal eligibility values.
+        delta = torch.zeros_like(dw)
+        selected_dw = torch.nan_to_num(dw[s, action_slice], nan=0.0,
+                                       posinf=0.0, neginf=0.0)
         if self.node_type == "hh":
-            self.connection[i].update(0.2 * self.weight_exc * dw)
-            self.connection[i].weight.data[s, [s * num_action, s * num_action + 1]] /= (self.connection[i].weight.data[s, [s * num_action, s * num_action + 1]].float().max() + 1e-12)
-            self.connection[i].weight.data[s, :] = self.connection[i].weight.data[s, :] * self.weight_exc
-        if self.node_type == "lif":
-            dw_mean = dw[s, [s * num_action, s * num_action + 1]].mean()
-            dw_std = dw[s, [s * num_action, s * num_action + 1]].std()
-            dw[s, [s * num_action, s * num_action + 1]] = (dw[s, [s * num_action,s * num_action + 1]] - dw_mean) / dw_std
-            dw[s, :] = dw[s, :] * self.connection[i].mask[s, :]
-            self.connection[i].update(dw)
-            self.connection[i].weight.data[s, [s * num_action, s * num_action + 1]] /= (self.connection[i].weight.data[s, [s * num_action, s * num_action + 1]].float().max() + 1e-12)
+            delta[s, action_slice] = 0.2 * self.weight_exc * selected_dw
+        elif self.node_type == "lif":
+            centered_dw = selected_dw - selected_dw.mean()
+            dw_std = centered_dw.std(unbiased=False)
+            if torch.isfinite(dw_std) and dw_std > 1e-12:
+                delta[s, action_slice] = centered_dw / dw_std
+        else:
+            raise ValueError("node_type must be 'lif' or 'hh'")
+
+        self.connection[i].update(delta)
+        selected_weights = self.connection[i].weight.data[s, action_slice]
+        selected_max = selected_weights.max()
+        if torch.isfinite(selected_max) and selected_max > 1e-12:
+            selected_weights /= selected_max
+        else:
+            # Preserve a valid exploratory path if inhibition has clipped every
+            # action synapse for a state.
+            selected_weights.fill_(self.weight_exc)
         if i in [0, 1, 2, 6, 7, 11, 12]:
             self.connection[i].weight.data = torch.clamp(self.connection[i].weight.data, 0, None)
         if i in [3, 4, 5, 8, 10]:

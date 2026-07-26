@@ -1,0 +1,4281 @@
+{
+  "configuration": {
+    "validate_env": false,
+    "episodes": 30,
+    "max_decisions": 180,
+    "control_steps": 1,
+    "internal_steps": 3,
+    "max_internal_steps": 30,
+    "action_magnitude": 0.25,
+    "trace_decay": 0.8,
+    "epsilon_start": 0.7,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 0.92,
+    "teacher_episodes": 20,
+    "teacher_start": 1.0,
+    "teacher_end": 1.0,
+    "dagger_episodes": 0,
+    "freeze_evaluation": false,
+    "teacher_credit_mode": "action_clamp",
+    "teacher_learning_mode": "behavior_clone",
+    "plasticity_rule": "three_factor",
+    "three_factor_learning_rate": 0.08,
+    "critic_learning_rate": 0.1,
+    "critic_discount": 0.98,
+    "clone_off_weight": 0.05,
+    "autonomous_epsilon": 0.0,
+    "autonomous_readout": "pm",
+    "clone_train_epochs": 30,
+    "clone_train_batch_size": 256,
+    "phase_context": false,
+    "action_duration_context": false,
+    "option_context": true,
+    "align_grid_context": false,
+    "align_residual_grid_context": false,
+    "align_residual_axis_context": true,
+    "fixed_pm_window": false,
+    "decision_readout": "pm",
+    "pm_threshold": 0.5,
+    "pm_lateral_gain": -2.5,
+    "coverage_audit": true,
+    "coverage_distance_threshold": 0.006,
+    "align_action_persistence": false,
+    "align_hold_decisions": 4,
+    "align_progress_persistence": true,
+    "progress_memory_context": false,
+    "factorized_progress_memory": false,
+    "progress_direction_bias": false,
+    "progress_bias_learning_rate": 0.15,
+    "progress_bias_maximum": 0.5,
+    "fixed_cube": true,
+    "deterministic_robot_start": true,
+    "fixed_cube_xy": [
+      0.0088,
+      0.0069
+    ],
+    "timeout_penalty": -1.0,
+    "stagnant_penalty": -0.1,
+    "unsafe_penalty": -2.0,
+    "seed": 0,
+    "device": "cuda:0",
+    "output_dir": "results/lift_bdm_snn_alignaxis_stage_online_seed0"
+  },
+  "state_space": "8 relative-position octants x 4 distance bins x 2 closed-or-grasped modes x 5 observable option contexts; align residual grid includes an observable dominant-error-axis bit",
+  "action_space": [
+    "+x",
+    "-x",
+    "+y",
+    "-y",
+    "+z",
+    "-z",
+    "gripper_open",
+    "gripper_close"
+  ],
+  "communication": "full, uncompressed BDM-SNN baseline",
+  "pm_dynamics": {
+    "threshold": 0.5,
+    "lateral_gain": -2.5
+  },
+  "episodes": [
+    {
+      "episode": 0,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.7,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 112,
+      "action_clamp_decisions": 112,
+      "teacher_pm_agreement_rate": 0.9642857142857143,
+      "behavior_clone_decisions": 112,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 112,
+      "control_steps": 112,
+      "learning_return": 13.68321830289116,
+      "robosuite_shaping_return": 13.330714364553865,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 14,
+      "readout_silent_decisions": 14,
+      "internal_snn_steps": 782,
+      "exploratory_decisions": 74,
+      "mean_pm_tie_count": 1.0535714285714286,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        5,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1476.0,
+        5292.0,
+        1002.0,
+        1306.0,
+        2459.0,
+        273.0,
+        105.0,
+        782.0
+      ],
+      "d1_weight_change_l1": 0.12162020802497864,
+      "d2_weight_change_l1": 0.12162013724446297,
+      "mean_td_error": 0.11937550018160274,
+      "option_decisions": {
+        "align": 45,
+        "descend": 60,
+        "close": 2,
+        "lift": 5,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 106,
+        "first_success_decision": 112,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 1,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.644,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.712919917985705,
+      "robosuite_shaping_return": 13.529920095447471,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 70,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        8,
+        56,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1158.0,
+        4986.0,
+        894.0,
+        1048.0,
+        2303.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.028343290090560913,
+      "d2_weight_change_l1": 0.028343304991722107,
+      "mean_td_error": 0.11957791279155251,
+      "option_decisions": {
+        "align": 45,
+        "descend": 56,
+        "close": 2,
+        "lift": 8,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 101,
+          "lift": 103,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 102,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 2,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.59248,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 16,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.685515781506993,
+      "robosuite_shaping_return": 13.345877491627006,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 77,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        7,
+        57,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1146.0,
+        4998.0,
+        896.0,
+        1050.0,
+        2319.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.04603874683380127,
+      "d2_weight_change_l1": 0.04603874310851097,
+      "mean_td_error": 0.11717605751802933,
+      "option_decisions": {
+        "align": 45,
+        "descend": 57,
+        "close": 2,
+        "lift": 7,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 102,
+          "lift": 104,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 103,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 3,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.5450815999999999,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.66851600210697,
+      "robosuite_shaping_return": 12.988969051301982,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 63,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        4,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1146.0,
+        4998.0,
+        894.0,
+        1047.0,
+        2320.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.13289165496826172,
+      "d2_weight_change_l1": 0.13289165869355202,
+      "mean_td_error": 0.11602437162576563,
+      "option_decisions": {
+        "align": 45,
+        "descend": 60,
+        "close": 2,
+        "lift": 4,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 106,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 4,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.5014750720000001,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 180,
+      "action_clamp_decisions": 180,
+      "teacher_pm_agreement_rate": 0.8222222222222222,
+      "behavior_clone_decisions": 180,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 32,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": 2.473943695391421,
+      "robosuite_shaping_return": 31.05882728183121,
+      "sparse_success": false,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 914,
+      "exploratory_decisions": 96,
+      "mean_pm_tie_count": 1.65,
+      "action_counts": [
+        45,
+        19,
+        17,
+        3,
+        8,
+        80,
+        4,
+        4
+      ],
+      "region_spikes": [
+        1568.0,
+        6272.0,
+        1152.0,
+        1416.0,
+        2831.0,
+        303.0,
+        167.0,
+        914.0
+      ],
+      "d1_weight_change_l1": 0.5923588275909424,
+      "d2_weight_change_l1": 0.5923587121069431,
+      "mean_td_error": 0.008378959887286099,
+      "option_decisions": {
+        "align": 84,
+        "descend": 80,
+        "close": 4,
+        "lift": 8,
+        "recover": 4
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": 111
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 106,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 5,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.46135706624000006,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 180,
+      "action_clamp_decisions": 180,
+      "teacher_pm_agreement_rate": 0.8888888888888888,
+      "behavior_clone_decisions": 180,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 30,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": 2.58935888803778,
+      "robosuite_shaping_return": 30.829412419041294,
+      "sparse_success": false,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 914,
+      "exploratory_decisions": 85,
+      "mean_pm_tie_count": 1.4,
+      "action_counts": [
+        42,
+        19,
+        8,
+        0,
+        9,
+        92,
+        4,
+        6
+      ],
+      "region_spikes": [
+        1510.0,
+        6346.0,
+        1156.0,
+        1398.0,
+        2899.0,
+        303.0,
+        167.0,
+        914.0
+      ],
+      "d1_weight_change_l1": 0.6581878066062927,
+      "d2_weight_change_l1": 0.6581877432763577,
+      "mean_td_error": 0.007392804776325817,
+      "option_decisions": {
+        "align": 69,
+        "descend": 92,
+        "close": 6,
+        "lift": 9,
+        "recover": 4
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": 111
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.002341701223566967,
+        "align_exit_xy_error_m": 0.0006628953112893095,
+        "first_grasp_decision": 106,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 6,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.42444850094080006,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.74738515057631,
+      "robosuite_shaping_return": 13.610153922697043,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 58,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        8,
+        56,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1141.0,
+        5011.0,
+        898.0,
+        1052.0,
+        2320.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.06209099292755127,
+      "d2_weight_change_l1": 0.062091000378131866,
+      "mean_td_error": 0.11425284038904726,
+      "option_decisions": {
+        "align": 45,
+        "descend": 56,
+        "close": 2,
+        "lift": 8,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 101,
+          "lift": 103,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 102,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 7,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.39049262086553616,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 180,
+      "action_clamp_decisions": 180,
+      "teacher_pm_agreement_rate": 0.8666666666666667,
+      "behavior_clone_decisions": 180,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 20,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": 3.0840712646064388,
+      "robosuite_shaping_return": 33.04416619621648,
+      "sparse_success": false,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 914,
+      "exploratory_decisions": 79,
+      "mean_pm_tie_count": 1.4333333333333333,
+      "action_counts": [
+        42,
+        26,
+        3,
+        0,
+        12,
+        85,
+        6,
+        6
+      ],
+      "region_spikes": [
+        1474.0,
+        6478.0,
+        1168.0,
+        1393.0,
+        2949.0,
+        303.0,
+        167.0,
+        914.0
+      ],
+      "d1_weight_change_l1": 0.6246563792228699,
+      "d2_weight_change_l1": 0.6246560625731945,
+      "mean_td_error": 0.00834746367172733,
+      "option_decisions": {
+        "align": 71,
+        "descend": 85,
+        "close": 6,
+        "lift": 12,
+        "recover": 6
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 103,
+          "lift": 105,
+          "recover": 109
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0020403871795787783,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 125,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 8,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.3592532111962932,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 112,
+      "action_clamp_decisions": 112,
+      "teacher_pm_agreement_rate": 0.9732142857142857,
+      "behavior_clone_decisions": 112,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 112,
+      "control_steps": 112,
+      "learning_return": 13.675657493033404,
+      "robosuite_shaping_return": 13.350256303668603,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 710,
+      "exploratory_decisions": 39,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        5,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1144.0,
+        5032.0,
+        902.0,
+        1058.0,
+        2339.0,
+        235.0,
+        99.0,
+        710.0
+      ],
+      "d1_weight_change_l1": 0.06792670488357544,
+      "d2_weight_change_l1": 0.06792665272951126,
+      "mean_td_error": 0.11141955971889025,
+      "option_decisions": {
+        "align": 45,
+        "descend": 60,
+        "close": 2,
+        "lift": 5,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 106,
+        "first_success_decision": 112,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 9,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.33051295430058975,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 180,
+      "action_clamp_decisions": 180,
+      "teacher_pm_agreement_rate": 0.8166666666666667,
+      "behavior_clone_decisions": 180,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 29,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": 1.9666536374306665,
+      "robosuite_shaping_return": 30.732287968381346,
+      "sparse_success": false,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 16,
+      "readout_silent_decisions": 16,
+      "internal_snn_steps": 995,
+      "exploratory_decisions": 65,
+      "mean_pm_tie_count": 1.6333333333333333,
+      "action_counts": [
+        42,
+        25,
+        16,
+        0,
+        8,
+        81,
+        4,
+        4
+      ],
+      "region_spikes": [
+        1588.0,
+        7036.0,
+        1276.0,
+        1538.0,
+        3227.0,
+        300.0,
+        164.0,
+        995.0
+      ],
+      "d1_weight_change_l1": 0.5750448107719421,
+      "d2_weight_change_l1": 0.5750448182225227,
+      "mean_td_error": 0.0031846786062433496,
+      "option_decisions": {
+        "align": 83,
+        "descend": 81,
+        "close": 4,
+        "lift": 8,
+        "recover": 4
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": 111
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0020067926698725423,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 106,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 10,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.3040719179565426,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.66525719611802,
+      "robosuite_shaping_return": 12.97681201059048,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 688,
+      "exploratory_decisions": 26,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        4,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1108.0,
+        4876.0,
+        874.0,
+        1033.0,
+        2294.0,
+        228.0,
+        98.0,
+        688.0
+      ],
+      "d1_weight_change_l1": 0.07402712106704712,
+      "d2_weight_change_l1": 0.0740271732211113,
+      "mean_td_error": 0.11092495728993719,
+      "option_decisions": {
+        "align": 45,
+        "descend": 60,
+        "close": 2,
+        "lift": 4,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.002341701222438126,
+        "align_exit_xy_error_m": 0.0006628953104141234,
+        "first_grasp_decision": 106,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 11,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.2797461645200192,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 110,
+      "action_clamp_decisions": 110,
+      "teacher_pm_agreement_rate": 0.9727272727272728,
+      "behavior_clone_decisions": 110,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 110,
+      "control_steps": 110,
+      "learning_return": 13.737232257759645,
+      "robosuite_shaping_return": 13.245721612532714,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 704,
+      "exploratory_decisions": 31,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        7,
+        56,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1145.0,
+        4991.0,
+        894.0,
+        1049.0,
+        2313.0,
+        233.0,
+        97.0,
+        704.0
+      ],
+      "d1_weight_change_l1": 0.08184534311294556,
+      "d2_weight_change_l1": 0.0818452499806881,
+      "mean_td_error": 0.1115174670560432,
+      "option_decisions": {
+        "align": 45,
+        "descend": 56,
+        "close": 2,
+        "lift": 7,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 101,
+          "lift": 103,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 102,
+        "first_success_decision": 110,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 12,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.25736647135841767,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.69775932872502,
+      "robosuite_shaping_return": 13.3566057663907,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 32,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        7,
+        57,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1141.0,
+        5011.0,
+        896.0,
+        1050.0,
+        2321.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.08996295928955078,
+      "d2_weight_change_l1": 0.0899629220366478,
+      "mean_td_error": 0.10860177987883546,
+      "option_decisions": {
+        "align": 45,
+        "descend": 57,
+        "close": 2,
+        "lift": 7,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 102,
+          "lift": 104,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 103,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 13,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.2367771536497443,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.67660547814367,
+      "robosuite_shaping_return": 12.920223966945692,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 28,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        4,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1141.0,
+        5011.0,
+        898.0,
+        1052.0,
+        2331.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.08224618434906006,
+      "d2_weight_change_l1": 0.08224616944789886,
+      "mean_td_error": 0.10869719571699099,
+      "option_decisions": {
+        "align": 45,
+        "descend": 60,
+        "close": 2,
+        "lift": 4,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 106,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 14,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.21783498135776477,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.701739141990243,
+      "robosuite_shaping_return": 13.380173632668765,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 27,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        7,
+        57,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1141.0,
+        5011.0,
+        894.0,
+        1042.0,
+        2324.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.09768509864807129,
+      "d2_weight_change_l1": 0.09768511354923248,
+      "mean_td_error": 0.10675559417736849,
+      "option_decisions": {
+        "align": 45,
+        "descend": 57,
+        "close": 2,
+        "lift": 7,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 102,
+          "lift": 104,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 103,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 15,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.2004081828491436,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 109,
+      "action_clamp_decisions": 109,
+      "teacher_pm_agreement_rate": 0.9724770642201835,
+      "behavior_clone_decisions": 109,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 109,
+      "control_steps": 109,
+      "learning_return": 13.740874086584377,
+      "robosuite_shaping_return": 12.95856394551761,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 701,
+      "exploratory_decisions": 27,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        7,
+        55,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1135.0,
+        4969.0,
+        888.0,
+        1039.0,
+        2298.0,
+        232.0,
+        96.0,
+        701.0
+      ],
+      "d1_weight_change_l1": 0.10325175523757935,
+      "d2_weight_change_l1": 0.1032518669962883,
+      "mean_td_error": 0.10797319802690049,
+      "option_decisions": {
+        "align": 45,
+        "descend": 55,
+        "close": 2,
+        "lift": 7,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 100,
+          "lift": 102,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012238473507,
+        "align_exit_xy_error_m": 0.0006628953114976059,
+        "first_grasp_decision": 101,
+        "first_success_decision": 109,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 16,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.18437552822121211,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.684420648351821,
+      "robosuite_shaping_return": 12.899706836945015,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 707,
+      "exploratory_decisions": 22,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        4,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1141.0,
+        5011.0,
+        898.0,
+        1052.0,
+        2331.0,
+        234.0,
+        98.0,
+        707.0
+      ],
+      "d1_weight_change_l1": 0.08741581439971924,
+      "d2_weight_change_l1": 0.08741586282849312,
+      "mean_td_error": 0.1066666676730069,
+      "option_decisions": {
+        "align": 45,
+        "descend": 60,
+        "close": 2,
+        "lift": 4,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 106,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 17,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.16962548596351512,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 109,
+      "action_clamp_decisions": 109,
+      "teacher_pm_agreement_rate": 0.9724770642201835,
+      "behavior_clone_decisions": 109,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 109,
+      "control_steps": 109,
+      "learning_return": 13.736395878818124,
+      "robosuite_shaping_return": 12.87827241475327,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 701,
+      "exploratory_decisions": 21,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        7,
+        55,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1135.0,
+        4969.0,
+        888.0,
+        1034.0,
+        2304.0,
+        232.0,
+        96.0,
+        701.0
+      ],
+      "d1_weight_change_l1": 0.10964041948318481,
+      "d2_weight_change_l1": 0.10964047908782959,
+      "mean_td_error": 0.10623763040719036,
+      "option_decisions": {
+        "align": 45,
+        "descend": 55,
+        "close": 2,
+        "lift": 7,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 100,
+          "lift": 102,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601237,
+        "first_grasp_decision": 101,
+        "first_success_decision": 109,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 18,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.15605544708643393,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 180,
+      "action_clamp_decisions": 180,
+      "teacher_pm_agreement_rate": 0.8111111111111111,
+      "behavior_clone_decisions": 180,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 31,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": 2.4260439098274738,
+      "robosuite_shaping_return": 31.39768523586714,
+      "sparse_success": false,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 14,
+      "readout_silent_decisions": 14,
+      "internal_snn_steps": 941,
+      "exploratory_decisions": 29,
+      "mean_pm_tie_count": 1.65,
+      "action_counts": [
+        42,
+        24,
+        15,
+        3,
+        8,
+        80,
+        4,
+        4
+      ],
+      "region_spikes": [
+        1516.0,
+        6628.0,
+        1196.0,
+        1425.0,
+        3004.0,
+        302.0,
+        166.0,
+        941.0
+      ],
+      "d1_weight_change_l1": 1.1128875315189362,
+      "d2_weight_change_l1": 1.1128874458372593,
+      "mean_td_error": -3.917379855914079e-05,
+      "option_decisions": {
+        "align": 84,
+        "descend": 80,
+        "close": 4,
+        "lift": 8,
+        "recover": 4
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": 111
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0021234067963878923,
+        "align_exit_xy_error_m": 0.0006628953111898073,
+        "first_grasp_decision": 106,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 19,
+      "phase": "teacher",
+      "frozen_evaluation": false,
+      "epsilon": 0.14357101131951924,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.972972972972973,
+      "behavior_clone_decisions": 111,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 14,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.675309802076658,
+      "robosuite_shaping_return": 12.952631617781948,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "readout_silent_decisions": 13,
+      "internal_snn_steps": 694,
+      "exploratory_decisions": 12,
+      "mean_pm_tie_count": 1.0,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        4,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1121.0,
+        4919.0,
+        884.0,
+        1051.0,
+        2340.0,
+        231.0,
+        98.0,
+        694.0
+      ],
+      "d1_weight_change_l1": 0.0927506685256958,
+      "d2_weight_change_l1": 0.09275062382221222,
+      "mean_td_error": 0.10490103803324162,
+      "option_decisions": {
+        "align": 45,
+        "descend": 60,
+        "close": 2,
+        "lift": 4,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 45,
+          "close": 105,
+          "lift": 107,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023417012236583144,
+        "align_exit_xy_error_m": 0.0006628953113601286,
+        "first_grasp_decision": 106,
+        "first_success_decision": 111,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 20,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": -5.3894169635633755,
+      "robosuite_shaping_return": 3.3624670866435684,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 50,
+      "readout_silent_decisions": 50,
+      "internal_snn_steps": 2094,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 1.8333333333333333,
+      "action_counts": [
+        106,
+        65,
+        4,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "region_spikes": [
+        3995.0,
+        13679.0,
+        2548.0,
+        3258.0,
+        6008.0,
+        899.0,
+        130.0,
+        2094.0
+      ],
+      "d1_weight_change_l1": 11.390294894576073,
+      "d2_weight_change_l1": 13.267157539725304,
+      "mean_td_error": -0.03095490762287864,
+      "option_decisions": {
+        "align": 180,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 26,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": null,
+          "close": null,
+          "lift": null,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.006952567519665706,
+        "align_exit_xy_error_m": null,
+        "first_grasp_decision": null,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 180,
+            "network": 0.46111111111111114,
+            "executed": 0.5611111111111111
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 21,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": -6.86394993921452,
+      "robosuite_shaping_return": 2.8299235175635116,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 48,
+      "readout_silent_decisions": 48,
+      "internal_snn_steps": 1984,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 1.85,
+      "action_counts": [
+        87,
+        75,
+        14,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "region_spikes": [
+        6486.0,
+        9984.0,
+        2150.0,
+        3419.0,
+        3445.0,
+        2252.0,
+        141.0,
+        1984.0
+      ],
+      "d1_weight_change_l1": 11.718391954898834,
+      "d2_weight_change_l1": 13.325164575129747,
+      "mean_td_error": -0.03660160274139353,
+      "option_decisions": {
+        "align": 180,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 21,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": null,
+          "close": null,
+          "lift": null,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0034275624929990655,
+        "align_exit_xy_error_m": null,
+        "first_grasp_decision": null,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 180,
+            "network": 0.4111111111111111,
+            "executed": 0.48333333333333334
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 22,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 113,
+      "control_steps": 113,
+      "learning_return": 13.893466598704546,
+      "robosuite_shaping_return": 12.693277017172926,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 25,
+      "readout_silent_decisions": 25,
+      "internal_snn_steps": 1057,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 1.238938053097345,
+      "action_counts": [
+        44,
+        1,
+        3,
+        1,
+        7,
+        55,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1893.0,
+        7199.0,
+        1350.0,
+        1767.0,
+        3249.0,
+        330.0,
+        88.0,
+        1057.0
+      ],
+      "d1_weight_change_l1": 7.951051365584135,
+      "d2_weight_change_l1": 5.82656130567193,
+      "mean_td_error": 0.11124166314348971,
+      "option_decisions": {
+        "align": 49,
+        "descend": 55,
+        "close": 2,
+        "lift": 7,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 3,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 49,
+          "close": 104,
+          "lift": 106,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.002400672101730518,
+        "align_exit_xy_error_m": 0.0008038798086428319,
+        "first_grasp_decision": 105,
+        "first_success_decision": 113,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 49,
+            "network": 0.8367346938775511,
+            "executed": 0.8979591836734694
+          },
+          "descend": {
+            "decisions": 55,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "close": {
+            "decisions": 2,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "lift": {
+            "decisions": 7,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 23,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": -5.666566116390206,
+      "robosuite_shaping_return": 3.2247964167577354,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 70,
+      "readout_silent_decisions": 70,
+      "internal_snn_steps": 2590,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 2.1666666666666665,
+      "action_counts": [
+        86,
+        61,
+        21,
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      "region_spikes": [
+        5308.0,
+        16524.0,
+        3126.0,
+        4004.0,
+        7165.0,
+        960.0,
+        110.0,
+        2590.0
+      ],
+      "d1_weight_change_l1": 13.613260641694069,
+      "d2_weight_change_l1": 16.208072423934937,
+      "mean_td_error": -0.031161482064577854,
+      "option_decisions": {
+        "align": 180,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 34,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": null,
+          "close": null,
+          "lift": null,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.004276577090622117,
+        "align_exit_xy_error_m": null,
+        "first_grasp_decision": null,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 180,
+            "network": 0.39444444444444443,
+            "executed": 0.45
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 24,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 139,
+      "control_steps": 139,
+      "learning_return": 13.408944640354079,
+      "robosuite_shaping_return": 14.40026270359048,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 45,
+      "readout_silent_decisions": 45,
+      "internal_snn_steps": 1797,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 1.5611510791366907,
+      "action_counts": [
+        50,
+        8,
+        8,
+        6,
+        8,
+        57,
+        0,
+        2
+      ],
+      "region_spikes": [
+        3165.0,
+        12113.0,
+        2248.0,
+        2849.0,
+        5496.0,
+        492.0,
+        94.0,
+        1797.0
+      ],
+      "d1_weight_change_l1": 9.491145309060812,
+      "d2_weight_change_l1": 7.780708257108927,
+      "mean_td_error": 0.08629653311867772,
+      "option_decisions": {
+        "align": 72,
+        "descend": 57,
+        "close": 2,
+        "lift": 8,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 13,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 72,
+          "close": 129,
+          "lift": 131,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0025591574292079954,
+        "align_exit_xy_error_m": 0.0006741229942386448,
+        "first_grasp_decision": 123,
+        "first_success_decision": 139,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 72,
+            "network": 0.6388888888888888,
+            "executed": 0.7222222222222222
+          },
+          "descend": {
+            "decisions": 57,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "close": {
+            "decisions": 2,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "lift": {
+            "decisions": 8,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 25,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": -5.934132155242771,
+      "robosuite_shaping_return": 2.9998241710496085,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 58,
+      "readout_silent_decisions": 58,
+      "internal_snn_steps": 2422,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 2.1166666666666667,
+      "action_counts": [
+        72,
+        41,
+        34,
+        33,
+        0,
+        0,
+        0,
+        0
+      ],
+      "region_spikes": [
+        6727.0,
+        13563.0,
+        2738.0,
+        3973.0,
+        5218.0,
+        2039.0,
+        149.0,
+        2422.0
+      ],
+      "d1_weight_change_l1": 14.71214847266674,
+      "d2_weight_change_l1": 17.63014407083392,
+      "mean_td_error": -0.032792616916157265,
+      "option_decisions": {
+        "align": 180,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 33,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": null,
+          "close": null,
+          "lift": null,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0023085709597793834,
+        "align_exit_xy_error_m": null,
+        "first_grasp_decision": null,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 180,
+            "network": 0.4222222222222222,
+            "executed": 0.43333333333333335
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 26,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 147,
+      "control_steps": 147,
+      "learning_return": 12.806498587161848,
+      "robosuite_shaping_return": 14.784857382595519,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 57,
+      "readout_silent_decisions": 57,
+      "internal_snn_steps": 2128,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 1.7346938775510203,
+      "action_counts": [
+        56,
+        15,
+        6,
+        4,
+        8,
+        56,
+        0,
+        2
+      ],
+      "region_spikes": [
+        4265.0,
+        13841.0,
+        2626.0,
+        3419.0,
+        6136.0,
+        823.0,
+        90.0,
+        2128.0
+      ],
+      "d1_weight_change_l1": 11.740347426384687,
+      "d2_weight_change_l1": 9.88251929730177,
+      "mean_td_error": 0.07738191463824347,
+      "option_decisions": {
+        "align": 81,
+        "descend": 56,
+        "close": 2,
+        "lift": 8,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 14,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 81,
+          "close": 137,
+          "lift": 139,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0020923855034755664,
+        "align_exit_xy_error_m": 0.001071869075268557,
+        "first_grasp_decision": 131,
+        "first_success_decision": 147,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 81,
+            "network": 0.6049382716049383,
+            "executed": 0.7037037037037037
+          },
+          "descend": {
+            "decisions": 56,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "close": {
+            "decisions": 2,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "lift": {
+            "decisions": 8,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 27,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": -6.784346394786186,
+      "robosuite_shaping_return": 2.9679070265303706,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 53,
+      "readout_silent_decisions": 53,
+      "internal_snn_steps": 2195,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 1.8833333333333333,
+      "action_counts": [
+        75,
+        50,
+        43,
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      "region_spikes": [
+        5643.0,
+        12774.0,
+        2520.0,
+        3507.0,
+        5131.0,
+        1469.0,
+        127.0,
+        2195.0
+      ],
+      "d1_weight_change_l1": 15.663885615766048,
+      "d2_weight_change_l1": 17.699114710092545,
+      "mean_td_error": -0.037500162775228815,
+      "option_decisions": {
+        "align": 180,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 27,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": null,
+          "close": null,
+          "lift": null,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.004856618199929557,
+        "align_exit_xy_error_m": null,
+        "first_grasp_decision": null,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 180,
+            "network": 0.32222222222222224,
+            "executed": 0.37777777777777777
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    },
+    {
+      "episode": 28,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": 1.5351382962633573,
+      "robosuite_shaping_return": 29.091988102904345,
+      "sparse_success": false,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 24,
+      "readout_silent_decisions": 24,
+      "internal_snn_steps": 1232,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 2.1,
+      "action_counts": [
+        56,
+        26,
+        13,
+        14,
+        5,
+        62,
+        2,
+        2
+      ],
+      "region_spikes": [
+        1913.0,
+        8680.0,
+        1542.0,
+        1770.0,
+        3888.0,
+        291.0,
+        156.0,
+        1232.0
+      ],
+      "d1_weight_change_l1": 10.42250306904316,
+      "d2_weight_change_l1": 6.198369678109884,
+      "mean_td_error": -0.0033648212766236247,
+      "option_decisions": {
+        "align": 109,
+        "descend": 62,
+        "close": 2,
+        "lift": 5,
+        "recover": 2
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 38,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 53,
+          "close": 115,
+          "lift": 117,
+          "recover": 122
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.0034975090244093645,
+        "align_exit_xy_error_m": 0.0018758437674654645,
+        "first_grasp_decision": 115,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 109,
+            "network": 0.47706422018348627,
+            "executed": 0.6330275229357798
+          },
+          "descend": {
+            "decisions": 62,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "close": {
+            "decisions": 2,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "lift": {
+            "decisions": 5,
+            "network": 1.0,
+            "executed": 1.0
+          },
+          "recover": {
+            "decisions": 2,
+            "network": 1.0,
+            "executed": 1.0
+          }
+        }
+      }
+    },
+    {
+      "episode": 29,
+      "phase": "evaluation",
+      "frozen_evaluation": false,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 180,
+      "control_steps": 180,
+      "learning_return": -9.395814296174922,
+      "robosuite_shaping_return": 2.8036366429021395,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 41,
+      "readout_silent_decisions": 41,
+      "internal_snn_steps": 2112,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 1.6833333333333333,
+      "action_counts": [
+        66,
+        73,
+        35,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "region_spikes": [
+        5666.0,
+        12027.0,
+        2364.0,
+        3260.0,
+        4607.0,
+        1709.0,
+        139.0,
+        2112.0
+      ],
+      "d1_weight_change_l1": 9.437196809798479,
+      "d2_weight_change_l1": 13.721352700144053,
+      "mean_td_error": -0.04926074641150213,
+      "option_decisions": {
+        "align": 180,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 13,
+      "progress_bias_decisions": 0,
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": null,
+          "close": null,
+          "lift": null,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.00667121342676266,
+        "align_exit_xy_error_m": null,
+        "first_grasp_decision": null,
+        "first_success_decision": null,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 180,
+            "network": 0.3277777777777778,
+            "executed": 0.3333333333333333
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "mean_learning_return": 7.321290003969126,
+    "sparse_success_rate": 0.6,
+    "grasp_any_rate": 0.8,
+    "mean_decisions": 140.7,
+    "teacher_assisted_success_rate": 0.75,
+    "clone_policy_memory": {
+      "labeled_states": 48,
+      "conflicting_states": 0
+    },
+    "clone_mlp": {
+      "samples": 2562,
+      "train_loss": NaN,
+      "train_accuracy": NaN
+    },
+    "clone_gru": {
+      "episodes": 20,
+      "samples": 2562,
+      "train_loss": NaN,
+      "train_accuracy": NaN
+    },
+    "full_communication_traffic": {
+      "rank": 0,
+      "mode": "all_cross_core",
+      "fitted": false,
+      "links": {
+        "dlpfc_stn": {
+          "source_dim": 544,
+          "target_dim": 2,
+          "samples": 34925,
+          "source_logical_events": 34925
+        },
+        "strd2_gpe": {
+          "source_dim": 4352,
+          "target_dim": 8,
+          "samples": 34925,
+          "source_logical_events": 228229
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 34925,
+          "source_logical_events": 42660
+        },
+        "strd1_gpi": {
+          "source_dim": 4352,
+          "target_dim": 8,
+          "samples": 34925,
+          "source_logical_events": 70136
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 34925,
+          "source_logical_events": 42660
+        },
+        "gpe_stn": {
+          "source_dim": 8,
+          "target_dim": 2,
+          "samples": 34925,
+          "source_logical_events": 54359
+        },
+        "gpi_thalamus": {
+          "source_dim": 8,
+          "target_dim": 8,
+          "samples": 34925,
+          "source_logical_events": 100169
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 544,
+          "target_dim": 8,
+          "samples": 34925,
+          "source_logical_events": 34925
+        }
+      }
+    },
+    "coverage_audit": {
+      "continuous_distance_threshold_m": 0.006,
+      "teacher_labeled_state_count": 48,
+      "teacher_conflicting_state_count": 0,
+      "teacher_mean_label_entropy_bits": 0.0,
+      "student_during_curriculum": {
+        "decisions": 2562,
+        "state_out_of_demo_rate": 0.0,
+        "continuous_out_of_demo_rate": 0.0,
+        "both_out_of_demo_rate": 0.0,
+        "mean_nearest_teacher_distance_m": 0.0,
+        "network_teacher_agreement_rate": 0.9262295081967213,
+        "executed_teacher_agreement_rate": 1.0,
+        "option_decisions": {
+          "align": 1066,
+          "descend": 1287,
+          "close": 54,
+          "lift": 133,
+          "recover": 22
+        }
+      },
+      "student_dagger_against_initial_teacher": {
+        "decisions": 0
+      },
+      "student_evaluation": {
+        "decisions": 1659,
+        "state_out_of_demo_rate": 0.46353224834237494,
+        "continuous_out_of_demo_rate": 0.5581675708257987,
+        "both_out_of_demo_rate": 0.37130801687763715,
+        "mean_nearest_teacher_distance_m": 0.018639032694779897,
+        "network_teacher_agreement_rate": 0.5286317058468957,
+        "executed_teacher_agreement_rate": 0.5816757082579868,
+        "option_decisions": {
+          "align": 1391,
+          "descend": 230,
+          "close": 8,
+          "lift": 28,
+          "recover": 2
+        }
+      },
+      "student_deployment": {
+        "decisions": 1659,
+        "state_out_of_demo_rate": 0.46353224834237494,
+        "continuous_out_of_demo_rate": 0.5581675708257987,
+        "both_out_of_demo_rate": 0.37130801687763715,
+        "mean_nearest_teacher_distance_m": 0.018639032694779897,
+        "network_teacher_agreement_rate": 0.5286317058468957,
+        "executed_teacher_agreement_rate": 0.5816757082579868,
+        "option_decisions": {
+          "align": 1391,
+          "descend": 230,
+          "close": 8,
+          "lift": 28,
+          "recover": 2
+        }
+      },
+      "per_option_xy_error_histograms": {
+        "align": {
+          "teacher_count": 1066,
+          "deployment_count": 1391,
+          "xy_error_histogram_teacher": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              5.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              7.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              37.0,
+              107.0,
+              3.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              6.0,
+              161.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              120.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              140.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              120.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "xy_error_histogram_deployment": [
+            [
+              9.0,
+              14.0,
+              6.0,
+              23.0,
+              5.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              10.0,
+              26.0,
+              0.0,
+              32.0,
+              17.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              12.0,
+              20.0,
+              7.0,
+              59.0,
+              68.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              5.0,
+              15.0,
+              6.0,
+              110.0,
+              147.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              57.0,
+              118.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              25.0,
+              72.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              27.0,
+              77.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              32.0,
+              61.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "descend": {
+          "teacher_count": 1287,
+          "deployment_count": 230,
+          "xy_error_histogram_teacher": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1204.0,
+              53.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              21.0,
+              9.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "xy_error_histogram_deployment": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              6.0,
+              112.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              56.0,
+              56.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "close": {
+          "teacher_count": 54,
+          "deployment_count": 8,
+          "xy_error_histogram_teacher": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              38.0,
+              16.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "xy_error_histogram_deployment": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              6.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "lift": {
+          "teacher_count": 133,
+          "deployment_count": 28,
+          "xy_error_histogram_teacher": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              72.0,
+              61.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "xy_error_histogram_deployment": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              4.0,
+              16.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              3.0,
+              5.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "recover": {
+          "teacher_count": 22,
+          "deployment_count": 2,
+          "xy_error_histogram_teacher": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              11.0,
+              10.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "xy_error_histogram_deployment": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    },
+    "phase_success": {
+      "teacher": {
+        "episodes": 20,
+        "lift_successes": 15
+      },
+      "dagger": {
+        "episodes": 0,
+        "lift_successes": 0
+      },
+      "evaluation": {
+        "episodes": 10,
+        "lift_successes": 3
+      }
+    }
+  }
+}

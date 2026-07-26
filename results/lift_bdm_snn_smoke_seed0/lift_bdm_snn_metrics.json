@@ -1,0 +1,145 @@
+{
+  "configuration": {
+    "validate_env": false,
+    "episodes": 3,
+    "max_decisions": 15,
+    "control_steps": 2,
+    "internal_steps": 6,
+    "action_magnitude": 0.25,
+    "trace_decay": 0.8,
+    "epsilon_start": 0.7,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 0.92,
+    "timeout_penalty": -1.0,
+    "stagnant_penalty": -0.1,
+    "unsafe_penalty": -2.0,
+    "seed": 0,
+    "device": "cuda:0",
+    "output_dir": "results/lift_bdm_snn_smoke_seed0"
+  },
+  "state_space": "8 relative-position octants x 4 distance bins x 2 closed-or-grasped modes",
+  "action_space": [
+    "+x",
+    "-x",
+    "+y",
+    "-y",
+    "+z",
+    "-z",
+    "gripper_open",
+    "gripper_close"
+  ],
+  "communication": "full, uncompressed BDM-SNN baseline",
+  "episodes": [
+    {
+      "episode": 0,
+      "epsilon": 0.7,
+      "decisions": 15,
+      "control_steps": 30,
+      "learning_return": -1.207735669446405,
+      "robosuite_shaping_return": 0.26558445313825746,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 11,
+      "exploratory_decisions": 10,
+      "action_counts": [
+        4,
+        1,
+        2,
+        1,
+        3,
+        1,
+        2,
+        1
+      ],
+      "region_spikes": [
+        481.0,
+        348.0,
+        90.0,
+        164.0,
+        64.0,
+        182.0,
+        15.0,
+        90.0
+      ],
+      "d1_weight_change_l1": 9.887509904801846,
+      "d2_weight_change_l1": 56.62610459327698
+    },
+    {
+      "episode": 1,
+      "epsilon": 0.644,
+      "decisions": 15,
+      "control_steps": 30,
+      "learning_return": -1.1738948881624596,
+      "robosuite_shaping_return": 0.23169948342811184,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 6,
+      "exploratory_decisions": 8,
+      "action_counts": [
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        1,
+        2
+      ],
+      "region_spikes": [
+        111.0,
+        298.0,
+        84.0,
+        177.0,
+        179.0,
+        87.0,
+        13.0,
+        90.0
+      ],
+      "d1_weight_change_l1": 1.1124901119619608,
+      "d2_weight_change_l1": 63.087982535362244
+    },
+    {
+      "episode": 2,
+      "epsilon": 0.59248,
+      "decisions": 15,
+      "control_steps": 30,
+      "learning_return": -1.2171268740499392,
+      "robosuite_shaping_return": 0.24881746906897415,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 4,
+      "exploratory_decisions": 10,
+      "action_counts": [
+        2,
+        3,
+        2,
+        0,
+        2,
+        2,
+        1,
+        3
+      ],
+      "region_spikes": [
+        279.0,
+        317.0,
+        88.0,
+        172.0,
+        125.0,
+        131.0,
+        22.0,
+        90.0
+      ],
+      "d1_weight_change_l1": 11.776113912463188,
+      "d2_weight_change_l1": 65.45399284362793
+    }
+  ],
+  "summary": {
+    "mean_learning_return": -1.1995858105529347,
+    "sparse_success_rate": 0.0,
+    "grasp_any_rate": 0.0,
+    "mean_decisions": 15.0
+  }
+}

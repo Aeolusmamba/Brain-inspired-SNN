@@ -1,0 +1,3926 @@
+{
+  "task": "enumerate_all_25_discrete_starts",
+  "readout": "pm_count",
+  "window": 10,
+  "pm_threshold": 0.35,
+  "pm_lateral_gain": -1.25,
+  "teacher_epochs": 2,
+  "teacher_decisions": 120,
+  "deployment_teacher_decisions": 0,
+  "success": 16,
+  "total": 25,
+  "decision_accuracy": 0.5,
+  "pm_silent_rate": 0.3442622950819672,
+  "pm_tie_rate": 0.3442622950819672,
+  "trials": [
+    {
+      "start": [
+        -2,
+        -2
+      ],
+      "success": true,
+      "steps": 5,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -2
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "optimal": 2,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            2.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -3.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "optimal": 2,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            0.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            4.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            4.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -8.75,
+            0.0,
+            -8.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -8.75,
+            -13.75,
+            0.0,
+            -13.75
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -2,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -7.5,
+            -7.5,
+            -7.5
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -8.75,
+            -7.75,
+            -8.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            1.0,
+            2.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -9.0,
+            -7.0,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "optimal": 1,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -6.0,
+            -7.0,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "optimal": 1,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.0,
+            -7.0,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -7.0,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            -12.0,
+            -15.0
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -2,
+        0
+      ],
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -7.5,
+            -7.5,
+            -7.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -2,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -7.5,
+            -7.5,
+            -7.5
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -8.75,
+            -8.75,
+            -7.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            1.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -9.0,
+            -10.0,
+            -7.0
+          ]
+        },
+        {
+          "position": [
+            2,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -6.0,
+            -10.0,
+            -7.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.0,
+            -10.0,
+            -7.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 0,
+          "tie_count": 4,
+          "pm_action": 0,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -10.0,
+            -6.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -13.75,
+            -8.75
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -2,
+        2
+      ],
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "optimal": 3,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -5.0,
+            -3.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "optimal": 3,
+          "action": 0,
+          "tie_count": 4,
+          "pm_action": 0,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -5.0,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            4.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            4.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -8.75,
+            -8.75,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            2.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            -7.5,
+            -12.5,
+            -12.5,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -7.5,
+            -9.5,
+            -12.5,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -1,
+        -2
+      ],
+      "success": true,
+      "steps": 5,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            0.0,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            2.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.0,
+            -5.0,
+            0.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            0.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -8.75,
+            -3.75,
+            -8.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -13.75,
+            -8.75,
+            -13.75
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -1,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            2.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -3.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -4.0,
+            -2.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "optimal": 1,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -2.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -5.75,
+            -8.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -6.25,
+            0.0,
+            -8.25,
+            -11.25
+          ]
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -6.25,
+            0.0,
+            -8.25,
+            -11.25
+          ]
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            -6.25,
+            0.0,
+            -8.25,
+            -9.25
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -1,
+        0
+      ],
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -1,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -5.0,
+            -3.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -4.0,
+            -5.0,
+            -2.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "optimal": 1,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -5.0,
+            -2.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -8.75,
+            -5.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -6.25,
+            0.0,
+            -11.25,
+            -8.25
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.25,
+            0.0,
+            -11.25,
+            -8.25
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -2
+          ],
+          "optimal": 2,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            2.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.25,
+            0.0,
+            -9.25,
+            -8.25
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        -1,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            -3.75,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "thalamus_counts": [
+            2.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -3.0,
+            -5.0,
+            -5.0,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -5.0,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -8.75,
+            -8.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            2.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            2.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -12.5,
+            -12.5,
+            -7.5
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -12.5,
+            -11.5,
+            -7.5
+          ]
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "optimal": 2,
+          "action": 0,
+          "tie_count": 4,
+          "pm_action": 0,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -12.5,
+            -8.5,
+            -7.5
+          ]
+        },
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -9.5,
+            -8.5,
+            -7.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        0,
+        -2
+      ],
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            0.0,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -7.5,
+            -7.5,
+            0.0,
+            -7.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        0,
+        -1
+      ],
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            0.0,
+            -3.75
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        0,
+        0
+      ],
+      "success": true,
+      "steps": 0,
+      "trace": []
+    },
+    {
+      "start": [
+        0,
+        1
+      ],
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            -3.75,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        0,
+        2
+      ],
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            0,
+            2
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            -3.75,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -7.5,
+            -7.5,
+            -7.5,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        1,
+        -2
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            0.0,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            2.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            -3.0,
+            0.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "optimal": 1,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            0.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -8.75,
+            0.0,
+            -3.75,
+            -8.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -12.5,
+            0.0,
+            -7.5,
+            -12.5
+          ]
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -12.5,
+            0.0,
+            -7.5,
+            -11.5
+          ]
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "optimal": 3,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -12.5,
+            0.0,
+            -7.5,
+            -8.5
+          ]
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "optimal": 3,
+          "action": 0,
+          "tie_count": 4,
+          "pm_action": 0,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -12.5,
+            0.0,
+            -7.5,
+            -5.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        1,
+        -1
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            1.0,
+            2.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            -3.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -4.0,
+            0.0,
+            -2.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            -1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 4,
+          "pm_action": 0,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -2.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -5.75,
+            -8.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -7.5,
+            -8.5,
+            -12.5
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -7.5,
+            -7.5,
+            -12.5
+          ]
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "optimal": 2,
+          "action": 0,
+          "tie_count": 4,
+          "pm_action": 0,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -7.5,
+            -4.5,
+            -12.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        1,
+        0
+      ],
+      "success": true,
+      "steps": 1,
+      "trace": [
+        {
+          "position": [
+            1,
+            0
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -3.75,
+            -3.75
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        1,
+        1
+      ],
+      "success": true,
+      "steps": 6,
+      "trace": [
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            1.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            -5.0,
+            -3.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -4.0,
+            0.0,
+            -5.0,
+            -2.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "optimal": 0,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -5.0,
+            -2.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -3.75,
+            -8.75,
+            -5.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -7.5,
+            -12.5,
+            -9.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        1,
+        2
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            1,
+            2
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            -3.75,
+            -3.75,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            2.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            -3.0,
+            -5.0,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "optimal": 1,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            -5.0,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            4.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -8.75,
+            0.0,
+            -8.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            2.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -12.5,
+            0.0,
+            -12.5,
+            -6.5
+          ]
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -12.5,
+            0.0,
+            -12.5,
+            -5.5
+          ]
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "optimal": 3,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -12.5,
+            0.0,
+            -12.5,
+            -2.5
+          ]
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "optimal": 0,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -9.5,
+            0.0,
+            -12.5,
+            -2.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        2,
+        -2
+      ],
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            2,
+            -2
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            -2
+          ],
+          "optimal": 2,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            1.0,
+            2.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            -3.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -2
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            3.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            0.0,
+            -5.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 2,
+          "tie_count": 1,
+          "pm_action": 2,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            4.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            4.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -8.75,
+            -3.75,
+            0.0,
+            -8.75
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        2,
+        -1
+      ],
+      "success": true,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            -1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -2.5,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            -1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -7.5,
+            0.0,
+            -6.25,
+            -7.5
+          ]
+        },
+        {
+          "position": [
+            0,
+            -1
+          ],
+          "optimal": 2,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            2.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -10.0,
+            0.0,
+            -7.75,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            -1
+          ],
+          "optimal": 0,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -9.0,
+            0.0,
+            -6.75,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -6.0,
+            0.0,
+            -6.75,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "optimal": 0,
+          "action": 1,
+          "tie_count": 4,
+          "pm_action": 1,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.0,
+            0.0,
+            -6.75,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -6.75,
+            -10.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            0
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -11.75,
+            -15.0
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        2,
+        0
+      ],
+      "success": true,
+      "steps": 2,
+      "trace": [
+        {
+          "position": [
+            2,
+            0
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            0
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -7.5,
+            0.0,
+            -7.5,
+            -7.5
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        2,
+        1
+      ],
+      "success": false,
+      "steps": 8,
+      "trace": [
+        {
+          "position": [
+            2,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            1
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -7.5,
+            0.0,
+            -7.5,
+            -7.5
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          "pm_membrane": [
+            -8.75,
+            0.0,
+            -8.75,
+            -7.75
+          ]
+        },
+        {
+          "position": [
+            -1,
+            1
+          ],
+          "optimal": 0,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            1.0,
+            1.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            -9.0,
+            0.0,
+            -10.0,
+            -7.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            1
+          ],
+          "optimal": 0,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -6.0,
+            0.0,
+            -10.0,
+            -7.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "optimal": 0,
+          "action": 2,
+          "tie_count": 4,
+          "pm_action": 2,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.0,
+            0.0,
+            -10.0,
+            -7.0
+          ]
+        },
+        {
+          "position": [
+            -2,
+            2
+          ],
+          "optimal": 0,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            4.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            0.0,
+            -10.0,
+            -7.0
+          ]
+        },
+        {
+          "position": [
+            -1,
+            2
+          ],
+          "optimal": 3,
+          "action": 0,
+          "tie_count": 1,
+          "pm_action": 0,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            3.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            0.0,
+            -5.0,
+            -15.0,
+            -12.0
+          ]
+        }
+      ]
+    },
+    {
+      "start": [
+        2,
+        2
+      ],
+      "success": true,
+      "steps": 4,
+      "trace": [
+        {
+          "position": [
+            2,
+            2
+          ],
+          "optimal": 1,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ],
+          "pm_membrane": [
+            -3.75,
+            0.0,
+            -3.75,
+            -3.75
+          ]
+        },
+        {
+          "position": [
+            1,
+            2
+          ],
+          "optimal": 3,
+          "action": 1,
+          "tie_count": 1,
+          "pm_action": 1,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            1.0,
+            0.0,
+            2.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            -5.0,
+            -3.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            2
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 4,
+          "pm_action": 3,
+          "pm_tie_count": 4,
+          "pm_silent": true,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            3.0
+          ],
+          "pm_membrane": [
+            -5.0,
+            0.0,
+            -5.0,
+            0.0
+          ]
+        },
+        {
+          "position": [
+            0,
+            1
+          ],
+          "optimal": 3,
+          "action": 3,
+          "tie_count": 1,
+          "pm_action": 3,
+          "pm_tie_count": 1,
+          "pm_silent": false,
+          "pm_counts": [
+            0.0,
+            0.0,
+            0.0,
+            4.0
+          ],
+          "thalamus_counts": [
+            0.0,
+            0.0,
+            0.0,
+            4.0
+          ],
+          "pm_membrane": [
+            -8.75,
+            -3.75,
+            -8.75,
+            0.0
+          ]
+        }
+      ]
+    }
+  ]
+}

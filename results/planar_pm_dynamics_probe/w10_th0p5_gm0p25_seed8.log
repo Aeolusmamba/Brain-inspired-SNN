@@ -1,0 +1,17 @@
+pygame 2.5.2 (SDL 2.28.2, Python 3.10.4)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+{
+  "task": "enumerate_all_25_discrete_starts",
+  "readout": "pm_count",
+  "window": 10,
+  "pm_threshold": 0.5,
+  "pm_lateral_gain": -0.25,
+  "teacher_epochs": 2,
+  "teacher_decisions": 120,
+  "deployment_teacher_decisions": 0,
+  "success": 23,
+  "total": 25,
+  "decision_accuracy": 0.6976744186046512,
+  "pm_silent_rate": 0.046511627906976744,
+  "pm_tie_rate": 0.2441860465116279
+}

@@ -1,0 +1,383 @@
+{
+  "configuration": {
+    "validate_env": false,
+    "episodes": 8,
+    "max_decisions": 60,
+    "control_steps": 2,
+    "internal_steps": 6,
+    "action_magnitude": 0.25,
+    "trace_decay": 0.8,
+    "epsilon_start": 0.7,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 0.92,
+    "timeout_penalty": -1.0,
+    "stagnant_penalty": -0.1,
+    "unsafe_penalty": -2.0,
+    "seed": 0,
+    "device": "cuda:0",
+    "output_dir": "results/lift_bdm_snn_baseline_seed0_8x60"
+  },
+  "state_space": "8 relative-position octants x 4 distance bins x 2 closed-or-grasped modes",
+  "action_space": [
+    "+x",
+    "-x",
+    "+y",
+    "-y",
+    "+z",
+    "-z",
+    "gripper_open",
+    "gripper_close"
+  ],
+  "communication": "full, uncompressed BDM-SNN baseline",
+  "episodes": [
+    {
+      "episode": 0,
+      "epsilon": 0.7,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -1.286880973427326,
+      "robosuite_shaping_return": 1.255193936208066,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 33,
+      "exploratory_decisions": 38,
+      "mean_pm_tie_count": 5.233333333333333,
+      "action_counts": [
+        7,
+        5,
+        4,
+        13,
+        8,
+        9,
+        8,
+        6
+      ],
+      "region_spikes": [
+        1094.0,
+        1182.0,
+        342.0,
+        703.0,
+        444.0,
+        582.0,
+        60.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 29.096215879544616,
+      "d2_weight_change_l1": 234.27286505699158
+    },
+    {
+      "episode": 1,
+      "epsilon": 0.644,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -2.622530678498446,
+      "robosuite_shaping_return": 0.49017842501652464,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 30,
+      "exploratory_decisions": 34,
+      "mean_pm_tie_count": 4.6,
+      "action_counts": [
+        2,
+        7,
+        18,
+        6,
+        9,
+        4,
+        10,
+        4
+      ],
+      "region_spikes": [
+        943.0,
+        1179.0,
+        336.0,
+        702.0,
+        495.0,
+        539.0,
+        49.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 24.626573776826262,
+      "d2_weight_change_l1": 246.5755090713501
+    },
+    {
+      "episode": 2,
+      "epsilon": 0.59248,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -1.3002699952340924,
+      "robosuite_shaping_return": 1.1332894296008988,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 29,
+      "exploratory_decisions": 30,
+      "mean_pm_tie_count": 4.5,
+      "action_counts": [
+        17,
+        5,
+        6,
+        7,
+        9,
+        4,
+        3,
+        9
+      ],
+      "region_spikes": [
+        860.0,
+        1207.0,
+        338.0,
+        697.0,
+        526.0,
+        511.0,
+        54.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 19.851337678497657,
+      "d2_weight_change_l1": 239.18882429599762
+    },
+    {
+      "episode": 3,
+      "epsilon": 0.5450815999999999,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -0.024091606206646077,
+      "robosuite_shaping_return": 2.9500701033645513,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 25,
+      "exploratory_decisions": 32,
+      "mean_pm_tie_count": 4.033333333333333,
+      "action_counts": [
+        4,
+        5,
+        5,
+        4,
+        6,
+        20,
+        9,
+        7
+      ],
+      "region_spikes": [
+        1020.0,
+        1203.0,
+        340.0,
+        690.0,
+        478.0,
+        549.0,
+        59.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 23.718736328184605,
+      "d2_weight_change_l1": 235.58823919296265
+    },
+    {
+      "episode": 4,
+      "epsilon": 0.5014750720000001,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -3.2220897353004174,
+      "robosuite_shaping_return": 0.977390326401713,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 25,
+      "exploratory_decisions": 30,
+      "mean_pm_tie_count": 4.016666666666667,
+      "action_counts": [
+        2,
+        10,
+        6,
+        6,
+        15,
+        3,
+        5,
+        13
+      ],
+      "region_spikes": [
+        770.0,
+        1172.0,
+        340.0,
+        702.0,
+        588.0,
+        464.0,
+        57.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 12.396377228200436,
+      "d2_weight_change_l1": 227.57217180728912
+    },
+    {
+      "episode": 5,
+      "epsilon": 0.46135706624000006,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -1.780349495774741,
+      "robosuite_shaping_return": 0.8779811273317791,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 36,
+      "exploratory_decisions": 25,
+      "mean_pm_tie_count": 5.333333333333333,
+      "action_counts": [
+        3,
+        7,
+        17,
+        9,
+        11,
+        7,
+        6,
+        0
+      ],
+      "region_spikes": [
+        713.0,
+        1165.0,
+        334.0,
+        698.0,
+        569.0,
+        475.0,
+        40.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 26.530000030994415,
+      "d2_weight_change_l1": 252.99199616909027
+    },
+    {
+      "episode": 6,
+      "epsilon": 0.42444850094080006,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -1.2120900591488737,
+      "robosuite_shaping_return": 1.378791181834815,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 29,
+      "exploratory_decisions": 26,
+      "mean_pm_tie_count": 4.416666666666667,
+      "action_counts": [
+        3,
+        5,
+        4,
+        5,
+        6,
+        6,
+        21,
+        10
+      ],
+      "region_spikes": [
+        932.0,
+        1195.0,
+        336.0,
+        695.0,
+        509.0,
+        522.0,
+        49.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 27.62293669069186,
+      "d2_weight_change_l1": 255.63237726688385
+    },
+    {
+      "episode": 7,
+      "epsilon": 0.39049262086553616,
+      "decisions": 60,
+      "control_steps": 120,
+      "learning_return": -2.1333967771059226,
+      "robosuite_shaping_return": 1.8723833186293768,
+      "sparse_success": false,
+      "grasped_any": false,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 22,
+      "exploratory_decisions": 28,
+      "mean_pm_tie_count": 3.6666666666666665,
+      "action_counts": [
+        1,
+        4,
+        1,
+        8,
+        9,
+        14,
+        6,
+        17
+      ],
+      "region_spikes": [
+        396.0,
+        1144.0,
+        338.0,
+        713.0,
+        725.0,
+        344.0,
+        74.0,
+        360.0
+      ],
+      "d1_weight_change_l1": 8.0,
+      "d2_weight_change_l1": 244.38956940174103
+    }
+  ],
+  "summary": {
+    "mean_learning_return": -1.6977124150870582,
+    "sparse_success_rate": 0.0,
+    "grasp_any_rate": 0.0,
+    "mean_decisions": 60.0,
+    "full_communication_traffic": {
+      "rank": 0,
+      "mode": "all_cross_core",
+      "fitted": false,
+      "links": {
+        "dlpfc_stn": {
+          "source_dim": 64,
+          "target_dim": 2,
+          "samples": 2880,
+          "source_logical_events": 2880
+        },
+        "strd2_gpe": {
+          "source_dim": 512,
+          "target_dim": 8,
+          "samples": 2880,
+          "source_logical_events": 9447
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 2880,
+          "source_logical_events": 2704
+        },
+        "strd1_gpi": {
+          "source_dim": 512,
+          "target_dim": 8,
+          "samples": 2880,
+          "source_logical_events": 6728
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 2880,
+          "source_logical_events": 2704
+        },
+        "gpe_stn": {
+          "source_dim": 8,
+          "target_dim": 2,
+          "samples": 2880,
+          "source_logical_events": 5600
+        },
+        "gpi_thalamus": {
+          "source_dim": 8,
+          "target_dim": 8,
+          "samples": 2880,
+          "source_logical_events": 4334
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 64,
+          "target_dim": 8,
+          "samples": 2880,
+          "source_logical_events": 2880
+        }
+      }
+    }
+  }
+}

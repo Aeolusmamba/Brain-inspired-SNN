@@ -6,16 +6,27 @@ import torch
 from torch import nn
 
 
-ALL_CROSS_CORE_LINK_DIMENSIONS = {
-    "dlpfc_stn": (9, 2),
-    "strd2_gpe": (18, 2),
-    "stn_gpe": (2, 2),
-    "strd1_gpi": (18, 2),
-    "stn_gpi": (2, 2),
-    "gpe_stn": (2, 2),
-    "gpi_thalamus": (2, 2),
-    "dlpfc_thalamus": (9, 2),
-}
+def cross_core_link_dimensions(num_state=9, num_action=2):
+    """Return the BDM-SNN core-boundary dimensions for a state/action space.
+
+    The original constant described only Flappy Bird (9 states, 2 actions).
+    Keeping the topology parameterized lets a full-traffic monitor and a later
+    RRR ablation describe arbitrary discrete control tasks consistently.
+    """
+    return {
+        "dlpfc_stn": (num_state, 2),
+        "strd2_gpe": (num_state * num_action, num_action),
+        "stn_gpe": (2, num_action),
+        "strd1_gpi": (num_state * num_action, num_action),
+        "stn_gpi": (2, num_action),
+        "gpe_stn": (num_action, 2),
+        "gpi_thalamus": (num_action, num_action),
+        "dlpfc_thalamus": (num_state, num_action),
+    }
+
+
+# Backward-compatible Flappy Bird dimensions for external callers.
+ALL_CROSS_CORE_LINK_DIMENSIONS = cross_core_link_dimensions()
 
 
 class CrossCoreTrafficMonitor(nn.Module):

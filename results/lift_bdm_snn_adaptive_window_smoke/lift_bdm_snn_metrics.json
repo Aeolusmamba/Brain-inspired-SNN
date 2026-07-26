@@ -1,0 +1,272 @@
+{
+  "configuration": {
+    "validate_env": false,
+    "episodes": 4,
+    "max_decisions": 180,
+    "control_steps": 1,
+    "internal_steps": 3,
+    "max_internal_steps": 30,
+    "action_magnitude": 0.25,
+    "trace_decay": 0.8,
+    "epsilon_start": 0.7,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 0.92,
+    "teacher_episodes": 4,
+    "teacher_start": 1.0,
+    "teacher_end": 1.0,
+    "teacher_credit_mode": "action_clamp",
+    "phase_context": false,
+    "fixed_cube": true,
+    "deterministic_robot_start": true,
+    "fixed_cube_xy": [
+      0.0088,
+      0.0069
+    ],
+    "timeout_penalty": -1.0,
+    "stagnant_penalty": -0.1,
+    "unsafe_penalty": -2.0,
+    "seed": 0,
+    "device": "cuda:0",
+    "output_dir": "results/lift_bdm_snn_adaptive_window_smoke"
+  },
+  "state_space": "8 relative-position octants x 4 distance bins x 2 closed-or-grasped modes",
+  "action_space": [
+    "+x",
+    "-x",
+    "+y",
+    "-y",
+    "+z",
+    "-z",
+    "gripper_open",
+    "gripper_close"
+  ],
+  "communication": "full, uncompressed BDM-SNN baseline",
+  "episodes": [
+    {
+      "episode": 0,
+      "epsilon": 0.7,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 111,
+      "action_clamp_decisions": 111,
+      "teacher_pm_agreement_rate": 0.6306306306306306,
+      "decisions": 111,
+      "control_steps": 111,
+      "learning_return": 13.68189538966572,
+      "robosuite_shaping_return": 12.898373818369862,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 16,
+      "internal_snn_steps": 801,
+      "exploratory_decisions": 74,
+      "mean_pm_tie_count": 2.0720720720720722,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        5,
+        60,
+        0,
+        1
+      ],
+      "region_spikes": [
+        1303.0,
+        5493.0,
+        1004.0,
+        1259.0,
+        2519.0,
+        300.0,
+        102.0,
+        801.0
+      ],
+      "d1_weight_change_l1": 70.85170105099678,
+      "d2_weight_change_l1": 36.03918516635895
+    },
+    {
+      "episode": 1,
+      "epsilon": 0.644,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 110,
+      "action_clamp_decisions": 110,
+      "teacher_pm_agreement_rate": 0.7090909090909091,
+      "decisions": 110,
+      "control_steps": 110,
+      "learning_return": 13.713194203377036,
+      "robosuite_shaping_return": 13.092110315863698,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 12,
+      "internal_snn_steps": 677,
+      "exploratory_decisions": 69,
+      "mean_pm_tie_count": 1.7636363636363637,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        8,
+        56,
+        0,
+        1
+      ],
+      "region_spikes": [
+        852.0,
+        4603.0,
+        846.0,
+        1074.0,
+        2228.0,
+        238.0,
+        98.0,
+        677.0
+      ],
+      "d1_weight_change_l1": 27.088756531476974,
+      "d2_weight_change_l1": 29.933950573205948
+    },
+    {
+      "episode": 2,
+      "epsilon": 0.59248,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 110,
+      "action_clamp_decisions": 110,
+      "teacher_pm_agreement_rate": 0.6909090909090909,
+      "decisions": 110,
+      "control_steps": 110,
+      "learning_return": 13.685722954058868,
+      "robosuite_shaping_return": 12.915383231353811,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "internal_snn_steps": 690,
+      "exploratory_decisions": 72,
+      "mean_pm_tie_count": 1.8272727272727274,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        7,
+        57,
+        0,
+        1
+      ],
+      "region_spikes": [
+        854.0,
+        4705.0,
+        864.0,
+        1096.0,
+        2270.0,
+        243.0,
+        97.0,
+        690.0
+      ],
+      "d1_weight_change_l1": 34.73450855910778,
+      "d2_weight_change_l1": 24.61871761083603
+    },
+    {
+      "episode": 3,
+      "epsilon": 0.5450815999999999,
+      "teacher_probability": 1.0,
+      "teacher_decisions": 110,
+      "action_clamp_decisions": 110,
+      "teacher_pm_agreement_rate": 0.7363636363636363,
+      "decisions": 110,
+      "control_steps": 110,
+      "learning_return": 13.667324834173957,
+      "robosuite_shaping_return": 12.561286062085692,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 13,
+      "internal_snn_steps": 690,
+      "exploratory_decisions": 58,
+      "mean_pm_tie_count": 1.8272727272727274,
+      "action_counts": [
+        42,
+        0,
+        3,
+        0,
+        4,
+        60,
+        0,
+        1
+      ],
+      "region_spikes": [
+        855.0,
+        4673.0,
+        860.0,
+        1096.0,
+        2272.0,
+        243.0,
+        97.0,
+        690.0
+      ],
+      "d1_weight_change_l1": 32.44300615787506,
+      "d2_weight_change_l1": 33.46099689602852
+    }
+  ],
+  "summary": {
+    "mean_learning_return": 13.687034345318896,
+    "sparse_success_rate": 1.0,
+    "grasp_any_rate": 1.0,
+    "mean_decisions": 110.25,
+    "teacher_assisted_success_rate": 1.0,
+    "full_communication_traffic": {
+      "rank": 0,
+      "mode": "all_cross_core",
+      "fitted": false,
+      "links": {
+        "dlpfc_stn": {
+          "source_dim": 64,
+          "target_dim": 2,
+          "samples": 2858,
+          "source_logical_events": 2858
+        },
+        "strd2_gpe": {
+          "source_dim": 512,
+          "target_dim": 8,
+          "samples": 2858,
+          "source_logical_events": 19474
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 2858,
+          "source_logical_events": 3574
+        },
+        "strd1_gpi": {
+          "source_dim": 512,
+          "target_dim": 8,
+          "samples": 2858,
+          "source_logical_events": 3864
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 2858,
+          "source_logical_events": 3574
+        },
+        "gpe_stn": {
+          "source_dim": 8,
+          "target_dim": 2,
+          "samples": 2858,
+          "source_logical_events": 4525
+        },
+        "gpi_thalamus": {
+          "source_dim": 8,
+          "target_dim": 8,
+          "samples": 2858,
+          "source_logical_events": 9289
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 64,
+          "target_dim": 8,
+          "samples": 2858,
+          "source_logical_events": 2858
+        }
+      }
+    }
+  }
+}
