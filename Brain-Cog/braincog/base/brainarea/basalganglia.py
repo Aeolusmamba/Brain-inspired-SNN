@@ -23,7 +23,7 @@ class basalganglia(nn.Module):
     Basal Ganglia
     """
 
-    def __init__(self, ns, na, we, wi, node_type):
+    def __init__(self, ns, na, we, wi, node_type, compact_striatum=False):
         super().__init__()
         """
         :param ns: 状态个数
@@ -33,6 +33,7 @@ class basalganglia(nn.Module):
         """
         num_state = ns
         num_action = na
+        self.compact_striatum = compact_striatum
         num_STN = 2
         weight_exc = we
         weight_inh = wi
@@ -40,10 +41,15 @@ class basalganglia(nn.Module):
         bg_connection = []
         bg_con_mask = []
         # DLPFC-StrD1
-        con_matrix1 = torch.zeros((num_state, num_state * num_action), dtype=torch.float)
-        for i in range(num_state):
-            for j in range(num_action):
-                con_matrix1[i, i * num_action + j] = 1
+        if compact_striatum:
+            # A population-level Str channel retains one learned weight per
+            # state/action pair but shares one LIF output neuron per action.
+            con_matrix1 = torch.ones((num_state, num_action), dtype=torch.float)
+        else:
+            con_matrix1 = torch.zeros((num_state, num_state * num_action), dtype=torch.float)
+            for i in range(num_state):
+                for j in range(num_action):
+                    con_matrix1[i, i * num_action + j] = 1
         bg_con_mask.append(con_matrix1)
         bg_connection.append(CustomLinear(weight_exc * con_matrix1, con_matrix1))
         # DLPFC-StrD2
@@ -54,10 +60,13 @@ class basalganglia(nn.Module):
         bg_con_mask.append(con_matrix3)
         bg_connection.append(CustomLinear(weight_exc * con_matrix3, con_matrix3))
         # StrD1-GPi
-        con_matrix4 = torch.zeros((num_state * num_action, num_action), dtype=torch.float)
-        for i in range(num_state):
-            for j in range(num_action):
-                con_matrix4[i * num_action + j, j] = 1
+        if compact_striatum:
+            con_matrix4 = torch.eye(num_action, dtype=torch.float)
+        else:
+            con_matrix4 = torch.zeros((num_state * num_action, num_action), dtype=torch.float)
+            for i in range(num_state):
+                for j in range(num_action):
+                    con_matrix4[i * num_action + j, j] = 1
         bg_con_mask.append(con_matrix4)
         bg_connection.append(CustomLinear(weight_inh * con_matrix4, con_matrix4))
         # StrD2-GPe

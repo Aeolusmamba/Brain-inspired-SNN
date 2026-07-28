@@ -35,21 +35,25 @@ from braincog.model_zoo.bdmsnn import BDMSNN
 BASE_NUM_STATE = 64
 NUM_PHASE_CONTEXT = 4
 NUM_ACTION_DURATION_BINS = 3
+# Physical actions remain eight-wide because the deployment FSM still issues
+# descend / close / lift / recover primitives.  The align SNN can use either
+# all eight output channels (legacy baseline) or only the four lateral ones.
 NUM_ACTION = 8
+NUM_ALIGN_ACTION = 4
 TEMPORAL_ACTION_SYMBOLS = NUM_ACTION + 1
 OPTION_NAMES = ("align", "descend", "close", "lift", "recover")
 NUM_OPTION_CONTEXT = len(OPTION_NAMES)
 ALIGN_GRID_BINS = 5
 ALIGN_GRID_STATES = ALIGN_GRID_BINS * ALIGN_GRID_BINS
-ALIGN_RESIDUAL_BINS = 12  # ten 10-mm bins plus a lower/upper overflow bin
-ALIGN_RESIDUAL_STATES = ALIGN_RESIDUAL_BINS * ALIGN_RESIDUAL_BINS
-ALIGN_RESIDUAL_AXIS_STATES = 2 * ALIGN_RESIDUAL_STATES
+# The legacy default has ten 10-mm in-range bins plus two overflow bins.
+ALIGN_RESIDUAL_BINS = 12
 ALIGN_MEMORY_SYMBOLS = 5  # none, +x, -x, +y, -y
 OPTION_MEMORY_BASE_STATES = 128
 FACTORIZED_ALIGN_STATE_COUNT = ALIGN_GRID_STATES + ALIGN_MEMORY_SYMBOLS + 4 * BASE_NUM_STATE
 ACTION_NAMES = (
     "+x", "-x", "+y", "-y", "+z", "-z", "gripper_open", "gripper_close",
 )
+ALIGN_ACTION_NAMES = ACTION_NAMES[:NUM_ALIGN_ACTION]
 REGION_NAMES = ("StrD1", "StrD2", "STN", "GPe", "GPi", "thalamus", "PM", "DLPFC")
 
 
@@ -69,7 +73,8 @@ class LiftStateEncoder:
                  use_action_duration=False, use_option_context=False,
                  use_align_grid=False, use_progress_memory_context=False,
                  use_factorized_progress_memory=False, use_align_residual_grid=False,
-                 use_align_residual_axis=False):
+                 use_align_residual_axis=False, align_residual_bins=ALIGN_RESIDUAL_BINS,
+                 snn_align_only=False):
         self.distance_edges = np.asarray(distance_edges, dtype=np.float64)
         self.use_phase_context = use_phase_context
         self.use_action_duration = use_action_duration
@@ -79,17 +84,31 @@ class LiftStateEncoder:
         self.use_factorized_progress_memory = use_factorized_progress_memory
         self.use_align_residual_grid = use_align_residual_grid
         self.use_align_residual_axis = use_align_residual_axis
+        if align_residual_bins < 4:
+            raise ValueError("align_residual_bins must retain at least two in-range bins and two overflow bins")
+        self.align_residual_bins = align_residual_bins
+        self.snn_align_only = snn_align_only
+
+    @property
+    def align_residual_states(self):
+        return self.align_residual_bins * self.align_residual_bins
+
+    @property
+    def align_residual_axis_states(self):
+        return 2 * self.align_residual_states
 
     @property
     def num_state(self):
         if self.use_align_residual_axis:
             if not self.use_option_context or self.use_action_duration:
                 raise ValueError("align residual-axis code requires option context without duration context")
-            return ALIGN_RESIDUAL_AXIS_STATES + (NUM_OPTION_CONTEXT - 1) * BASE_NUM_STATE
+            return (self.align_residual_axis_states if self.snn_align_only else
+                    self.align_residual_axis_states + (NUM_OPTION_CONTEXT - 1) * BASE_NUM_STATE)
         if self.use_align_residual_grid:
             if not self.use_option_context or self.use_action_duration:
                 raise ValueError("align residual grid requires option context without duration context")
-            return ALIGN_RESIDUAL_STATES + (NUM_OPTION_CONTEXT - 1) * BASE_NUM_STATE
+            return (self.align_residual_states if self.snn_align_only else
+                    self.align_residual_states + (NUM_OPTION_CONTEXT - 1) * BASE_NUM_STATE)
         if self.use_factorized_progress_memory:
             return FACTORIZED_ALIGN_STATE_COUNT
         if self.use_progress_memory_context:
@@ -109,14 +128,14 @@ class LiftStateEncoder:
         bits = (np.asarray(relative_position) >= 0.0).astype(np.int64)
         return int(bits[0] | (bits[1] << 1) | (bits[2] << 2))
 
-    @staticmethod
-    def residual_bin(error):
-        """Encode 10-mm in-range residuals without saturating overflow."""
+    def residual_bin(self, error):
+        """Use two overflow bins and evenly partition the +/-50-mm operating range."""
         if error < -0.050:
             return 0
         if error >= 0.050:
-            return ALIGN_RESIDUAL_BINS - 1
-        return 1 + int(np.floor((error + 0.050) / 0.010))
+            return self.align_residual_bins - 1
+        return 1 + int(np.floor((error + 0.050) /
+                                (0.100 / (self.align_residual_bins - 2))))
 
     def encode(self, observation, grasped, previous_action=None, action_duration=0,
                option_index=0, progress_memory_action=None):
@@ -130,12 +149,12 @@ class LiftStateEncoder:
             xy_error = relative_position[:2] - np.array((-0.020, 0.0))
             grid = np.asarray([self.residual_bin(value) for value in xy_error], dtype=np.int64)
             dominant_axis = int(abs(xy_error[1]) > abs(xy_error[0]))
-            base_state = int(grid[0] + ALIGN_RESIDUAL_BINS * grid[1] +
-                             dominant_axis * ALIGN_RESIDUAL_STATES)
+            base_state = int(grid[0] + self.align_residual_bins * grid[1] +
+                             dominant_axis * self.align_residual_states)
         elif self.use_align_residual_grid and option_index == 0:
             xy_error = relative_position[:2] - np.array((-0.020, 0.0))
             grid = np.asarray([self.residual_bin(value) for value in xy_error], dtype=np.int64)
-            base_state = int(grid[0] + ALIGN_RESIDUAL_BINS * grid[1])
+            base_state = int(grid[0] + self.align_residual_bins * grid[1])
         elif self.use_align_grid and option_index == 0:
             # Align only needs lateral error.  Five bins per axis preserve
             # direction and error magnitude without expanding the 320-state
@@ -159,9 +178,13 @@ class LiftStateEncoder:
         if self.use_align_residual_grid or self.use_align_residual_axis:
             if self.use_progress_memory_context or self.use_factorized_progress_memory:
                 raise ValueError("align residual encoders cannot be combined with progress-memory encoders")
-            align_states = (ALIGN_RESIDUAL_AXIS_STATES if self.use_align_residual_axis
-                            else ALIGN_RESIDUAL_STATES)
+            align_states = (self.align_residual_axis_states if self.use_align_residual_axis
+                            else self.align_residual_states)
             if option_index != 0:
+                if self.snn_align_only:
+                    # This value is never sent through the SNN: fixed-action
+                    # options are handled by the deployment FSM alone.
+                    return None, {"option_index": option_index, "snn_active": False}
                 # Residual cells occupy the first block; remaining
                 # options retain their original 64-state local encodings.
                 state = align_states + (option_index - 1) * BASE_NUM_STATE + base_state
@@ -223,11 +246,12 @@ class LiftStateEncoder:
                            self.use_align_residual_axis)
                            and option_index == 0 else None),
             "progress_memory_action": progress_memory_action,
+            "snn_active": True,
         }
 
 
 class LiftActionPrimitives:
-    """Translate the eight discrete actions into Panda OSC pose commands."""
+    """Translate the physical eight-action alphabet into Panda OSC commands."""
 
     def __init__(self, magnitude=0.25):
         self.magnitude = magnitude
@@ -975,8 +999,8 @@ def choose_action(network, state, eligibility_d1, eligibility_d2, rng, epsilon,
                   decision_readout="pm"):
     """Decode either PM or thalamic spikes without changing BDM-SNN dynamics."""
     input_current = make_input(state, num_state, device)
-    pm_spikes = torch.zeros(NUM_ACTION, dtype=torch.float32, device=device)
-    thalamus_spikes = torch.zeros(NUM_ACTION, dtype=torch.float32, device=device)
+    pm_spikes = torch.zeros(network.num_action, dtype=torch.float32, device=device)
+    thalamus_spikes = torch.zeros(network.num_action, dtype=torch.float32, device=device)
     region_spikes = torch.zeros(len(REGION_NAMES), dtype=torch.float32, device=device)
     executed_internal_steps = 0
     for _ in range(max_internal_steps):
@@ -994,9 +1018,9 @@ def choose_action(network, state, eligibility_d1, eligibility_d2, rng, epsilon,
             break
 
     pm_silent = bool(pm_spikes.sum().item() == 0)
-    allowed_actions = np.asarray(range(NUM_ACTION) if allowed_actions is None else allowed_actions,
+    allowed_actions = np.asarray(range(network.num_action) if allowed_actions is None else allowed_actions,
                                dtype=np.int64)
-    if allowed_actions.size == 0:
+    if allowed_actions.size == 0 or np.any(allowed_actions < 0) or np.any(allowed_actions >= network.num_action):
         raise ValueError("an option must allow at least one action")
     allowed_spikes = pm_spikes[torch.as_tensor(allowed_actions, device=device)]
     max_spike_count = torch.max(allowed_spikes)
@@ -1057,16 +1081,26 @@ def choose_action(network, state, eligibility_d1, eligibility_d2, rng, epsilon,
     }
 
 
+def striatum_weight_index(network, state, action):
+    """Locate a state-action synapse in expanded or population-level Str."""
+    return int(action if network.compact_striatum else state * network.num_action + action)
+
+
+def striatum_action_slice(network, state):
+    return (slice(0, network.num_action) if network.compact_striatum else
+            slice(state * network.num_action, (state + 1) * network.num_action))
+
+
 def reward_modulated_update(network, state, action, reward, eligibility_d1, eligibility_d2):
     """Apply the original D1 / D2 reward modulation to an arbitrary action slice."""
     reward_mask = torch.ones_like(eligibility_d1)
     for active_state in active_states(state):
-        reward_mask[active_state, active_state * NUM_ACTION + action] = reward
+        reward_mask[active_state, striatum_weight_index(network, active_state, action)] = reward
     before_d1 = network.connection[0].weight.detach().clone()
     before_d2 = network.connection[1].weight.detach().clone()
     for active_state in active_states(state):
-        network.UpdateWeight(0, active_state, NUM_ACTION, reward_mask * eligibility_d1)
-        network.UpdateWeight(1, active_state, NUM_ACTION, -reward_mask * eligibility_d2)
+        network.UpdateWeight(0, active_state, network.num_action, reward_mask * eligibility_d1)
+        network.UpdateWeight(1, active_state, network.num_action, -reward_mask * eligibility_d2)
     return {
         "d1_weight_change_l1": float((network.connection[0].weight - before_d1).abs().sum().item()),
         "d2_weight_change_l1": float((network.connection[1].weight - before_d2).abs().sum().item()),
@@ -1085,7 +1119,7 @@ def three_factor_update(network, state, action, td_error, eligibility_d1, eligib
     changes = [0.0, 0.0]
     with torch.no_grad():
         for active_state in learning_states(state, action):
-            index = active_state * NUM_ACTION + action
+            index = striatum_weight_index(network, active_state, action)
             before_d1 = network.connection[0].weight[active_state, index].item()
             before_d2 = network.connection[1].weight[active_state, index].item()
             trace_d1 = float(torch.nan_to_num(eligibility_d1[active_state, index]).item())
@@ -1109,7 +1143,7 @@ def initialize_three_factor_weights(network):
             connection.weight.copy_(0.5 * connection.mask)
 
 
-def executed_action_eligibility(eligibility, state, action):
+def executed_action_eligibility(network, eligibility, state, action):
     """Assign local eligibility to the action actually sent to the robot.
 
     The PM can be silent or tied while an option-safe fallback still sends one
@@ -1119,7 +1153,7 @@ def executed_action_eligibility(eligibility, state, action):
     """
     clamped = torch.zeros_like(eligibility)
     for active_state in learning_states(state, action):
-        clamped[active_state, active_state * NUM_ACTION + action] = 1.0
+        clamped[active_state, striatum_weight_index(network, active_state, action)] = 1.0
     return clamped
 
 
@@ -1133,7 +1167,7 @@ def behavior_clone_update(network, state, action, off_weight):
     """
     with torch.no_grad():
         for active_state in learning_states(state, action):
-            action_slice = slice(active_state * NUM_ACTION, (active_state + 1) * NUM_ACTION)
+            action_slice = striatum_action_slice(network, active_state)
             d1 = network.connection[0].weight[active_state, action_slice]
             d2 = network.connection[1].weight[active_state, action_slice]
             d1.fill_(off_weight)
@@ -1214,10 +1248,14 @@ def train(args):
                                use_progress_memory_context=args.progress_memory_context,
                                use_factorized_progress_memory=args.factorized_progress_memory,
                                use_align_residual_grid=args.align_residual_grid_context,
-                               use_align_residual_axis=args.align_residual_axis_context)
-    network = BDMSNN(encoder.num_state, NUM_ACTION, 1.0, -0.5, "lif",
+                               use_align_residual_axis=args.align_residual_axis_context,
+                               align_residual_bins=args.align_residual_bins,
+                               snn_align_only=args.snn_align_only)
+    snn_action_count = args.align_action_count
+    network = BDMSNN(encoder.num_state, snn_action_count, 1.0, -0.5, "lif",
                      communication_mode="all_cross_core", pm_threshold=args.pm_threshold,
-                     pm_lateral_gain=args.pm_lateral_gain).to(device)
+                     pm_lateral_gain=args.pm_lateral_gain,
+                     compact_striatum=args.compact_striatum).to(device)
     if args.plasticity_rule == "three_factor":
         initialize_three_factor_weights(network)
     critic = (TabularTDCritic(encoder.num_state, args.critic_learning_rate,
@@ -1259,6 +1297,15 @@ def train(args):
              if args.align_residual_grid_context else "") +
             ("; align residual grid includes an observable dominant-error-axis bit"
              if args.align_residual_axis_context else "") +
+            (f"; residual grid uses {args.align_residual_bins} bins per axis"
+             if args.align_residual_grid_context or args.align_residual_axis_context else "") +
+            ("; fixed-action options bypass DLPFC/BG/PM and do not receive SNN plasticity"
+             if args.snn_align_only else "") +
+            ("; StrD1/StrD2 use one population LIF channel per action"
+             if args.compact_striatum else "") +
+            (f"; align SNN exposes {snn_action_count} lateral action channels while "
+             "the FSM retains the four non-align physical primitives"
+             if snn_action_count != NUM_ACTION else "") +
             ("; valid progress direction is an explicit five-symbol DLPFC context"
              if args.progress_memory_context else "") +
             ("; align xy and progress-token neurons are factorized and co-active"
@@ -1266,6 +1313,7 @@ def train(args):
             (" x 9 previous-action symbols x 3 action-duration bins"
              if args.action_duration_context else "")),
         "action_space": list(ACTION_NAMES),
+        "snn_align_action_space": list(ALIGN_ACTION_NAMES[:snn_action_count]),
         "communication": "full, uncompressed BDM-SNN baseline",
         "pm_dynamics": {
             "threshold": network.pm_threshold,
@@ -1376,8 +1424,9 @@ def train(args):
                                       if (align_progress_memory is not None and option_index == 0) else None)
             action_bias = (direction_bias.scores(progress_memory_action)
                            if direction_bias is not None else None)
-            state, _ = encoder.encode(observation, grasped, action_memory.previous_action,
-                                      action_memory.duration, option_index, progress_memory_action)
+            state, state_info = encoder.encode(observation, grasped, action_memory.previous_action,
+                                               action_memory.duration, option_index, progress_memory_action)
+            snn_active = bool(state_info.get("snn_active", True))
             if align_progress_value is not None and option_index == 0:
                 # This is used only when PM has no unique winner inside
                 # choose_action; a unique SNN decision remains untouched.
@@ -1387,12 +1436,25 @@ def train(args):
             # an action or update a weight.
             audit_teacher_action = (option_controller.teacher_action(observation)
                                     if option_controller is not None else None)
-            action, eligibility_d1, eligibility_d2, decision = choose_action(
-                network, state, eligibility_d1, eligibility_d2, rng, epsilon,
-                args.internal_steps, args.max_internal_steps, args.trace_decay,
-                encoder.num_state, device,
-                (option_controller.allowed_actions() if option_controller is not None else None),
-                args.fixed_pm_window, action_bias, args.decision_readout)
+            if snn_active:
+                action, eligibility_d1, eligibility_d2, decision = choose_action(
+                    network, state, eligibility_d1, eligibility_d2, rng, epsilon,
+                    args.internal_steps, args.max_internal_steps, args.trace_decay,
+                    encoder.num_state, device,
+                    (option_controller.allowed_actions() if option_controller is not None else None),
+                    args.fixed_pm_window, action_bias, args.decision_readout)
+            else:
+                # Non-align options expose one safe primitive.  Bypassing the
+                # SNN prevents fixed FSM actions from allocating DLPFC/Str
+                # states or producing irrelevant plasticity updates.
+                action = int(option_controller.allowed_actions()[0])
+                decision = {
+                    "region_spikes": torch.zeros(len(REGION_NAMES), device=device),
+                    "pm_silent": False, "readout_silent": False, "exploratory": False,
+                    "network_action": action, "pm_confident": False,
+                    "readout_confident": False, "pm_tie_count": 0,
+                    "progress_bias_intervened": False, "internal_steps": 0,
+                }
             teacher_used = episode_phase == "teacher" and bool(rng.random() < current_teacher_probability)
             action_source = ("pm_unique" if decision["readout_confident"]
                              else "ambiguous_fallback")
@@ -1404,18 +1466,20 @@ def train(args):
                     teacher_action, keep_gripper_closed = teacher.action(observation, grasped)
                 action = teacher_action
                 teacher_decisions += 1
-                teacher_pm_agreements += int(decision["network_action"] == teacher_action)
-                label_key = tuple(active_states(state))
-                previous_labels = teacher_action_labels.setdefault(label_key, set())
-                behavior_clone_label_conflicts += int(bool(previous_labels and action not in previous_labels))
-                previous_labels.add(action)
-                policy_memory.observe(state, action)
+                teacher_pm_agreements += int(snn_active and decision["network_action"] == teacher_action)
+                if snn_active:
+                    label_key = tuple(active_states(state))
+                    previous_labels = teacher_action_labels.setdefault(label_key, set())
+                    behavior_clone_label_conflicts += int(bool(previous_labels and action not in previous_labels))
+                    previous_labels.add(action)
+                    policy_memory.observe(state, action)
                 clone_mlp.observe(observation, action, decision_index, args.max_decisions)
                 clone_gru.observe(observation, action)
-                coverage_audit.observe_teacher(option_index, state, action, observation, grasped)
-                coverage_audit.observe_student("curriculum", option_index, state,
-                                               audit_teacher_action, decision["network_action"], action,
-                                               observation, grasped)
+                if snn_active:
+                    coverage_audit.observe_teacher(option_index, state, action, observation, grasped)
+                    coverage_audit.observe_student("curriculum", option_index, state,
+                                                   audit_teacher_action, decision["network_action"], action,
+                                                   observation, grasped)
             else:
                 # Cartesian actions must preserve a completed close command.
                 # Previously this hold signal was discarded for all autonomous
@@ -1425,14 +1489,14 @@ def train(args):
                                        if option_controller is not None else
                                        bool(np.max(np.abs(observation["robot0_gripper_qpos"])) < 0.012)
                                        and action != 6)
-                if args.autonomous_readout == "clone_table":
+                if snn_active and args.autonomous_readout == "clone_table":
                     cloned_action = policy_memory.predict(state)
                     if cloned_action is None:
                         clone_readout_unknown_states += 1
                     else:
                         action = cloned_action
                         clone_readout_decisions += 1
-                elif args.autonomous_readout == "clone_mlp":
+                elif snn_active and args.autonomous_readout == "clone_mlp":
                     action = clone_mlp.predict(observation, decision_index, args.max_decisions)
                     clone_mlp_readout_decisions += 1
                     # Retain grasp during a Cartesian primitive after the
@@ -1440,7 +1504,7 @@ def train(args):
                     keep_gripper_closed = bool(
                         np.max(np.abs(observation["robot0_gripper_qpos"])) < 0.012
                     ) and action != 6
-                elif args.autonomous_readout == "clone_gru":
+                elif snn_active and args.autonomous_readout == "clone_gru":
                     action = clone_gru.predict(observation)
                     clone_mlp_readout_decisions += 1
                     keep_gripper_closed = bool(
@@ -1469,10 +1533,11 @@ def train(args):
                 if (align_progress_memory is not None and option_index == 0 and
                         args.align_progress_persistence and retained):
                     action_source = "progress_memory"
-                coverage_audit.observe_student(episode_phase, option_index, state,
-                                               audit_teacher_action, decision["network_action"], action,
-                                               observation, grasped)
-            if not teacher_used and audit_teacher_action is not None:
+                if snn_active:
+                    coverage_audit.observe_student(episode_phase, option_index, state,
+                                                   audit_teacher_action, decision["network_action"], action,
+                                                   observation, grasped)
+            if snn_active and not teacher_used and audit_teacher_action is not None:
                 option_name = OPTION_NAMES[option_index]
                 stage_teacher_labels[option_name] += 1
                 stage_network_teacher_agreements[option_name] += int(
@@ -1502,10 +1567,12 @@ def train(args):
                     break
 
             grasped = bool(env._check_grasp(gripper=env.robots[0].gripper, object_geoms=env.cube))
+            # Progress is an observability metric for every align decision;
+            # optional memory/value modules consume the same measurement.
+            next_xy_error = (float(np.linalg.norm(
+                (observation["cube_pos"] - observation["robot0_eef_pos"])[:2] -
+                np.array((-0.020, 0.0)))) if option_index == 0 else None)
             if align_progress_memory is not None and option_index == 0:
-                next_xy_error = float(np.linalg.norm(
-                    (observation["cube_pos"] - observation["robot0_eef_pos"])[:2] -
-                    np.array((-0.020, 0.0))))
                 align_progress_memory.observe(action, previous_xy_error, next_xy_error)
             if direction_bias is not None and option_index == 0:
                 direction_bias.update(action, previous_xy_error, next_xy_error)
@@ -1535,35 +1602,39 @@ def train(args):
                 source_stats["lift_success"] += int(first_success_decision == decision_index + 1)
             if stage_first_decision[OPTION_NAMES[next_option_index]] is None:
                 stage_first_decision[OPTION_NAMES[next_option_index]] = decision_index + 1
-            next_state, _ = encoder.encode(observation, grasped, action_memory.previous_action,
-                                           action_memory.duration, next_option_index,
-                                           (align_progress_memory.context_action()
-                                            if align_progress_memory is not None else None))
-            teacher_action_clamped = teacher_used and args.teacher_credit_mode == "action_clamp"
-            executed_action_credited = not teacher_used and args.executed_action_credit
+            next_state, next_info = encoder.encode(observation, grasped, action_memory.previous_action,
+                                                    action_memory.duration, next_option_index,
+                                                    (align_progress_memory.context_action()
+                                                     if align_progress_memory is not None else None))
+            # Keep the current align state as a zero-progress bootstrap when
+            # its physical action enters a fixed FSM stage.
+            critic_next_state = next_state if next_info.get("snn_active", True) else state
+            teacher_action_clamped = (snn_active and teacher_used and
+                                      args.teacher_credit_mode == "action_clamp")
+            executed_action_credited = snn_active and not teacher_used and args.executed_action_credit
             if teacher_action_clamped or executed_action_credited:
-                update_eligibility_d1 = executed_action_eligibility(eligibility_d1, state, action)
-                update_eligibility_d2 = executed_action_eligibility(eligibility_d2, state, action)
+                update_eligibility_d1 = executed_action_eligibility(network, eligibility_d1, state, action)
+                update_eligibility_d2 = executed_action_eligibility(network, eligibility_d2, state, action)
                 action_clamp_decisions += int(teacher_action_clamped)
                 executed_action_credit_decisions += int(executed_action_credited)
             else:
                 update_eligibility_d1 = eligibility_d1
                 update_eligibility_d2 = eligibility_d2
             changes = {"d1_weight_change_l1": 0.0, "d2_weight_change_l1": 0.0}
-            if not frozen_evaluation and args.plasticity_rule == "three_factor":
-                td_error = critic.update(next_state=next_state, state=state, reward=learning_reward,
+            if snn_active and not frozen_evaluation and args.plasticity_rule == "three_factor":
+                td_error = critic.update(next_state=critic_next_state, state=state, reward=learning_reward,
                                          terminal=bool(success or unsafe or timeout))
                 changes = three_factor_update(
                     network, state, action, td_error, update_eligibility_d1,
                     update_eligibility_d2, args.three_factor_learning_rate)
                 td_errors.append(td_error)
-            elif not frozen_evaluation:
+            elif snn_active and not frozen_evaluation:
                 changes = reward_modulated_update(
                     network, state, action, learning_reward, update_eligibility_d1, update_eligibility_d2)
-            if teacher_used and args.teacher_learning_mode == "behavior_clone":
+            if snn_active and teacher_used and args.teacher_learning_mode == "behavior_clone":
                 behavior_clone_update(network, state, action, args.clone_off_weight)
                 behavior_clone_decisions += 1
-            elif episode_phase == "dagger" and audit_teacher_action is not None:
+            elif snn_active and episode_phase == "dagger" and audit_teacher_action is not None:
                 # DAgger labels the state the student actually reached; the
                 # student action remains in the environment and TD update.
                 behavior_clone_update(network, state, audit_teacher_action, args.clone_off_weight)
@@ -1617,6 +1688,8 @@ def train(args):
             "internal_snn_steps": internal_snn_steps,
             "exploratory_decisions": exploratory_decisions,
             "mean_pm_tie_count": float(np.mean(pm_tie_counts)),
+            # Counts refer to physical commands, including the FSM-only
+            # descend / close / lift / recover primitives.
             "action_counts": [action_counts[index] for index in range(NUM_ACTION)],
             "region_spikes": region_spikes.tolist(),
             "d1_weight_change_l1": float(update_l1[0]),
@@ -1754,6 +1827,14 @@ def parse_args():
                         help="Use a 12x12 10-mm xy residual code with explicit overflow bins for align")
     parser.add_argument("--align-residual-axis-context", action="store_true",
                         help="Add the teacher-relevant observable dominant xy-error axis to the residual grid")
+    parser.add_argument("--align-residual-bins", type=int, default=ALIGN_RESIDUAL_BINS,
+                        help="Residual bins per xy axis, including lower/upper overflow bins")
+    parser.add_argument("--snn-align-only", action="store_true",
+                        help="Route fixed descend/close/lift/recover actions through the FSM without SNN states or updates")
+    parser.add_argument("--compact-striatum", action="store_true",
+                        help="Use one D1 and one D2 LIF action-channel population instead of S x A expanded Str neurons")
+    parser.add_argument("--align-action-count", type=int, choices=(4, 8), default=NUM_ACTION,
+                        help="Number of SNN output actions during align; 4 keeps only +x/-x/+y/-y and leaves other primitives to the FSM")
     parser.add_argument("--fixed-pm-window", action="store_true",
                         help="Always integrate --max-internal-steps and select from PM spike counts")
     parser.add_argument("--decision-readout", choices=("pm", "thalamus"), default="pm",
@@ -1810,6 +1891,9 @@ if __name__ == "__main__":
         arguments.max_internal_steps = arguments.internal_steps
     if arguments.max_internal_steps < arguments.internal_steps:
         raise ValueError("--max-internal-steps must be at least --internal-steps")
+    if arguments.align_action_count != NUM_ACTION and not (
+            arguments.option_context and arguments.snn_align_only):
+        raise ValueError("--align-action-count 4 requires --option-context and --snn-align-only")
     if arguments.validate_env:
         validate_environment(arguments.seed, arguments.control_steps)
     else:

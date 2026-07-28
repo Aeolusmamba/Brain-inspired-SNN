@@ -1598,3 +1598,180 @@ BDM-SNN 的动作选择，不能仅以 PM 的唯一 winner 比例来判断机制
 预算，或在 240 步中只记录而不写入后 60 步的 TD/STDP；但这属于用户此前明确暂缓的冻结/受限写入
 消融，故当前先将 240 窗口作为无限制在线闭环候选配置，并优先记录抓取确认和恢复前后的状态轨迹。
 结果目录为 `results/lift_bdm_snn_alignaxis_online_pmrecon_budget240_seed*/`。
+
+### 13.32 面向 RRAM 的状态和 Str 群体压缩（2026-07-27）
+
+此前最佳 (S=544,A=8) 中，`align` 的 12x12 xy 残差格加主误差轴占 288 个状态，而
+`descend/close/lift/recover` 四个 option 各占 64 个状态、合计 256 个。后四个阶段实际上只有
+一个 FSM 安全原语被允许：`-z`、close、`+z`、open。因此其 SNN 输出不能改变实际动作，却仍分配
+DLPFC/Str 神经元并写入状态--动作突触。为验证可否删除这部分冗余，新增 `--snn-align-only`：仅
+`align` 时调用 DLPFC--BG--PM、更新 eligibility 和 TD/STDP；固定阶段由同一可观测 FSM 直接执行，
+不送入 SNN，也不产生突触写入。教师仍只在前 20 回合存在，后 50 回合 `teacher_decisions=0`，其余
+协议均保持弱 PM 侧抑制 `-0.1`、全通信和 240 决策窗口。
+
+同时将残差分箱改为可配 `--align-residual-bins B`。每轴保留上下 overflow 两格，其余 (B-2) 个格在
+[-50, 50) mm 内等宽；再乘以主误差轴二值，故 `align` 状态数为 (S=2B^2)。三 seed 的格点筛选为：
+
+| align 状态编码 | SNN 状态数 | 无教师 Lift 成功 | 各 seed | 判断 |
+| --- | ---: | ---: | --- | --- |
+| 原始：12x12x2 + 4 个固定阶段块 | 544 | 123/150 (82.0%) | 41 / 40 / 42 | 旧最佳对照 |
+| 仅 align，12x12x2 | 288 | 130/150 (86.7%) | 45 / 45 / 40 | 通过 |
+| 仅 align，10x10x2 | **200** | **141/150 (94.0%)** | 48 / 47 / 46 | 选择 |
+| 仅 align，8x8x2 | 128 | 133/150 (88.7%) | 45 / 43 / 45 | 太粗，拒绝 |
+
+10x10 优于 12x12 并不说明更粗编码普遍更好；在当前固定场景和有限在线样本下，它减少了状态碎片化，
+使每个状态--动作权重获得更多重复访问。继续缩到 8x8 后性能回落，因此选 10x10x2 作为当前任务的
+最小经验支持表示，而不再继续缩格。
+
+在 (S=200,A=8) 的通过版本上，进一步新增 `--compact-striatum`，但**没有合并 Str 与 GP**。原始
+展开 Str 为每状态复制八个 LIF：
+
+\[
+\mathrm{DLPFC}[s]\rightarrow\mathrm{StrD1}[s,a],\quad
+\mathrm{DLPFC}[s]\rightarrow\mathrm{StrD2}[s,a],
+\]
+
+故 StrD1/StrD2 各有 (SA=1600) 个神经元。压缩版仍保存两张完整的
+(W^{D1},W^{D2}\in\mathbb{R}^{200\times8}) 状态--动作可塑权重表，且仍只对真实执行的
+\((s,a)\) 做三因子更新；变化只是将每个 Str 群压为 8 个共享的动作通道 LIF：
+
+\[
+\mathrm{DLPFC}[s]\xrightarrow{W^{D1}_{s,a}}\widetilde{\mathrm{StrD1}}[a]
+\rightarrow\mathrm{GPi}[a],\qquad
+\mathrm{DLPFC}[s]\xrightarrow{W^{D2}_{s,a}}\widetilde{\mathrm{StrD2}}[a]
+\rightarrow\mathrm{GPe}[a].
+\]
+
+即 D1/D2 两条通路、Str LIF 阈值/复位、Str->GPi/GPe、GPe/STN/GPi、丘脑和 PM 均仍独立存在；
+它是动作通道级 Str 群体近似，而非“删除 Str 后直接连 GP”。三 seed 结果：
+
+| 版本 | 总 SNN 神经元 | StrD1 / StrD2 神经元 | 无教师 Lift 成功 | 各 seed |
+| --- | ---: | ---: | ---: | --- |
+| 旧 (S=544) 展开 Str | 9282 | 4352 / 4352 | 123/150 (82.0%) | 41 / 40 / 42 |
+| 10x10，仅 align，展开 Str | 3434 | 1600 / 1600 | **141/150 (94.0%)** | 48 / 47 / 46 |
+| 10x10，仅 align，压缩 Str | **250** | **8 / 8** | **136/150 (90.7%)** | 45 / 46 / 45 |
+
+压缩 Str 相对同状态的展开版本下降 5/150（3.3 个百分点），但未出现大幅失效，且仍高于旧 82.0%
+结果。所有 150 个自主 episode 均到达 `descend/close/lift`，PM 静默率约 1.96%，说明当前主要误差
+并非对齐无法完成。该结果仅在固定方块/确定性初态与无限制在线更新下成立，不能视为冻结或随机初态
+泛化结果。
+
+硬件含义：压缩版本最大权重矩阵是 DLPFC->StrD1/D2 的 200x8；DLPFC 的所有外送矩阵
+`D1(200x8)+D2(200x8)+STN(200x2)+Thalamus(200x8)` 可并列打包为 200x26，一个 256x256 阵列可容纳。
+其余 8/2 通道的 BG--Thalamus--PM 小矩阵可打包至第二阵列；状态输入到 DLPFC 的 one-hot 地址/单位映射
+可由路由逻辑实现，若强制使用 RRAM 则另需一阵列。因此它是约 **2 个主要 RRAM MVM 阵列**、3 个
+物理神经元核（DLPFC 200；BG 含 Str/STN/GPe/GPi 34；Thalamus/PM 16）的候选，而不是原软件矩阵
+逐块映射所需的大量低利用率阵列。仍需在下一阶段验证 RRAM 写入量化、变异、延迟和 AER 交通。
+
+结果目录为：
+`results/lift_bdm_snn_alignonly_res{8,10,12}_seed*/` 与
+`results/lift_bdm_snn_alignonly_res10_compactstr_seed*/`。
+
+### 13.33 将 align SNN 动作轴从 8 缩至 4（2026-07-28）
+
+在 13.32 的 `S=200`、仅 `align` 进入 SNN、压缩 Str 而不合并 Str--GP 的候选上，继续考察
+动作轴是否仍有冗余。这里不能简单地把八个物理动作删成四个，否则任务无法下降、夹紧和抬升；正确的
+缩减是利用已验证的可观测 option：只有 `align` 需要在横向动作中竞争，而 `descend/close/lift/recover`
+分别只有 `-z`、close、`+z`、open 一个安全原语。因此新增 `--align-action-count 4`，使 SNN 的
+StrD1、StrD2、GPe、GPi、thalamus、PM 均只保留 `+x,-x,+y,-y` 四通道；后四个物理原语仍由 FSM
+直接下发，既不占 SNN 神经元，也不写入 SNN 突触。
+
+为避免把动作数变化和学习设置变化混为一谈，使用与 13.32 相同协议：固定方块和确定 Panda 初态、
+每 seed 20 个教师回合加 50 个无教师评价回合、240 决策上限、教师退出后保持无限制在线 TD/STDP、
+PM 侧向抑制为 `-0.1`。三 seed 结果如下：
+
+| SNN align 动作数 | DLPFC->StrD1 / DLPFC->StrD2 | 总 SNN 神经元 | 无教师 Lift 成功 | 各 seed |
+| --- | --- | ---: | ---: | --- |
+| 8（13.32 候选） | `200x8` / `200x8` | 250 | 136/150 (90.7%) | 45 / 46 / 45 |
+| **4（本轮）** | **`200x4` / `200x4`** | **226** | **132/150 (88.0%)** | 42 / 48 / 42 |
+
+4 通道相对于 8 通道少 24 个神经元，成功率低 4/150（2.7 个百分点）。所有 150 个自主回合都达到
+`descend`；仅 2/150 未达到 `close`，其余失败主要发生于抓取--抬升后的恢复链路。这说明当前小规模
+退化不是“横向动作类别不够”，而是较少 PM/BG 动作通道改变了脉冲竞争、使部分对齐轨迹在接触前超时。
+在这一固定课程下，88.0% 可作为需要更小网络时的可接受候选；若将 90.7% 作为优先目标，则保留 8 通道。
+不能据此声称对随机初态、冻结部署或真实机器人同样成立。
+
+4 通道的神经元规模为 DLPFC 200、StrD1 4、StrD2 4、STN 2、GPe 4、GPi 4、thalamus 4、PM 4，
+合计 226。DLPFC 的外送矩阵可并列为
+`D1(200x4)+D2(200x4)+STN(200x2)+Thalamus(200x4)=200x14`，故仍可放入一个 `256x256`
+RRAM 阵列，且列占用从 8 通道时的 26 降为 14。其余 BG--thalamus--PM 的最大矩阵为 `4x4`，可打包
+进第二个阵列。因此在“one-hot 状态到 DLPFC 由地址/路由逻辑完成”的前提下，仍需 **2 个主要 RRAM
+MVM 阵列**，不是 1 个；缩动作轴减少的是列数、神经元和小矩阵活动，而没有消除 DLPFC->BG 与
+BG/thalamus/PM 这两个顺序计算阶段。若输入 one-hot->DLPFC 也必须用 RRAM MVM，则其 `200x200`
+单位映射还需第 3 个输入阵列（或独立的时分复用方案），不能与上述 200x14 权重同时常驻。
+
+复现本轮 4 通道实验（分别取 `seed=0,1,2`）的核心命令为：
+
+```sh
+CUDA_VISIBLE_DEVICES=0 /home/lph/.conda/envs/lph/bin/python \
+  Brain-Cog/examples/decision_making/BDM-SNN-Robosuite/lift_bdm_snn.py \
+  --episodes 70 --teacher-episodes 20 --max-decisions 240 --control-steps 1 \
+  --internal-steps 3 --max-internal-steps 30 --teacher-start 1 --teacher-end 1 \
+  --teacher-credit-mode action_clamp --executed-action-credit \
+  --teacher-learning-mode behavior_clone --plasticity-rule three_factor \
+  --three-factor-learning-rate 0.08 --critic-learning-rate 0.1 --critic-discount 0.98 \
+  --clone-off-weight 0.05 --autonomous-epsilon 0 --option-context \
+  --align-residual-axis-context --align-residual-bins 10 --snn-align-only \
+  --compact-striatum --align-action-count 4 --pm-lateral-gain -0.1 \
+  --coverage-audit --fixed-cube --deterministic-robot-start --seed 0 --device cuda:0 \
+  --output-dir results/lift_bdm_snn_alignonly_res10_compactstr_a4_seed0
+```
+
+结果目录为 `results/lift_bdm_snn_alignonly_res10_compactstr_a4_seed*/`。本轮只实现并测量软件 SNN 的
+动作通道缩减与全通信逻辑 spike 计数；尚未测量 AER 包数、比特数、FIFO、真实 RRAM 写入/噪声或能耗，
+所以不能仅凭 `200x4` 而宣称通信或硬件能耗已降低。
+
+### 13.34 后续 RRR / 流形通信方案（2026-07-28，尚未执行）
+
+**架构选择。** 两个版本都可接入同一套通信接口，但后续 RRR 的主实验选择 `S=200,A=8` 的
+压缩 Str 基线（90.7%），而 `A=4`（88.0%）保留为最终小型部署复核。理由不是 8 动作性能显著更高，
+而是 RRR 的可压缩维度受目标群体维度限制：4 动作版本中所有 BG/PM 群体最多只有 4 维，除去
+rank-1 的公共电流后，几乎没有可探索的低秩余量；8 动作版本能先检验 rank 6、4、2 的性能--通信
+权衡。任何在 8 动作上得到的方案都必须用 4 动作再复核，不能假定会自动迁移。
+
+采用当前可装入阵列的三核分区：核心 0 为 DLPFC(200)+StrD1/StrD2(各 A)，核心 1 为 STN(2)+
+GPe(A)+GPi(A)，核心 2 为 thalamus(A)+PM(A)。因此监测的跨核链路为下表的八条；两个 DLPFC->Str
+突触表保留在核心 0 内，第一阶段既不跨核也不压缩。
+
+| 跨核链路 | 8 动作维度 | 4 动作维度 | 初始处理 | 原因与候选 rank |
+| --- | --- | --- | --- | --- |
+| DLPFC->STN | `200x2` | `200x2` | RRR | 当前全 1 权重的目标电流严格 rank-1；用 `k=1`。 |
+| DLPFC->thalamus | `200x8` | `200x4` | RRR | 当前各动作通道接收相同的 DLPFC 电流，严格 rank-1；用 `k=1`。 |
+| STN->GPe、STN->GPi | `2x8` | `2x4` | RRR | 当前全连接且各目标列相同，严格 rank-1；各用 `k=1`。 |
+| GPe->STN | `8x2` | `4x2` | RRR | 当前两个目标接收相同 GPe 汇聚电流，严格 rank-1；用 `k=1`。 |
+| StrD1->GPi、StrD2->GPe | `8x8` | `4x4` | 暂不压缩 | 对角动作身份通路，矩阵满秩；过早压缩会直接混淆候选动作。第二阶段离线审计后，8 动作依次试 `k=6,4,2`，4 动作依次试 `k=3,2`。 |
+| GPi->thalamus | `8x8` | `4x4` | 暂不压缩 | 同样接近动作身份门控；先全通信，后与上两条同样的逐 rank 阶梯测试。 |
+
+这意味着第一阶段会压缩 5/8 条跨核边，但特意保留 3 条最影响动作选择的身份通路为全通信。这里的
+rank-1 结论来自**当前代码矩阵结构**，不是仅由数据拟合得出的乐观假设；仍需用真实脉冲轨迹验证重建
+误差和控制性能，因为 LIF 阈值、复位与时间顺序会放大很小的电流误差。
+
+**在线学习边界。** 当前无限制三因子 TD/STDP 只显式更新两张
+`DLPFC->StrD1/DLPFC->StrD2` 状态--动作表；它们是任务适应的核心，第一阶段保持本地完整 MVM。
+若未来为了更多物理核而强制将 DLPFC 与 Str 分离，才把它作为单独的高风险实验：保留完整可写权重
+shadow，使用过去决策窗口的样本对该 `200x8`（或 `200x4`）通路因果重拟合，8 动作从 `k=6` 再到
+`k=4`，4 动作从 `k=3` 再到 `k=2`。但 DLPFC 当前是稀疏 one-hot 脉冲，直接发送一个状态 AER 地址
+可能已经比每个窗口发送多个连续 latent 值更省链路；所以它必须与 AER 包/比特/目标阵列激活实测比较，
+不能预设 RRR 一定更优。
+
+**执行顺序与门控。**
+
+1. 先改通信模块：支持按链路设置 rank、显式在每个决策结束后用历史窗口 refit，并把校准窗口、
+留出窗口和部署窗口严格时间因果分开。当前 `three_factor_update` 直接写权重，不会触发旧
+`UpdateWeight` 内的 refit 钩子；不修复此点不能进行可信的在线 RRR 实验。
+2. 对全通信 8 动作轨迹做离线审计：按链路、按训练/无教师评价时段绘制 `k=1..min(N_src,N_tgt)` 的
+目标电流 EV、NRMSE、PM 动作一致率和单窗口峰值误差。仅当留出窗口满足预设阈值（建议 EV >= 0.99、
+NRMSE <= 5%、无静默/并列恶化）才允许该 rank 进入闭环。
+3. 先闭环启用上述五条理论 rank-1 链路，三 seed 重跑 20 教师 + 50 无教师回合；接受条件为相对
+同 seed 全通信成功率下降不超过 5 个百分点，且没有新的 PM 静默、超时或阶段转移失败模式。失败时
+逐链路回退全通信，而不是调网络其它参数掩盖问题。
+4. 再只对一条动作身份链路做 rank 阶梯：8 动作 `6 -> 4 -> 2`，4 动作 `3 -> 2`；每个 rank 均先离线
+审计、再单链路闭环、最后三条身份边联合闭环。rank 等于原维度是对照，不称为压缩。
+5. 线性 RRR 通过后才实现真正的 latent LIF 群体、阈值/不应期与 AER 编码；分别记录逻辑源 spike、
+latent spike、AER 包/bit、峰值事件率、FIFO 占用、目标阵列读次数、控制延迟及成功率。此时再比较
+连续 latent、spike latent 与预测残差事件三种传输，避免把“latent 标量数变少”误称为链路降耗。
+6. 只有线性 RRR 在动作身份链路上无法同时达到误差门槛和任务门槛时，才研究非线性/递归 latent
+流形；它应解释线性不足的残差动力学，而不是作为没有线性基线的额外复杂网络。
+
+每个阶段都保留 rank=0 全通信、同一动作数、同一 seed 和同一在线学习协议。现阶段的目标是建立
+“任务保持--电流重建--真实事件/阵列工作量”三者的因果证据，而不是仅使矩阵 rank 变小。

@@ -27,7 +27,7 @@ class BDMSNN(nn.Module):
                  communication_warmup=0, communication_refit_interval=1,
                  communication_mode="striatum_to_output", communication_links=None,
                  communication_lossless_only=False, pm_threshold=None,
-                 pm_lateral_gain=None):
+                 pm_lateral_gain=None, compact_striatum=False):
         """
         定义BDM-SNN网络
         :param num_state: 状态个数
@@ -37,7 +37,10 @@ class BDMSNN(nn.Module):
         """
         super().__init__()
         # parameters
-        BG = basalganglia(num_state, num_action, weight_exc, weight_inh, node_type)
+        self.num_state = num_state
+        self.num_action = num_action
+        BG = basalganglia(num_state, num_action, weight_exc, weight_inh, node_type,
+                          compact_striatum=compact_striatum)
         dm_connection = BG.getweight()
         dm_mask = BG.getmask()
         # input-dlpfc
@@ -64,6 +67,7 @@ class BDMSNN(nn.Module):
         dm_connection.append(CustomLinear(5 * weight_inh * con_matrix5, con_matrix5))
         # dlpfc thalamus pm +bg
         self.weight_exc = weight_exc
+        self.compact_striatum = compact_striatum
         self.num_subDM = 8
         # The original implementation used plain lists, which leaves these
         # modules unregistered and prevents ``model.to(device)`` from moving
@@ -110,7 +114,8 @@ class BDMSNN(nn.Module):
                 # (DLPFC, StrD1, StrD2), STN, (GPe, GPi), and (thalamus, PM).
                 # These are all eight connections crossing that partition;
                 # local plastic DLPFC-to-striatum weights stay untouched.
-                link_dimensions = cross_core_link_dimensions(num_state, num_action)
+                link_dimensions = cross_core_link_dimensions(
+                    num_state, num_action, compact_striatum=compact_striatum)
                 if self.communication_link_names is not None:
                     unknown = self.communication_link_names.difference(link_dimensions)
                     if unknown:
@@ -132,7 +137,8 @@ class BDMSNN(nn.Module):
                     "striatum_to_output, or all_cross_core")
         elif communication_mode == "all_cross_core":
             self.full_traffic_monitor = CrossCoreTrafficMonitor(
-                cross_core_link_dimensions(num_state, num_action))
+                cross_core_link_dimensions(num_state, num_action,
+                                           compact_striatum=compact_striatum))
         if self.node_type == "hh":
             self.node.extend([SimHHNode() for i in range(self.num_subDM - BG.num_subBG)])
             self.node[6].g_Na = torch.tensor(12)
@@ -292,7 +298,8 @@ class BDMSNN(nn.Module):
         :param dw:更新权重的量
         :return:
         """
-        action_slice = slice(s * num_action, (s + 1) * num_action)
+        action_slice = (slice(0, num_action) if self.compact_striatum else
+                        slice(s * num_action, (s + 1) * num_action))
         if s < 0 or action_slice.stop > self.connection[i].weight.shape[1]:
             raise IndexError("state/action slice is outside the DLPFC-to-striatum weight matrix")
 
