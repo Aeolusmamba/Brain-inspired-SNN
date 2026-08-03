@@ -1,0 +1,222 @@
+[robosuite WARNING] No private macro file found! (macros.py:57)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:58)
+[robosuite WARNING] To setup, run: python /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (macros.py:59)
+[robosuite WARNING] Could not import robosuite_models. Some robots may not be available. If you want to use these robots, please install robosuite_models from source (https://github.com/ARISE-Initiative/robosuite_models) or through pip install. (__init__.py:30)
+[robosuite WARNING] Could not load the mink-based whole-body IK. Make sure you install related import properly, otherwise you will not be able to use the default IK controller setting for GR1 robot. (__init__.py:40)
+[robosuite INFO] Loading controller configuration from: /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/controllers/config/default/composite/basic.json (composite_controller_factory.py:121)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+pygame 2.5.2 (SDL 2.28.2, Python 3.10.4)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+episode=0 reward=-0.815 success=False grasped=False decisions=8 teacher=8 epsilon=0.700
+summary: {
+  "mean_learning_return": -0.8151041458470771,
+  "sparse_success_rate": 0.0,
+  "grasp_any_rate": 0.0,
+  "mean_decisions": 8.0,
+  "teacher_assisted_success_rate": 0.0,
+  "clone_policy_memory": {
+    "labeled_states": 8,
+    "conflicting_states": 0
+  },
+  "clone_mlp": {
+    "samples": 8,
+    "train_loss": NaN,
+    "train_accuracy": NaN
+  },
+  "clone_gru": {
+    "episodes": 1,
+    "samples": 8,
+    "train_loss": NaN,
+    "train_accuracy": NaN
+  },
+  "full_communication_traffic": {
+    "rank": 3,
+    "mode": "nmf_dlpfc_to_striatum_latent",
+    "fitted": true,
+    "links": {
+      "dlpfc_strd1": {
+        "source_dim": 200,
+        "latent_dim": 3,
+        "target_dim": 8,
+        "transport": "binary_if_spike_nmf_latent",
+        "spike_transport": {
+          "enabled": true,
+          "source_neuron": "IF",
+          "encoder": "soft_reset_sigma_delta",
+          "factor_normalization": true,
+          "contrast_encoding": true,
+          "threshold": 1.0,
+          "projection_current_gain": 0.5,
+          "decoder_pulse_gain": 1.0,
+          "logical_spike_events": 220,
+          "active_event_samples": 195,
+          "peak_events_per_sample": 2,
+          "mean_events_per_sample": 1.0476190476190477,
+          "decoder_teacher_updates": 0,
+          "decoder_teacher_ranking_updates": 0,
+          "shadow_calibration_updates": 0,
+          "shadow_calibration_squared_error": 0.0,
+          "decoder_teacher_event_mass": 0.0
+        },
+        "quantization": {
+          "enabled": false,
+          "bits_per_scalar": 0,
+          "fixed_full_scale": 5.0,
+          "quantized_vector_records": 0,
+          "clipped_values": 0,
+          "total_quantized_values": 0,
+          "clip_rate": null,
+          "current_nrmse_vs_unquantized_latent": 0.9110335479261253,
+          "peak_current_error_vs_unquantized_latent": 2.0000011920928955
+        },
+        "active_samples": 210,
+        "full_warmup_fallback_samples": 30,
+        "source_logical_events": 420,
+        "continuous_latent_scalar_values": 630,
+        "continuous_latent_nonzero_values": 630,
+        "transmitted_continuous_vector_records": 0,
+        "transmitted_continuous_latent_scalar_values": 0,
+        "mean_absolute_latent_value": 0.740659066608974,
+        "peak_absolute_latent_value": 1.9984025955200195,
+        "source_projection_array_activations": 210,
+        "target_decoder_array_activations": 195,
+        "continuous_vector_records": 0,
+        "suppressed_repeat_samples": 0,
+        "repeat_suppression_rate": 0.0,
+        "online_current_ev": 0.17001789828183245,
+        "online_current_nrmse": 0.9110335349031712,
+        "online_current_peak_absolute_error": 2.0000009536743164
+      },
+      "dlpfc_strd2": {
+        "source_dim": 200,
+        "latent_dim": 3,
+        "target_dim": 8,
+        "transport": "binary_if_spike_nmf_latent",
+        "spike_transport": {
+          "enabled": true,
+          "source_neuron": "IF",
+          "encoder": "soft_reset_sigma_delta",
+          "factor_normalization": true,
+          "contrast_encoding": true,
+          "threshold": 1.0,
+          "projection_current_gain": 0.5,
+          "decoder_pulse_gain": 1.0,
+          "logical_spike_events": 226,
+          "active_event_samples": 200,
+          "peak_events_per_sample": 3,
+          "mean_events_per_sample": 1.0761904761904761,
+          "decoder_teacher_updates": 0,
+          "decoder_teacher_ranking_updates": 0,
+          "shadow_calibration_updates": 0,
+          "shadow_calibration_squared_error": 0.0,
+          "decoder_teacher_event_mass": 0.0
+        },
+        "quantization": {
+          "enabled": false,
+          "bits_per_scalar": 0,
+          "fixed_full_scale": 5.0,
+          "quantized_vector_records": 0,
+          "clipped_values": 0,
+          "total_quantized_values": 0,
+          "clip_rate": null,
+          "current_nrmse_vs_unquantized_latent": 0.9686916299282706,
+          "peak_current_error_vs_unquantized_latent": 0.9974907040596008
+        },
+        "active_samples": 210,
+        "full_warmup_fallback_samples": 30,
+        "source_logical_events": 420,
+        "continuous_latent_scalar_values": 630,
+        "continuous_latent_nonzero_values": 630,
+        "transmitted_continuous_vector_records": 0,
+        "transmitted_continuous_latent_scalar_values": 0,
+        "mean_absolute_latent_value": 0.7476218087332589,
+        "peak_absolute_latent_value": 1.9523961544036865,
+        "source_projection_array_activations": 210,
+        "target_decoder_array_activations": 200,
+        "continuous_vector_records": 0,
+        "suppressed_repeat_samples": 0,
+        "repeat_suppression_rate": 0.0,
+        "online_current_ev": 0.061636573967102204,
+        "online_current_nrmse": 0.9686916052247474,
+        "online_current_peak_absolute_error": 0.997490644454956
+      }
+    },
+    "other_full_cross_core_links": {
+      "dlpfc_stn": {
+        "source_dim": 200,
+        "target_dim": 2,
+        "samples": 240,
+        "source_logical_events": 480
+      },
+      "strd2_gpe": {
+        "source_dim": 8,
+        "target_dim": 8,
+        "samples": 240,
+        "source_logical_events": 352
+      },
+      "stn_gpe": {
+        "source_dim": 2,
+        "target_dim": 8,
+        "samples": 240,
+        "source_logical_events": 270
+      },
+      "strd1_gpi": {
+        "source_dim": 8,
+        "target_dim": 8,
+        "samples": 240,
+        "source_logical_events": 488
+      },
+      "stn_gpi": {
+        "source_dim": 2,
+        "target_dim": 8,
+        "samples": 240,
+        "source_logical_events": 270
+      },
+      "gpe_stn": {
+        "source_dim": 8,
+        "target_dim": 2,
+        "samples": 240,
+        "source_logical_events": 840
+      },
+      "gpi_thalamus": {
+        "source_dim": 8,
+        "target_dim": 8,
+        "samples": 240,
+        "source_logical_events": 404
+      },
+      "dlpfc_thalamus": {
+        "source_dim": 200,
+        "target_dim": 8,
+        "samples": 240,
+        "source_logical_events": 480
+      }
+    }
+  },
+  "simple_hardware_link_proxy": null,
+  "communication_refit_count": 0,
+  "coverage_audit": null,
+  "pm_offline_training": null,
+  "phase_success": {
+    "teacher": {
+      "episodes": 1,
+      "lift_successes": 0
+    },
+    "dagger": {
+      "episodes": 0,
+      "lift_successes": 0
+    },
+    "evaluation": {
+      "episodes": 0,
+      "lift_successes": 0
+    }
+  }
+}

@@ -56,6 +56,67 @@ class CrossCoreTrafficMonitor(nn.Module):
         }
 
 
+class CommonModeCountCommunication(nn.Module):
+    """Losslessly transport an all-to-all equal-weight current with one count.
+
+    This is not an AER packet implementation.  It models the algorithmic
+    communication payload: source spikes are summed once, one integer-like
+    count crosses the boundary, then the target broadcasts the same weighted
+    current to every target neuron.  It is exact only while the supplied
+    connection has one shared weight value.
+    """
+
+    def __init__(self, connection):
+        super().__init__()
+        weight = connection.weight.detach()
+        if weight.ndim != 2 or weight.numel() == 0:
+            raise ValueError("common-mode communication requires a nonempty 2D weight matrix")
+        value = weight.flatten()[0]
+        if not torch.equal(weight, torch.full_like(weight, value)):
+            raise ValueError("common-mode communication requires identical connection weights")
+        self.source_dim, self.target_dim = weight.shape
+        self.register_buffer("shared_weight", value.clone())
+        self.source_logical_events = 0
+        self.sample_count = 0
+        self.count_records = 0
+        self.nonzero_count_records = 0
+        self.max_source_count = 0
+
+    @torch.no_grad()
+    def observe(self, source, target_current):
+        del target_current
+        self.sample_count += 1
+        self.source_logical_events += int(torch.count_nonzero(source).item())
+
+    def forward(self, source, fallback_current):
+        # Compute in the same scalar order as x.matmul(constant_matrix), then
+        # broadcast the result. This preserves the current exactly for binary
+        # spikes and the fixed all-equal connection used in this experiment.
+        count = source.sum()
+        current_value = count * self.shared_weight.to(dtype=source.dtype)
+        current = torch.full_like(fallback_current, current_value.item())
+        if not torch.equal(current, fallback_current):
+            raise RuntimeError("common-mode count reconstruction is not lossless")
+        self.count_records += 1
+        self.nonzero_count_records += int(count.item() != 0)
+        self.max_source_count = max(self.max_source_count, int(count.item()))
+        return current
+
+    def transport_summary(self):
+        return {
+            "transport": "lossless_common_mode_count",
+            "observed_samples": self.sample_count,
+            "observed_source_logical_events": self.source_logical_events,
+            "count_records": self.count_records,
+            "nonzero_count_records": self.nonzero_count_records,
+            "count_scalar_values": self.count_records,
+            "max_source_count": self.max_source_count,
+            "online_prediction_ev": 1.0,
+            "online_prediction_nrmse": 0.0,
+            "online_prediction_peak_absolute_error": 0.0,
+        }
+
+
 class ReducedRankCommunication(nn.Module):
     """Fit an affine RRR map from source activity to full target current.
 
@@ -87,6 +148,13 @@ class ReducedRankCommunication(nn.Module):
         self.full_fallback_source_events = 0
         self.latent_samples = 0
         self.latent_scalar_values = 0
+        # Prediction diagnostics are accumulated only on forward samples that
+        # use a model fitted at an earlier decision boundary.  They therefore
+        # are distinct from the calibration-window fit statistic.
+        self.online_prediction_samples = 0
+        self.online_prediction_squared_error = 0.0
+        self.online_prediction_target_energy = 0.0
+        self.online_prediction_peak_absolute_error = 0.0
         self.register_buffer("source_mean", torch.zeros(source_dim))
         self.register_buffer("target_mean", torch.zeros(target_dim))
         self.register_buffer("projection", torch.zeros(source_dim, rank))
@@ -110,7 +178,16 @@ class ReducedRankCommunication(nn.Module):
         self.latent_samples += 1
         self.latent_scalar_values += self.active_rank
         latent = (source - self.source_mean) @ self.projection
-        return latent @ self.decoder + self.target_mean
+        prediction = latent @ self.decoder + self.target_mean
+        error = prediction - fallback_current
+        self.online_prediction_samples += 1
+        self.online_prediction_squared_error += float(error.square().sum().item())
+        self.online_prediction_target_energy += float(fallback_current.square().sum().item())
+        self.online_prediction_peak_absolute_error = max(
+            self.online_prediction_peak_absolute_error,
+            float(error.abs().max().item()),
+        )
+        return prediction
 
     @torch.no_grad()
     def refit(self):
@@ -128,13 +205,21 @@ class ReducedRankCommunication(nn.Module):
         centered_y = y - target_mean
         total_variance = centered_y.square().sum()
         if total_variance <= 1e-12:
-            # A short internal-step window can contain only a single state.
-            # Keeping full communication is safer than replacing a link that
-            # may later become dynamic with its momentary mean current.
-            self.last_refit_status = "constant_target_fallback"
-            self.fitted = False
+            # The affine intercept is an exact rank-0 transport for a target
+            # current that is constant over the causal window.  This occurs
+            # for the current all-to-all DLPFC broadcast connections.  It is
+            # safer and more informative than calling an exactly represented
+            # DC current a failed RRR fit; a later non-constant window will
+            # replace this with an ordinary latent fit.
+            self.source_mean.copy_(source_mean)
+            self.target_mean.copy_(target_mean)
+            self.projection.zero_()
+            self.decoder.zero_()
+            self.fitted = True
             self.active_rank = 0
-            return False
+            self.last_retained_variance = 1.0
+            self.last_refit_status = "constant_target_dc"
+            return True
         source_rank = int(torch.linalg.matrix_rank(centered_x).item())
         if source_rank == 0:
             self.last_refit_status = "constant_source_fallback"
@@ -183,4 +268,12 @@ class ReducedRankCommunication(nn.Module):
             "latent_active_rank": self.active_rank,
             "continuous_latent_scalar_values": self.latent_scalar_values,
             "last_refit_status": self.last_refit_status,
+            "online_prediction_samples": self.online_prediction_samples,
+            "online_prediction_ev": (
+                1.0 - self.online_prediction_squared_error / self.online_prediction_target_energy
+                if self.online_prediction_target_energy > 1e-12 else None),
+            "online_prediction_nrmse": (
+                (self.online_prediction_squared_error / self.online_prediction_target_energy) ** 0.5
+                if self.online_prediction_target_energy > 1e-12 else None),
+            "online_prediction_peak_absolute_error": self.online_prediction_peak_absolute_error,
         }

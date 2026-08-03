@@ -1,0 +1,260 @@
+{
+  "source": "results/topology_placecells_neighbor_x125_seed2/lift_bdm_snn_decision_traces.json",
+  "phase": "evaluation",
+  "align_labeled_records": 2010,
+  "binary_pattern_width": 180,
+  "unique_patterns": 238,
+  "cross_label_pattern_collisions": 3,
+  "cross_label_collision_fraction": 0.012605042016806723,
+  "mean_hamming_distance_within_teacher_action": {
+    "0": 30.443164444716242,
+    "1": 33.68195962507096,
+    "2": 0.0,
+    "3": 54.79333333333334
+  },
+  "mean_hamming_distance_between_teacher_actions": {
+    "0_1": 48.76519455922865,
+    "0_2": 38.306640625,
+    "0_3": 61.993984375,
+    "1_2": 18.858126721763085,
+    "1_3": 48.54782369146005,
+    "2_3": 38.0
+  },
+  "state_action_pattern_stability": {
+    "(0,)|1": {
+      "samples": 56,
+      "unique_patterns": 30,
+      "dominant_pattern_fraction": 0.10714285714285714,
+      "mean_hamming_distance": 89.19545454545455
+    },
+    "(10, 20)|1": {
+      "samples": 6,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8333333333333334,
+      "mean_hamming_distance": 15.333333333333334
+    },
+    "(20, 30)|1": {
+      "samples": 6,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8333333333333334,
+      "mean_hamming_distance": 0.3333333333333333
+    },
+    "(30, 40)|1": {
+      "samples": 621,
+      "unique_patterns": 33,
+      "dominant_pattern_fraction": 0.9452495974235104,
+      "mean_hamming_distance": 2.112170796322269
+    },
+    "(31, 32, 41, 42)|1": {
+      "samples": 19,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(32, 33, 42, 43)|1": {
+      "samples": 13,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(33, 34, 43, 44)|1": {
+      "samples": 2,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(40, 50)|1": {
+      "samples": 161,
+      "unique_patterns": 12,
+      "dominant_pattern_fraction": 0.9316770186335404,
+      "mean_hamming_distance": 5.9937888198757765
+    },
+    "(41, 42, 51, 52)|1": {
+      "samples": 13,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(42, 43, 52, 53)|1": {
+      "samples": 26,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(43, 44, 53, 54)|1": {
+      "samples": 33,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(44, 45, 54, 55)|1": {
+      "samples": 12,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(45, 46, 55, 56)|0": {
+      "samples": 19,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(46, 47, 56, 57)|0": {
+      "samples": 19,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.9473684210526315,
+      "mean_hamming_distance": 0.21052631578947367
+    },
+    "(47, 48, 57, 58)|0": {
+      "samples": 3,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.6666666666666666,
+      "mean_hamming_distance": 0.6666666666666666
+    },
+    "(50, 60)|1": {
+      "samples": 176,
+      "unique_patterns": 52,
+      "dominant_pattern_fraction": 0.7045454545454546,
+      "mean_hamming_distance": 13.311883116883116
+    },
+    "(53, 54, 63, 64)|1": {
+      "samples": 5,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(54, 55, 64, 65)|1": {
+      "samples": 14,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(55, 56, 65, 66)|0": {
+      "samples": 15,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(56, 57, 66, 67)|0": {
+      "samples": 40,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(57, 58, 67, 68)|0": {
+      "samples": 66,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8484848484848485,
+      "mean_hamming_distance": 2.3496503496503496
+    },
+    "(58, 68)|0": {
+      "samples": 40,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.25,
+      "mean_hamming_distance": 14.743589743589743
+    },
+    "(59, 69)|0": {
+      "samples": 310,
+      "unique_patterns": 26,
+      "dominant_pattern_fraction": 0.06451612903225806,
+      "mean_hamming_distance": 3.9586595678045726
+    },
+    "(60, 70)|1": {
+      "samples": 67,
+      "unique_patterns": 30,
+      "dominant_pattern_fraction": 0.417910447761194,
+      "mean_hamming_distance": 50.55269109000452
+    },
+    "(61, 62, 71, 72)|1": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(62, 63, 72, 73)|1": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(63, 64, 73, 74)|1": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(70, 80)|1": {
+      "samples": 11,
+      "unique_patterns": 5,
+      "dominant_pattern_fraction": 0.6363636363636364,
+      "mean_hamming_distance": 39.38181818181818
+    },
+    "(80,)|1": {
+      "samples": 42,
+      "unique_patterns": 22,
+      "dominant_pattern_fraction": 0.14285714285714285,
+      "mean_hamming_distance": 84.40766550522648
+    },
+    "(90,)|1": {
+      "samples": 157,
+      "unique_patterns": 49,
+      "dominant_pattern_fraction": 0.1592356687898089,
+      "mean_hamming_distance": 82.32467744569655
+    },
+    "(100,)|3": {
+      "samples": 9,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.4444444444444444,
+      "mean_hamming_distance": 35.44444444444444
+    },
+    "(102, 103)|3": {
+      "samples": 1,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": null
+    },
+    "(105, 106)|3": {
+      "samples": 1,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": null
+    },
+    "(108,)|3": {
+      "samples": 1,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": null
+    },
+    "(144, 145, 154, 155)|3": {
+      "samples": 9,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(145, 146, 155, 156)|3": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(154, 155, 164, 165)|2": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(155, 156, 165, 166)|2": {
+      "samples": 14,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(164, 165, 174, 175)|2": {
+      "samples": 3,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    }
+  },
+  "interpretation": "Patterns preserve the ordered binary D1/D2 latent events over one fixed decision window. This audit diagnoses code collisions and residual-phase sensitivity; it does not measure packet bits or establish a nonlinear manifold."
+}

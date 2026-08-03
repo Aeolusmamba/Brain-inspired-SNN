@@ -1,0 +1,124 @@
+{
+  "source": "results/residual_reset_pairedrng_seed2",
+  "phase": "evaluation",
+  "all_align_decisions": {
+    "decisions": 1245,
+    "teacher_agreement_rate": 0.36305220883534134,
+    "unique_pm_winner_rate": 0.41445783132530123,
+    "mean_pm_tie_count": 2.2602409638554217,
+    "zero_pm_window_rate": 0.0
+  },
+  "by_final_outcome": {
+    "success": {
+      "decisions": 45,
+      "teacher_agreement_rate": 0.9555555555555556,
+      "unique_pm_winner_rate": 0.8888888888888888,
+      "mean_pm_tie_count": 1.2,
+      "zero_pm_window_rate": 0.0
+    },
+    "failure": {
+      "decisions": 1200,
+      "teacher_agreement_rate": 0.3408333333333333,
+      "unique_pm_winner_rate": 0.39666666666666667,
+      "mean_pm_tie_count": 2.3,
+      "zero_pm_window_rate": 0.0
+    }
+  },
+  "first_errors": [
+    {
+      "episode": 0,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 30,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.04419796727334723,
+        "xy_error_after_m": 0.043536483187279075
+      }
+    },
+    {
+      "episode": 1,
+      "outcome": "success",
+      "first_error": {
+        "decision": 35,
+        "state": [
+          57
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 1,
+        "xy_error_before_m": 0.028595356079296204,
+        "xy_error_after_m": 0.026444657589524998
+      }
+    },
+    {
+      "episode": 2,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 31,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 6,
+        "xy_error_before_m": 0.04105819979194467,
+        "xy_error_after_m": 0.0403961922260285
+      }
+    },
+    {
+      "episode": 3,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 31,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 6,
+        "xy_error_before_m": 0.04105819979194467,
+        "xy_error_after_m": 0.0403961922260285
+      }
+    },
+    {
+      "episode": 4,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 31,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 6,
+        "xy_error_before_m": 0.04105819979194467,
+        "xy_error_after_m": 0.0403961922260285
+      }
+    },
+    {
+      "episode": 5,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 30,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 3,
+        "xy_error_before_m": 0.04419796727488285,
+        "xy_error_after_m": 0.04353648318881413
+      }
+    }
+  ],
+  "first_error_state_action_counts": {
+    "(58,)|0": 5,
+    "(57,)|0": 1
+  }
+}
+saved: results/residual_reset_pairedrng_seed2/closed_loop_failure_audit.json

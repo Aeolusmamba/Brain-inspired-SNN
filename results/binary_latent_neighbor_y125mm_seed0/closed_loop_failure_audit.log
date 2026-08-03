@@ -1,0 +1,183 @@
+{
+  "source": "results/binary_latent_neighbor_y125mm_seed0",
+  "phase": "evaluation",
+  "all_align_decisions": {
+    "decisions": 1696,
+    "teacher_agreement_rate": 0.47877358490566035,
+    "unique_pm_winner_rate": 0.24056603773584906,
+    "mean_pm_tie_count": 2.2211084905660377,
+    "zero_pm_window_rate": 0.0
+  },
+  "by_final_outcome": {
+    "success": {
+      "decisions": 564,
+      "teacher_agreement_rate": 0.6347517730496454,
+      "unique_pm_winner_rate": 0.36347517730496454,
+      "mean_pm_tie_count": 1.9680851063829787,
+      "zero_pm_window_rate": 0.0
+    },
+    "failure": {
+      "decisions": 1132,
+      "teacher_agreement_rate": 0.4010600706713781,
+      "unique_pm_winner_rate": 0.1793286219081272,
+      "mean_pm_tie_count": 2.347173144876325,
+      "zero_pm_window_rate": 0.0
+    }
+  },
+  "first_errors": [
+    {
+      "episode": 0,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 1,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13299088675352455,
+        "xy_error_after_m": 0.13425156594803944
+      }
+    },
+    {
+      "episode": 1,
+      "outcome": "success",
+      "first_error": {
+        "decision": 1,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13299088675352455,
+        "xy_error_after_m": 0.13425156594803028
+      }
+    },
+    {
+      "episode": 2,
+      "outcome": "success",
+      "first_error": {
+        "decision": 1,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13299088675352455,
+        "xy_error_after_m": 0.13425156594803944
+      }
+    },
+    {
+      "episode": 3,
+      "outcome": "success",
+      "first_error": {
+        "decision": 1,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13299088675352455,
+        "xy_error_after_m": 0.13425156594805915
+      }
+    },
+    {
+      "episode": 4,
+      "outcome": "success",
+      "first_error": {
+        "decision": 5,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.12380737274990954,
+        "xy_error_after_m": 0.12343028854042148
+      }
+    },
+    {
+      "episode": 5,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 1,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13299088675352455,
+        "xy_error_after_m": 0.13425156594803944
+      }
+    },
+    {
+      "episode": 6,
+      "outcome": "success",
+      "first_error": {
+        "decision": 1,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13299088675352455,
+        "xy_error_after_m": 0.13425156594803944
+      }
+    },
+    {
+      "episode": 7,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 1,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13299088675352455,
+        "xy_error_after_m": 0.13425156594803944
+      }
+    },
+    {
+      "episode": 8,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 2,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.13173119656910176,
+        "xy_error_after_m": 0.13185561696140666
+      }
+    },
+    {
+      "episode": 9,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 3,
+        "state": [
+          69
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.129329444055224,
+        "xy_error_after_m": 0.1291703373934776
+      }
+    }
+  ],
+  "first_error_state_action_counts": {
+    "(69,)|0": 10
+  }
+}
+saved: results/binary_latent_neighbor_y125mm_seed0/closed_loop_failure_audit.json

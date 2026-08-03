@@ -1,0 +1,124 @@
+{
+  "source": "results/recovery_control_warmup3_seed1",
+  "phase": "evaluation",
+  "all_align_decisions": {
+    "decisions": 1061,
+    "teacher_agreement_rate": 0.2629594721960415,
+    "unique_pm_winner_rate": 0.6720075400565504,
+    "mean_pm_tie_count": 1.407163053722903,
+    "zero_pm_window_rate": 0.0
+  },
+  "by_final_outcome": {
+    "success": {
+      "decisions": 101,
+      "teacher_agreement_rate": 0.900990099009901,
+      "unique_pm_winner_rate": 0.7920792079207921,
+      "mean_pm_tie_count": 1.6633663366336633,
+      "zero_pm_window_rate": 0.0
+    },
+    "failure": {
+      "decisions": 960,
+      "teacher_agreement_rate": 0.19583333333333333,
+      "unique_pm_winner_rate": 0.659375,
+      "mean_pm_tie_count": 1.3802083333333333,
+      "zero_pm_window_rate": 0.0
+    }
+  },
+  "first_errors": [
+    {
+      "episode": 8,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 34,
+        "state": [
+          57
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.03169109623152105,
+        "xy_error_after_m": 0.029559161725757392
+      }
+    },
+    {
+      "episode": 9,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 33,
+        "state": [
+          57
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.0348024807941685,
+        "xy_error_after_m": 0.032686907306678614
+      }
+    },
+    {
+      "episode": 10,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 33,
+        "state": [
+          57
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.03480248079549021,
+        "xy_error_after_m": 0.03268690730800645
+      }
+    },
+    {
+      "episode": 11,
+      "outcome": "success",
+      "first_error": {
+        "decision": 37,
+        "state": [
+          56
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 3,
+        "xy_error_before_m": 0.02247608682145972,
+        "xy_error_after_m": 0.020279100553144334
+      }
+    },
+    {
+      "episode": 12,
+      "outcome": "success",
+      "first_error": {
+        "decision": 34,
+        "state": [
+          57
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.03169109623152105,
+        "xy_error_after_m": 0.029559161725757392
+      }
+    },
+    {
+      "episode": 13,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 34,
+        "state": [
+          57
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.03169109623152105,
+        "xy_error_after_m": 0.029559161725757392
+      }
+    }
+  ],
+  "first_error_state_action_counts": {
+    "(57,)|0": 5,
+    "(56,)|0": 1
+  }
+}
+saved: results/recovery_control_warmup3_seed1/closed_loop_failure_audit.json

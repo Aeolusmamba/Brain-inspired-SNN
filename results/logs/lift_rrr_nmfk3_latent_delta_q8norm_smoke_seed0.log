@@ -1,0 +1,533 @@
+[robosuite WARNING] No private macro file found! (macros.py:57)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:58)
+[robosuite WARNING] To setup, run: python /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (macros.py:59)
+[robosuite WARNING] Could not import robosuite_models. Some robots may not be available. If you want to use these robots, please install robosuite_models from source (https://github.com/ARISE-Initiative/robosuite_models) or through pip install. (__init__.py:30)
+[robosuite WARNING] Could not load the mink-based whole-body IK. Make sure you install related import properly, otherwise you will not be able to use the default IK controller setting for GR1 robot. (__init__.py:40)
+[robosuite INFO] Loading controller configuration from: /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/controllers/config/default/composite/basic.json (composite_controller_factory.py:121)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite INFO] Loading controller configuration from: /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/controllers/config/default/composite/basic.json (composite_controller_factory.py:121)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite INFO] Loading controller configuration from: /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/controllers/config/default/composite/basic.json (composite_controller_factory.py:121)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite INFO] Loading controller configuration from: /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/controllers/config/default/composite/basic.json (composite_controller_factory.py:121)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite INFO] Loading controller configuration from: /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/controllers/config/default/composite/basic.json (composite_controller_factory.py:121)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite INFO] Loading controller configuration from: /home/lph/.conda/envs/lph/lib/python3.10/site-packages/robosuite/controllers/config/default/composite/basic.json (composite_controller_factory.py:121)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "left", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for left from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "torso", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for torso from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "head", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for head from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "base", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for base from self.part_controller_config. (robot.py:151)
+[robosuite WARNING] The config has defined for the controller "legs", but the robot does not have this component. Skipping, but make sure this is intended.Removing the controller config for legs from self.part_controller_config. (robot.py:151)
+pygame 2.5.2 (SDL 2.28.2, Python 3.10.4)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+episode=0 reward=13.683 success=True grasped=True decisions=112 teacher=112 epsilon=0.700
+episode=1 reward=13.713 success=True grasped=True decisions=111 teacher=111 epsilon=0.644
+episode=2 reward=-7.835 success=False grasped=False decisions=240 teacher=0 epsilon=0.000
+episode=3 reward=10.748 success=True grasped=True decisions=213 teacher=0 epsilon=0.000
+episode=4 reward=0.412 success=False grasped=True decisions=240 teacher=0 epsilon=0.000
+episode=5 reward=12.589 success=True grasped=True decisions=194 teacher=0 epsilon=0.000
+summary: {
+  "mean_learning_return": 7.218220154481414,
+  "sparse_success_rate": 0.6666666666666666,
+  "grasp_any_rate": 0.8333333333333334,
+  "mean_decisions": 185.0,
+  "teacher_assisted_success_rate": 1.0,
+  "clone_policy_memory": {
+    "labeled_states": 6,
+    "conflicting_states": 0
+  },
+  "clone_mlp": {
+    "samples": 223,
+    "train_loss": NaN,
+    "train_accuracy": NaN
+  },
+  "clone_gru": {
+    "episodes": 2,
+    "samples": 223,
+    "train_loss": NaN,
+    "train_accuracy": NaN
+  },
+  "full_communication_traffic": {
+    "rank": 3,
+    "mode": "nmf_dlpfc_to_striatum_latent",
+    "fitted": true,
+    "links": {
+      "dlpfc_strd1": {
+        "source_dim": 200,
+        "latent_dim": 3,
+        "target_dim": 8,
+        "transport": "continuous_nonnegative_nmf_latent",
+        "quantization": {
+          "enabled": true,
+          "bits_per_scalar": 8,
+          "fixed_full_scale": 1.0,
+          "quantized_vector_records": 774,
+          "clipped_values": 0,
+          "total_quantized_values": 2322,
+          "clip_rate": 0.0,
+          "current_nrmse_vs_unquantized_latent": 0.001069028972045215,
+          "peak_current_error_vs_unquantized_latent": 0.0031239986419677734
+        },
+        "active_samples": 4659,
+        "full_warmup_fallback_samples": 3,
+        "source_logical_events": 4659,
+        "continuous_latent_scalar_values": 13977,
+        "continuous_latent_nonzero_values": 9021,
+        "transmitted_continuous_vector_records": 774,
+        "transmitted_continuous_latent_scalar_values": 2322,
+        "mean_absolute_latent_value": 0.2997854030471533,
+        "peak_absolute_latent_value": 1.0,
+        "source_projection_array_activations": 774,
+        "target_decoder_array_activations": 774,
+        "continuous_vector_records": 774,
+        "suppressed_repeat_samples": 3885,
+        "repeat_suppression_rate": 0.8338699291693497,
+        "online_current_ev": 0.9999931266187649,
+        "online_current_nrmse": 0.0026217134158861045,
+        "online_current_peak_absolute_error": 0.0031239986419677734
+      },
+      "dlpfc_strd2": {
+        "source_dim": 200,
+        "latent_dim": 3,
+        "target_dim": 8,
+        "transport": "continuous_nonnegative_nmf_latent",
+        "quantization": {
+          "enabled": true,
+          "bits_per_scalar": 8,
+          "fixed_full_scale": 1.0,
+          "quantized_vector_records": 774,
+          "clipped_values": 0,
+          "total_quantized_values": 2322,
+          "clip_rate": 0.0,
+          "current_nrmse_vs_unquantized_latent": 0.000684803095730575,
+          "peak_current_error_vs_unquantized_latent": 0.0035341382026672363
+        },
+        "active_samples": 4659,
+        "full_warmup_fallback_samples": 3,
+        "source_logical_events": 4659,
+        "continuous_latent_scalar_values": 13977,
+        "continuous_latent_nonzero_values": 10524,
+        "transmitted_continuous_vector_records": 774,
+        "transmitted_continuous_latent_scalar_values": 2322,
+        "mean_absolute_latent_value": 0.37525676585424184,
+        "peak_absolute_latent_value": 1.0,
+        "source_projection_array_activations": 774,
+        "target_decoder_array_activations": 774,
+        "continuous_vector_records": 774,
+        "suppressed_repeat_samples": 3885,
+        "repeat_suppression_rate": 0.8338699291693497,
+        "online_current_ev": 0.9999972096521721,
+        "online_current_nrmse": 0.0016704334251504483,
+        "online_current_peak_absolute_error": 0.0035341382026672363
+      }
+    },
+    "other_full_cross_core_links": {
+      "dlpfc_stn": {
+        "source_dim": 200,
+        "target_dim": 2,
+        "samples": 4662,
+        "source_logical_events": 4662
+      },
+      "strd2_gpe": {
+        "source_dim": 8,
+        "target_dim": 8,
+        "samples": 4662,
+        "source_logical_events": 33395
+      },
+      "stn_gpe": {
+        "source_dim": 2,
+        "target_dim": 8,
+        "samples": 4662,
+        "source_logical_events": 5872
+      },
+      "strd1_gpi": {
+        "source_dim": 8,
+        "target_dim": 8,
+        "samples": 4662,
+        "source_logical_events": 13158
+      },
+      "stn_gpi": {
+        "source_dim": 2,
+        "target_dim": 8,
+        "samples": 4662,
+        "source_logical_events": 5872
+      },
+      "gpe_stn": {
+        "source_dim": 8,
+        "target_dim": 2,
+        "samples": 4662,
+        "source_logical_events": 6570
+      },
+      "gpi_thalamus": {
+        "source_dim": 8,
+        "target_dim": 8,
+        "samples": 4662,
+        "source_logical_events": 12496
+      },
+      "dlpfc_thalamus": {
+        "source_dim": 200,
+        "target_dim": 8,
+        "samples": 4662,
+        "source_logical_events": 4662
+      }
+    }
+  },
+  "simple_hardware_link_proxy": {
+    "model": "synchronous_fixed_frame_proxy_v1",
+    "scope": "DLPFC-to-StrD1/StrD2 only; downstream BG links remain full communication",
+    "assumptions": {
+      "full_baseline": "one one-hot DLPFC event multicast to both Str targets",
+      "full_frame_bits": 18,
+      "latent_frame": "one paired D1+D2 vector update when both paths update in a slot",
+      "latent_header_bits": 8,
+      "latent_payload_bits": 48,
+      "quantization_bits_per_scalar": 8,
+      "link_service": "one <=64-bit record per internal SNN slot",
+      "fifo": "arrival before service; no serialization, arbitration, retries, or physical timing modeled"
+    },
+    "observed": {
+      "active_internal_slots": 4659,
+      "baseline_multicast_records": 4659,
+      "latent_records": 774,
+      "latent_paths_paired": true,
+      "baseline_link_bits": 83862,
+      "latent_link_bits": 43344,
+      "record_reduction": 0.8338699291693497,
+      "bit_reduction": 0.4831508907490878,
+      "baseline_peak_arrivals_per_slot": 1,
+      "latent_peak_arrivals_per_slot": 1,
+      "baseline_fifo_peak_records": 1,
+      "latent_fifo_peak_records": 1,
+      "baseline_queue_delay_slots": 0,
+      "latent_queue_delay_slots": 0,
+      "transport_latency_slots": 1
+    },
+    "rram_mvm_proxy": {
+      "unit": "array activation / input-row-drive proxy, not energy",
+      "baseline_target_array_activations": 9318,
+      "compressed_source_projection_array_activations": 1548,
+      "compressed_target_decoder_array_activations": 1548,
+      "baseline_row_drives": 1863600,
+      "compressed_row_drives": 314244,
+      "row_drive_reduction": 0.83137797810689
+    },
+    "interpretation_limit": "This proxy does not establish physical energy or latency savings. In particular, without repeat-delta a rank-3 vector frame is wider than a one-hot multicast AER frame."
+  },
+  "communication_refit_count": 0,
+  "coverage_audit": {
+    "continuous_distance_threshold_m": 0.006,
+    "teacher_labeled_state_count": 6,
+    "teacher_conflicting_state_count": 0,
+    "teacher_mean_label_entropy_bits": 0.0,
+    "student_during_curriculum": {
+      "decisions": 90,
+      "state_out_of_demo_rate": 0.0,
+      "continuous_out_of_demo_rate": 0.0,
+      "both_out_of_demo_rate": 0.0,
+      "mean_nearest_teacher_distance_m": 0.0,
+      "network_teacher_agreement_rate": 0.9222222222222223,
+      "executed_teacher_agreement_rate": 1.0,
+      "option_decisions": {
+        "align": 90,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      }
+    },
+    "student_dagger_against_initial_teacher": {
+      "decisions": 0
+    },
+    "student_evaluation": {
+      "decisions": 685,
+      "state_out_of_demo_rate": 0.672992700729927,
+      "continuous_out_of_demo_rate": 0.654014598540146,
+      "both_out_of_demo_rate": 0.6452554744525547,
+      "mean_nearest_teacher_distance_m": 0.04190748922444546,
+      "network_teacher_agreement_rate": 0.42043795620437957,
+      "executed_teacher_agreement_rate": 0.5197080291970803,
+      "option_decisions": {
+        "align": 685,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      }
+    },
+    "student_deployment": {
+      "decisions": 685,
+      "state_out_of_demo_rate": 0.672992700729927,
+      "continuous_out_of_demo_rate": 0.654014598540146,
+      "both_out_of_demo_rate": 0.6452554744525547,
+      "mean_nearest_teacher_distance_m": 0.04190748922444546,
+      "network_teacher_agreement_rate": 0.42043795620437957,
+      "executed_teacher_agreement_rate": 0.5197080291970803,
+      "option_decisions": {
+        "align": 685,
+        "descend": 0,
+        "close": 0,
+        "lift": 0,
+        "recover": 0
+      }
+    },
+    "per_option_xy_error_histograms": {
+      "align": {
+        "teacher_count": 90,
+        "deployment_count": 685,
+        "xy_error_histogram_teacher": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            16.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            12.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            14.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            12.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "xy_error_histogram_deployment": [
+          [
+            0.0,
+            0.0,
+            4.0,
+            16.0,
+            17.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            7.0,
+            56.0,
+            11.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            6.0,
+            46.0,
+            2.0,
+            7.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            24.0,
+            62.0,
+            16.0,
+            4.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            22.0,
+            85.0,
+            19.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            24.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            28.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            24.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "descend": {
+        "teacher_count": 0,
+        "deployment_count": 0,
+        "xy_error_histogram_teacher": [],
+        "xy_error_histogram_deployment": []
+      },
+      "close": {
+        "teacher_count": 0,
+        "deployment_count": 0,
+        "xy_error_histogram_teacher": [],
+        "xy_error_histogram_deployment": []
+      },
+      "lift": {
+        "teacher_count": 0,
+        "deployment_count": 0,
+        "xy_error_histogram_teacher": [],
+        "xy_error_histogram_deployment": []
+      },
+      "recover": {
+        "teacher_count": 0,
+        "deployment_count": 0,
+        "xy_error_histogram_teacher": [],
+        "xy_error_histogram_deployment": []
+      }
+    }
+  },
+  "phase_success": {
+    "teacher": {
+      "episodes": 2,
+      "lift_successes": 2
+    },
+    "dagger": {
+      "episodes": 0,
+      "lift_successes": 0
+    },
+    "evaluation": {
+      "episodes": 4,
+      "lift_successes": 2
+    }
+  }
+}

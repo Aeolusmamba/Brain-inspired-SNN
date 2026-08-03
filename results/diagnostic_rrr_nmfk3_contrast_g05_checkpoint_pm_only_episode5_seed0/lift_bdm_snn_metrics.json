@@ -1,0 +1,4149 @@
+{
+  "configuration": {
+    "validate_env": false,
+    "episodes": 1,
+    "max_decisions": 240,
+    "control_steps": 1,
+    "internal_steps": 3,
+    "max_internal_steps": 30,
+    "action_magnitude": 0.25,
+    "trace_decay": 0.8,
+    "epsilon_start": 0.7,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 0.92,
+    "teacher_episodes": 0,
+    "teacher_start": 1.0,
+    "teacher_end": 0.0,
+    "dagger_episodes": 0,
+    "freeze_evaluation": true,
+    "teacher_credit_mode": "natural",
+    "executed_action_credit": false,
+    "teacher_learning_mode": "rstdp",
+    "plasticity_rule": "three_factor",
+    "three_factor_learning_rate": 0.08,
+    "critic_learning_rate": 0.1,
+    "critic_discount": 0.98,
+    "clone_off_weight": 0.05,
+    "autonomous_epsilon": 0.0,
+    "autonomous_readout": "pm",
+    "clone_train_epochs": 30,
+    "clone_train_batch_size": 256,
+    "phase_context": false,
+    "action_duration_context": false,
+    "option_context": true,
+    "failed_lift_steps": 4,
+    "close_steps": 2,
+    "align_grid_context": false,
+    "align_residual_grid_context": false,
+    "align_residual_axis_context": true,
+    "align_residual_bins": 10,
+    "snn_align_only": true,
+    "compact_striatum": true,
+    "rrr_first_stage": false,
+    "rrr_state_to_striatum_rank": 0,
+    "striatum_weight_rank": 3,
+    "striatum_weight_factorization": "nmf",
+    "striatum_nmf_iterations": 12,
+    "nmf_striatum_latent_rank": 3,
+    "nmf_latent_delta_transport": false,
+    "nmf_latent_quant_bits": 0,
+    "nmf_latent_quant_scale": 5.0,
+    "nmf_latent_spike_transport": true,
+    "nmf_latent_spike_threshold": 1.0,
+    "nmf_latent_spike_gain": 0.5,
+    "nmf_latent_spike_decoder_gain": 1.0,
+    "nmf_latent_spike_soft_reset": true,
+    "nmf_latent_spike_normalize_factors": true,
+    "nmf_latent_spike_contrast_encode": true,
+    "nmf_latent_binary_aware_projection": false,
+    "nmf_latent_spike_surrogate_projection": false,
+    "nmf_latent_spike_surrogate_steps": 16,
+    "nmf_latent_spike_surrogate_learning_rate": 0.05,
+    "nmf_latent_spike_surrogate_slope": 8.0,
+    "nmf_latent_spike_surrogate_event_penalty": 0.0,
+    "nmf_latent_decoder_teacher_adaptation": false,
+    "nmf_latent_decoder_teacher_learning_rate": 0.02,
+    "nmf_latent_decoder_teacher_pm_ranking": false,
+    "nmf_latent_shadow_calibration": false,
+    "nmf_latent_shadow_calibration_learning_rate": 0.001,
+    "nmf_latent_pm_teacher_surrogate": false,
+    "nmf_latent_pm_teacher_surrogate_steps": 4,
+    "nmf_latent_pm_teacher_surrogate_learning_rate": 0.01,
+    "nmf_latent_pm_teacher_surrogate_slope": 8.0,
+    "nmf_latent_pm_teacher_surrogate_event_penalty": 0.0,
+    "nmf_latent_pm_teacher_surrogate_weight_penalty": 0.0001,
+    "nmf_latent_pm_teacher_surrogate_dagger_labels": false,
+    "nmf_latent_pm_teacher_surrogate_supervised_only": false,
+    "nmf_latent_pm_offline_train": false,
+    "nmf_latent_pm_offline_epochs": 8,
+    "nmf_latent_pm_offline_batch_size": 32,
+    "nmf_latent_pm_offline_steps_per_sample": 1,
+    "nmf_latent_pm_offline_validation_fraction": 0.2,
+    "nmf_latent_pm_offline_patience": 3,
+    "nmf_latent_pm_offline_class_balanced": false,
+    "common_mode_count_stage": false,
+    "rrr_window": 128,
+    "rrr_warmup_decisions": 20,
+    "rrr_refit_interval": 1,
+    "align_action_count": 8,
+    "fixed_pm_window": true,
+    "decision_readout": "pm",
+    "pm_threshold": 0.5,
+    "pm_lateral_gain": -0.1,
+    "coverage_audit": true,
+    "coverage_distance_threshold": 0.006,
+    "align_action_persistence": false,
+    "align_hold_decisions": 4,
+    "align_progress_persistence": true,
+    "disable_align_progress_safeguard": true,
+    "disable_align_progress_safeguard_evaluation_only": false,
+    "progress_memory_context": false,
+    "factorized_progress_memory": false,
+    "progress_direction_bias": false,
+    "progress_bias_learning_rate": 0.15,
+    "progress_bias_maximum": 0.5,
+    "align_progress_value": true,
+    "progress_value_learning_rate": 0.15,
+    "progress_value_maximum": 0.5,
+    "progress_value_minimum_visits": 3,
+    "fixed_cube": true,
+    "deterministic_robot_start": true,
+    "fixed_cube_xy": [
+      0.0088,
+      0.0069
+    ],
+    "fixed_cube_direction_curriculum": false,
+    "timeout_penalty": -1.0,
+    "stagnant_penalty": -0.1,
+    "unsafe_penalty": -2.0,
+    "seed": 0,
+    "episode_seed_offset": 5,
+    "record_decision_trace": true,
+    "device": "cuda:0",
+    "checkpoint_path": "results/smoke_rrr_nmfk3_latent_contrast_g05_balancedcollect_pm_only_seed0/bdmsnn_final_state.pt",
+    "output_dir": "results/diagnostic_rrr_nmfk3_contrast_g05_checkpoint_pm_only_episode5_seed0"
+  },
+  "state_space": "8 relative-position octants x 4 distance bins x 2 closed-or-grasped modes x 5 observable option contexts; align residual grid includes an observable dominant-error-axis bit; residual grid uses 10 bins per axis; fixed-action options bypass DLPFC/BG/PM and do not receive SNN plasticity; StrD1/StrD2 use one population LIF channel per action",
+  "action_space": [
+    "+x",
+    "-x",
+    "+y",
+    "-y",
+    "+z",
+    "-z",
+    "gripper_open",
+    "gripper_close"
+  ],
+  "snn_align_action_space": [
+    "+x",
+    "-x",
+    "+y",
+    "-y"
+  ],
+  "communication": "DLPFC-to-StrD1/StrD2 nonnegative NMF latent transport, rank 3 via source-core IF spikes (threshold 1, gain 0.5, decoder pulse gain 1) with soft-reset residual coding and local factor normalization; all downstream BG links use full communication",
+  "pm_dynamics": {
+    "threshold": 0.5,
+    "lateral_gain": -0.1
+  },
+  "rrr": {
+    "enabled": true,
+    "state_to_striatum_rank": 0,
+    "striatum_weight_rank": 3,
+    "striatum_latent_rank": 3,
+    "striatum_latent_delta_transport": false,
+    "striatum_latent_quant_bits": 0,
+    "striatum_latent_quant_scale": 5.0,
+    "striatum_latent_spike_transport": true,
+    "striatum_latent_spike_threshold": 1.0,
+    "striatum_latent_spike_gain": 0.5,
+    "striatum_latent_spike_decoder_gain": 1.0,
+    "striatum_latent_spike_soft_reset": true,
+    "striatum_latent_spike_normalize_factors": true,
+    "striatum_latent_spike_contrast_encode": true,
+    "striatum_binary_aware_projection": false,
+    "striatum_spike_surrogate_projection": false,
+    "striatum_spike_surrogate_steps": 16,
+    "striatum_spike_surrogate_learning_rate": 0.05,
+    "striatum_spike_surrogate_slope": 8.0,
+    "striatum_spike_surrogate_event_penalty": 0.0,
+    "striatum_decoder_teacher_adaptation": false,
+    "striatum_decoder_teacher_learning_rate": 0.02,
+    "striatum_pm_offline_train": false,
+    "striatum_weight_factorization": "nmf",
+    "striatum_nmf_iterations": 12,
+    "link_ranks": {},
+    "window": 128,
+    "warmup_decisions": 20,
+    "refit_interval": 1
+  },
+  "common_mode_count": {
+    "enabled": false,
+    "links": []
+  },
+  "episodes": [
+    {
+      "episode": 0,
+      "phase": "evaluation",
+      "cube_xy": [
+        0.0088,
+        0.0069
+      ],
+      "frozen_evaluation": true,
+      "epsilon": 0.0,
+      "teacher_probability": 0.0,
+      "teacher_decisions": 0,
+      "action_clamp_decisions": 0,
+      "executed_action_credit_decisions": 0,
+      "teacher_pm_agreement_rate": NaN,
+      "behavior_clone_decisions": 0,
+      "dagger_label_decisions": 0,
+      "behavior_clone_label_conflicts": 0,
+      "teacher_labeled_states": 0,
+      "clone_readout_decisions": 0,
+      "clone_readout_unknown_states": 0,
+      "clone_mlp_readout_decisions": 0,
+      "clone_mlp_train_loss": NaN,
+      "clone_mlp_train_accuracy": NaN,
+      "clone_gru_train_loss": NaN,
+      "clone_gru_train_accuracy": NaN,
+      "decisions": 141,
+      "control_steps": 141,
+      "learning_return": 14.825487796049512,
+      "robosuite_shaping_return": 13.689012501800633,
+      "sparse_success": true,
+      "grasped_any": true,
+      "unsafe_termination": false,
+      "pm_silent_decisions": 0,
+      "readout_silent_decisions": 0,
+      "internal_snn_steps": 2250,
+      "exploratory_decisions": 0,
+      "mean_pm_tie_count": 0.6099290780141844,
+      "action_counts": [
+        58,
+        15,
+        2,
+        0,
+        4,
+        60,
+        0,
+        2
+      ],
+      "region_spikes": [
+        1539.0,
+        6019.0,
+        1934.0,
+        4443.0,
+        3740.0,
+        2741.0,
+        1691.0,
+        2250.0
+      ],
+      "d1_weight_change_l1": 0.0,
+      "d2_weight_change_l1": 0.0,
+      "latent_decoder_teacher_update_l1": [
+        0.0,
+        0.0
+      ],
+      "latent_decoder_teacher_update_decisions": 0,
+      "latent_shadow_calibration_update_l1": [
+        0.0,
+        0.0
+      ],
+      "latent_shadow_calibration_update_decisions": 0,
+      "latent_pm_teacher_surrogate_updates": 0,
+      "latent_pm_teacher_surrogate_mean_loss": NaN,
+      "latent_pm_teacher_surrogate_mean_margin": NaN,
+      "latent_pm_teacher_surrogate_dagger_updates": 0,
+      "latent_pm_offline_samples_collected": 0,
+      "mean_td_error": NaN,
+      "striatum_low_rank_projection": null,
+      "option_decisions": {
+        "align": 75,
+        "descend": 60,
+        "close": 2,
+        "lift": 4,
+        "recover": 0
+      },
+      "align_persistence_decisions": 0,
+      "align_progress_persistence_decisions": 0,
+      "progress_bias_decisions": 0,
+      "progress_value_decisions": 0,
+      "align_action_sources": {
+        "pm_unique": {
+          "decisions": 64,
+          "positive_progress": 49,
+          "xy_progress_sum_m": 0.11172112021478725,
+          "entered_descend": 1,
+          "grasp_onset": 0,
+          "lift_success": 0
+        },
+        "ambiguous_fallback": {
+          "decisions": 11,
+          "positive_progress": 9,
+          "xy_progress_sum_m": 0.018545907041554864,
+          "entered_descend": 0,
+          "grasp_onset": 0,
+          "lift_success": 0
+        }
+      },
+      "stage_milestones": {
+        "first_reached_decision": {
+          "align": 1,
+          "descend": 75,
+          "close": 135,
+          "lift": 137,
+          "recover": null
+        },
+        "initial_align_xy_error_m": 0.1317491023099922,
+        "minimum_align_xy_error_m": 0.00277734542773249,
+        "align_exit_xy_error_m": 0.0014820750536501117,
+        "first_grasp_decision": 126,
+        "first_success_decision": 141,
+        "counterfactual_teacher_agreement": {
+          "align": {
+            "decisions": 75,
+            "network": 0.7733333333333333,
+            "executed": 0.7733333333333333
+          },
+          "descend": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "close": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "lift": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          },
+          "recover": {
+            "decisions": 0,
+            "network": null,
+            "executed": null
+          }
+        }
+      }
+    }
+  ],
+  "decision_traces": [
+    {
+      "episode": 0,
+      "phase": "evaluation",
+      "trace": [
+        {
+          "decision": 1,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            5.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              4.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.1317491023099922,
+          "xy_error_after_m": 0.13047742390828299,
+          "entered_descend": false
+        },
+        {
+          "decision": 2,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            4.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.13047742390828299,
+          "xy_error_after_m": 0.1280521577269517,
+          "entered_descend": false
+        },
+        {
+          "decision": 3,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            4.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.1280521577269517,
+          "xy_error_after_m": 0.12533291064543678,
+          "entered_descend": false
+        },
+        {
+          "decision": 4,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            4.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.12533291064543678,
+          "xy_error_after_m": 0.12247250933056661,
+          "entered_descend": false
+        },
+        {
+          "decision": 5,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            10.0,
+            5.0,
+            5.0,
+            6.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            6.0,
+            7.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.12247250933056661,
+          "xy_error_after_m": 0.11953170945895804,
+          "entered_descend": false
+        },
+        {
+          "decision": 6,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            4.0,
+            5.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.11953170945895804,
+          "xy_error_after_m": 0.11653318645670856,
+          "entered_descend": false
+        },
+        {
+          "decision": 7,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            5.0,
+            6.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.11653318645670856,
+          "xy_error_after_m": 0.11349139051328078,
+          "entered_descend": false
+        },
+        {
+          "decision": 8,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            5.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.11349139051328078,
+          "xy_error_after_m": 0.11041684275885762,
+          "entered_descend": false
+        },
+        {
+          "decision": 9,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            4.0,
+            5.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            6.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              4.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.11041684275885762,
+          "xy_error_after_m": 0.1073174744105943,
+          "entered_descend": false
+        },
+        {
+          "decision": 10,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            10.0,
+            5.0,
+            6.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            8.0,
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.1073174744105943,
+          "xy_error_after_m": 0.10419932731595001,
+          "entered_descend": false
+        },
+        {
+          "decision": 11,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            4.0,
+            6.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            7.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.10419932731595001,
+          "xy_error_after_m": 0.1010670219649987,
+          "entered_descend": false
+        },
+        {
+          "decision": 12,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            5.0,
+            4.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.1010670219649987,
+          "xy_error_after_m": 0.09792410008171186,
+          "entered_descend": false
+        },
+        {
+          "decision": 13,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            4.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.09792410008171186,
+          "xy_error_after_m": 0.09477328284416368,
+          "entered_descend": false
+        },
+        {
+          "decision": 14,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            4.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            6.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.09477328284416368,
+          "xy_error_after_m": 0.09161666742515394,
+          "entered_descend": false
+        },
+        {
+          "decision": 15,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            5.0,
+            5.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            7.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.09161666742515394,
+          "xy_error_after_m": 0.08845587723280844,
+          "entered_descend": false
+        },
+        {
+          "decision": 16,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.08845587723280844,
+          "xy_error_after_m": 0.08529217711599651,
+          "entered_descend": false
+        },
+        {
+          "decision": 17,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            5.0,
+            5.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              4.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.08529217711599651,
+          "xy_error_after_m": 0.08212656201452519,
+          "entered_descend": false
+        },
+        {
+          "decision": 18,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            4.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            6.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.08212656201452519,
+          "xy_error_after_m": 0.07895982551554108,
+          "entered_descend": false
+        },
+        {
+          "decision": 19,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            5.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.07895982551554108,
+          "xy_error_after_m": 0.07579261328314112,
+          "entered_descend": false
+        },
+        {
+          "decision": 20,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            4.0,
+            6.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.07579261328314112,
+          "xy_error_after_m": 0.07262546521909989,
+          "entered_descend": false
+        },
+        {
+          "decision": 21,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            4.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.07262546521909989,
+          "xy_error_after_m": 0.06945884939795575,
+          "entered_descend": false
+        },
+        {
+          "decision": 22,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            9.0,
+            5.0,
+            4.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.06945884939795575,
+          "xy_error_after_m": 0.06629319023847713,
+          "entered_descend": false
+        },
+        {
+          "decision": 23,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            10.0,
+            4.0,
+            6.0,
+            4.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            7.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.06629319023847713,
+          "xy_error_after_m": 0.06312889298728634,
+          "entered_descend": false
+        },
+        {
+          "decision": 24,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            4.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            8.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.06312889298728634,
+          "xy_error_after_m": 0.05996636638063343,
+          "entered_descend": false
+        },
+        {
+          "decision": 25,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            9.0,
+            5.0,
+            5.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              4.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.05996636638063343,
+          "xy_error_after_m": 0.05680604531932675,
+          "entered_descend": false
+        },
+        {
+          "decision": 26,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            9.0,
+            4.0,
+            5.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            8.0,
+            6.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.05680604531932675,
+          "xy_error_after_m": 0.0536484155685731,
+          "entered_descend": false
+        },
+        {
+          "decision": 27,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            8.0,
+            5.0,
+            5.0,
+            4.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            7.0,
+            7.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              7.0,
+              7.0
+            ],
+            "d2": [
+              0.0,
+              13.0,
+              13.0
+            ]
+          },
+          "xy_error_before_m": 0.0536484155685731,
+          "xy_error_after_m": 0.05049404294664747,
+          "entered_descend": false
+        },
+        {
+          "decision": 28,
+          "state": [
+            59
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 2,
+          "executed_action": 2,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            7.0,
+            5.0,
+            7.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            8.0,
+            8.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              5.0,
+              8.0,
+              8.0
+            ],
+            "d2": [
+              0.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.05049404294664747,
+          "xy_error_after_m": 0.04843609197832417,
+          "entered_descend": false
+        },
+        {
+          "decision": 29,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            10.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            3.0,
+            1.0,
+            1.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.04843609197832417,
+          "xy_error_after_m": 0.04626405080173148,
+          "entered_descend": false
+        },
+        {
+          "decision": 30,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04626405080173148,
+          "xy_error_after_m": 0.043354736487479915,
+          "entered_descend": false
+        },
+        {
+          "decision": 31,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.043354736487479915,
+          "xy_error_after_m": 0.04283616983717022,
+          "entered_descend": false
+        },
+        {
+          "decision": 32,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            1.0,
+            1.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04283616983717022,
+          "xy_error_after_m": 0.044423595460410636,
+          "entered_descend": false
+        },
+        {
+          "decision": 33,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            2.0,
+            2.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.044423595460410636,
+          "xy_error_after_m": 0.04405629418782505,
+          "entered_descend": false
+        },
+        {
+          "decision": 34,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            3.0,
+            2.0,
+            1.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04405629418782505,
+          "xy_error_after_m": 0.0418331895550156,
+          "entered_descend": false
+        },
+        {
+          "decision": 35,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.0418331895550156,
+          "xy_error_after_m": 0.041734961238508936,
+          "entered_descend": false
+        },
+        {
+          "decision": 36,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.041734961238508936,
+          "xy_error_after_m": 0.0436108913434434,
+          "entered_descend": false
+        },
+        {
+          "decision": 37,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.0436108913434434,
+          "xy_error_after_m": 0.043454966462451804,
+          "entered_descend": false
+        },
+        {
+          "decision": 38,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            3.0,
+            2.0,
+            2.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.043454966462451804,
+          "xy_error_after_m": 0.04139013854189964,
+          "entered_descend": false
+        },
+        {
+          "decision": 39,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04139013854189964,
+          "xy_error_after_m": 0.04140882320343932,
+          "entered_descend": false
+        },
+        {
+          "decision": 40,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.04140882320343932,
+          "xy_error_after_m": 0.04337181845676773,
+          "entered_descend": false
+        },
+        {
+          "decision": 41,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04337181845676773,
+          "xy_error_after_m": 0.04328079305264545,
+          "entered_descend": false
+        },
+        {
+          "decision": 42,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            3.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04328079305264545,
+          "xy_error_after_m": 0.041267070752629004,
+          "entered_descend": false
+        },
+        {
+          "decision": 43,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.041267070752629004,
+          "xy_error_after_m": 0.04132459852943782,
+          "entered_descend": false
+        },
+        {
+          "decision": 44,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04132459852943782,
+          "xy_error_after_m": 0.043316578465588416,
+          "entered_descend": false
+        },
+        {
+          "decision": 45,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            1.0,
+            1.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.043316578465588416,
+          "xy_error_after_m": 0.04324616134975066,
+          "entered_descend": false
+        },
+        {
+          "decision": 46,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            3.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.04324616134975066,
+          "xy_error_after_m": 0.04124875964473631,
+          "entered_descend": false
+        },
+        {
+          "decision": 47,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04124875964473631,
+          "xy_error_after_m": 0.04131877963183618,
+          "entered_descend": false
+        },
+        {
+          "decision": 48,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04131877963183618,
+          "xy_error_after_m": 0.04332022069665206,
+          "entered_descend": false
+        },
+        {
+          "decision": 49,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            2.0,
+            1.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04332022069665206,
+          "xy_error_after_m": 0.0432569735836594,
+          "entered_descend": false
+        },
+        {
+          "decision": 50,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            3.0,
+            3.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            3.0,
+            2.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.0432569735836594,
+          "xy_error_after_m": 0.04373653869155584,
+          "entered_descend": false
+        },
+        {
+          "decision": 51,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            2.0,
+            2.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            3.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.04373653869155584,
+          "xy_error_after_m": 0.04596291854968199,
+          "entered_descend": false
+        },
+        {
+          "decision": 52,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04596291854968199,
+          "xy_error_after_m": 0.04854215284455777,
+          "entered_descend": false
+        },
+        {
+          "decision": 53,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04854215284455777,
+          "xy_error_after_m": 0.04881362833643422,
+          "entered_descend": false
+        },
+        {
+          "decision": 54,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            3.0,
+            3.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            1.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04881362833643422,
+          "xy_error_after_m": 0.047048118212422246,
+          "entered_descend": false
+        },
+        {
+          "decision": 55,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            2.0,
+            2.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            3.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.047048118212422246,
+          "xy_error_after_m": 0.04480881004787406,
+          "entered_descend": false
+        },
+        {
+          "decision": 56,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04480881004787406,
+          "xy_error_after_m": 0.04478670852342868,
+          "entered_descend": false
+        },
+        {
+          "decision": 57,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.04478670852342868,
+          "xy_error_after_m": 0.04426544128321309,
+          "entered_descend": false
+        },
+        {
+          "decision": 58,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            3.0,
+            3.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.04426544128321309,
+          "xy_error_after_m": 0.042011374153331976,
+          "entered_descend": false
+        },
+        {
+          "decision": 59,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            2.0,
+            2.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            3.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.042011374153331976,
+          "xy_error_after_m": 0.0394184505941445,
+          "entered_descend": false
+        },
+        {
+          "decision": 60,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 1,
+          "executed_action": 1,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            2.0,
+            3.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            3.0,
+            4.0,
+            2.0,
+            2.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.0394184505941445,
+          "xy_error_after_m": 0.03914286302845237,
+          "entered_descend": false
+        },
+        {
+          "decision": 61,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            2.0,
+            2.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              14.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.03914286302845237,
+          "xy_error_after_m": 0.038435137157405055,
+          "entered_descend": false
+        },
+        {
+          "decision": 62,
+          "state": [
+            58
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            3.0,
+            3.0,
+            0.0,
+            0.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            4.0,
+            4.0,
+            0.0,
+            0.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "d2": [
+              15.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.038435137157405055,
+          "xy_error_after_m": 0.036052550979972314,
+          "entered_descend": false
+        },
+        {
+          "decision": 63,
+          "state": [
+            57
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            3.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "readout_spike_count": [
+            8.0,
+            4.0,
+            5.0,
+            4.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              3.0,
+              14.0,
+              14.0
+            ],
+            "d2": [
+              4.0,
+              0.0,
+              0.0
+            ]
+          },
+          "xy_error_before_m": 0.036052550979972314,
+          "xy_error_after_m": 0.03337231672696198,
+          "entered_descend": false
+        },
+        {
+          "decision": 64,
+          "state": [
+            57
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            9.0,
+            4.0,
+            0.0,
+            0.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            9.0,
+            5.0,
+            9.0,
+            9.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              3.0,
+              15.0,
+              15.0
+            ],
+            "d2": [
+              4.0,
+              0.0,
+              0.0
+            ]
+          },
+          "xy_error_before_m": 0.03337231672696198,
+          "xy_error_after_m": 0.030562319246916332,
+          "entered_descend": false
+        },
+        {
+          "decision": 65,
+          "state": [
+            57
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            9.0,
+            4.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            5.0,
+            10.0,
+            9.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              3.0,
+              14.0,
+              14.0
+            ],
+            "d2": [
+              5.0,
+              0.0,
+              0.0
+            ]
+          },
+          "xy_error_before_m": 0.030562319246916332,
+          "xy_error_after_m": 0.027671450853359935,
+          "entered_descend": false
+        },
+        {
+          "decision": 66,
+          "state": [
+            57
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            10.0,
+            4.0,
+            2.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "readout_spike_count": [
+            10.0,
+            5.0,
+            10.0,
+            9.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              3.0,
+              15.0,
+              15.0
+            ],
+            "d2": [
+              4.0,
+              0.0,
+              0.0
+            ]
+          },
+          "xy_error_before_m": 0.027671450853359935,
+          "xy_error_after_m": 0.024725254971139907,
+          "entered_descend": false
+        },
+        {
+          "decision": 67,
+          "state": [
+            56
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            6.0,
+            2.0,
+            4.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            6.0,
+            3.0,
+            5.0,
+            6.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              2.0,
+              14.0,
+              14.0
+            ],
+            "d2": [
+              7.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.024725254971139907,
+          "xy_error_after_m": 0.021742524799992134,
+          "entered_descend": false
+        },
+        {
+          "decision": 68,
+          "state": [
+            56
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            5.0,
+            2.0,
+            5.0,
+            4.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "readout_spike_count": [
+            7.0,
+            5.0,
+            6.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              2.0,
+              14.0,
+              14.0
+            ],
+            "d2": [
+              7.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.021742524799992134,
+          "xy_error_after_m": 0.01873986471240838,
+          "entered_descend": false
+        },
+        {
+          "decision": 69,
+          "state": [
+            56
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            5.0,
+            3.0,
+            4.0,
+            3.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            7.0,
+            4.0,
+            6.0,
+            6.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              2.0,
+              13.0,
+              13.0
+            ],
+            "d2": [
+              6.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.01873986471240838,
+          "xy_error_after_m": 0.015735006752765332,
+          "entered_descend": false
+        },
+        {
+          "decision": 70,
+          "state": [
+            56
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 2,
+          "executed_action": 2,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            5.0,
+            2.0,
+            5.0,
+            4.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            7.0,
+            4.0,
+            6.0,
+            5.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              1.0,
+              14.0,
+              14.0
+            ],
+            "d2": [
+              7.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.015735006752765332,
+          "xy_error_after_m": 0.013638718183321998,
+          "entered_descend": false
+        },
+        {
+          "decision": 71,
+          "state": [
+            56
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            2.0,
+            5.0,
+            5.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "readout_spike_count": [
+            8.0,
+            4.0,
+            7.0,
+            7.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              2.0,
+              14.0,
+              14.0
+            ],
+            "d2": [
+              7.0,
+              15.0,
+              15.0
+            ]
+          },
+          "xy_error_before_m": 0.013638718183321998,
+          "xy_error_after_m": 0.01143785726898433,
+          "entered_descend": false
+        },
+        {
+          "decision": 72,
+          "state": [
+            55
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "ambiguous_fallback",
+          "pm_spike_count": [
+            5.0,
+            2.0,
+            4.0,
+            5.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            7.0,
+            3.0,
+            6.0,
+            5.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              10.0,
+              10.0
+            ],
+            "d2": [
+              3.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.01143785726898433,
+          "xy_error_after_m": 0.008577300041818748,
+          "entered_descend": false
+        },
+        {
+          "decision": 73,
+          "state": [
+            55
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            2.0,
+            4.0,
+            5.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0
+          ],
+          "readout_spike_count": [
+            8.0,
+            5.0,
+            6.0,
+            6.0,
+            5.0,
+            5.0,
+            5.0,
+            5.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              11.0,
+              11.0
+            ],
+            "d2": [
+              3.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.008577300041818748,
+          "xy_error_after_m": 0.005639018369242631,
+          "entered_descend": false
+        },
+        {
+          "decision": 74,
+          "state": [
+            55
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            6.0,
+            3.0,
+            4.0,
+            5.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            8.0,
+            5.0,
+            6.0,
+            6.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              10.0,
+              10.0
+            ],
+            "d2": [
+              2.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.005639018369242631,
+          "xy_error_after_m": 0.00277734542773249,
+          "entered_descend": false
+        },
+        {
+          "decision": 75,
+          "state": [
+            55
+          ],
+          "option": "align",
+          "teacher_action": 0,
+          "network_action": 0,
+          "executed_action": 0,
+          "action_source": "pm_unique",
+          "pm_spike_count": [
+            7.0,
+            3.0,
+            4.0,
+            4.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "readout_spike_count": [
+            8.0,
+            4.0,
+            5.0,
+            6.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "latent_event_count": {
+            "d1": [
+              0.0,
+              11.0,
+              11.0
+            ],
+            "d2": [
+              3.0,
+              14.0,
+              14.0
+            ]
+          },
+          "xy_error_before_m": 0.00277734542773249,
+          "xy_error_after_m": 0.0014820750536501117,
+          "entered_descend": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "mean_learning_return": 14.825487796049512,
+    "sparse_success_rate": 1.0,
+    "grasp_any_rate": 1.0,
+    "mean_decisions": 141.0,
+    "teacher_assisted_success_rate": NaN,
+    "clone_policy_memory": {
+      "labeled_states": 0,
+      "conflicting_states": 0
+    },
+    "clone_mlp": {
+      "samples": 0,
+      "train_loss": NaN,
+      "train_accuracy": NaN
+    },
+    "clone_gru": {
+      "episodes": 0,
+      "samples": 0,
+      "train_loss": NaN,
+      "train_accuracy": NaN
+    },
+    "full_communication_traffic": {
+      "rank": 3,
+      "mode": "nmf_dlpfc_to_striatum_latent",
+      "fitted": true,
+      "links": {
+        "dlpfc_strd1": {
+          "source_dim": 200,
+          "latent_dim": 3,
+          "target_dim": 8,
+          "transport": "binary_if_spike_nmf_latent",
+          "spike_transport": {
+            "enabled": true,
+            "source_neuron": "IF",
+            "encoder": "soft_reset_sigma_delta",
+            "factor_normalization": true,
+            "contrast_encoding": true,
+            "threshold": 1.0,
+            "projection_current_gain": 0.5,
+            "decoder_pulse_gain": 1.0,
+            "logical_spike_events": 923,
+            "active_event_samples": 496,
+            "peak_events_per_sample": 3,
+            "mean_events_per_sample": 0.4102222222222222,
+            "decoder_teacher_updates": 0,
+            "decoder_teacher_ranking_updates": 0,
+            "shadow_calibration_updates": 0,
+            "shadow_calibration_squared_error": 0.0,
+            "decoder_teacher_event_mass": 0.0
+          },
+          "quantization": {
+            "enabled": false,
+            "bits_per_scalar": 0,
+            "fixed_full_scale": 5.0,
+            "quantized_vector_records": 0,
+            "clipped_values": 0,
+            "total_quantized_values": 0,
+            "clip_rate": null,
+            "current_nrmse_vs_unquantized_latent": 0.8997512204921833,
+            "peak_current_error_vs_unquantized_latent": 2.0917532444000244
+          },
+          "active_samples": 2250,
+          "full_warmup_fallback_samples": 0,
+          "source_logical_events": 2250,
+          "continuous_latent_scalar_values": 6750,
+          "continuous_latent_nonzero_values": 4590,
+          "transmitted_continuous_vector_records": 0,
+          "transmitted_continuous_latent_scalar_values": 0,
+          "mean_absolute_latent_value": 0.2739999747607443,
+          "peak_absolute_latent_value": 0.97129225730896,
+          "source_projection_array_activations": 2250,
+          "target_decoder_array_activations": 496,
+          "continuous_vector_records": 0,
+          "suppressed_repeat_samples": 0,
+          "repeat_suppression_rate": 0.0,
+          "online_current_ev": 0.19044774500618045,
+          "online_current_nrmse": 0.8997512183897388,
+          "online_current_peak_absolute_error": 2.0917532444000244
+        },
+        "dlpfc_strd2": {
+          "source_dim": 200,
+          "latent_dim": 3,
+          "target_dim": 8,
+          "transport": "binary_if_spike_nmf_latent",
+          "spike_transport": {
+            "enabled": true,
+            "source_neuron": "IF",
+            "encoder": "soft_reset_sigma_delta",
+            "factor_normalization": true,
+            "contrast_encoding": true,
+            "threshold": 1.0,
+            "projection_current_gain": 0.5,
+            "decoder_pulse_gain": 1.0,
+            "logical_spike_events": 2567,
+            "active_event_samples": 1299,
+            "peak_events_per_sample": 3,
+            "mean_events_per_sample": 1.1408888888888888,
+            "decoder_teacher_updates": 0,
+            "decoder_teacher_ranking_updates": 0,
+            "shadow_calibration_updates": 0,
+            "shadow_calibration_squared_error": 0.0,
+            "decoder_teacher_event_mass": 0.0
+          },
+          "quantization": {
+            "enabled": false,
+            "bits_per_scalar": 0,
+            "fixed_full_scale": 5.0,
+            "quantized_vector_records": 0,
+            "clipped_values": 0,
+            "total_quantized_values": 0,
+            "clip_rate": null,
+            "current_nrmse_vs_unquantized_latent": 0.6765537125084137,
+            "peak_current_error_vs_unquantized_latent": 1.9077839851379395
+          },
+          "active_samples": 2250,
+          "full_warmup_fallback_samples": 0,
+          "source_logical_events": 2250,
+          "continuous_latent_scalar_values": 6750,
+          "continuous_latent_nonzero_values": 5670,
+          "transmitted_continuous_vector_records": 0,
+          "transmitted_continuous_latent_scalar_values": 0,
+          "mean_absolute_latent_value": 0.7610255278481377,
+          "peak_absolute_latent_value": 0.9878227114677429,
+          "source_projection_array_activations": 2250,
+          "target_decoder_array_activations": 1299,
+          "continuous_vector_records": 0,
+          "suppressed_repeat_samples": 0,
+          "repeat_suppression_rate": 0.0,
+          "online_current_ev": 0.542275048414202,
+          "online_current_nrmse": 0.6765537314846457,
+          "online_current_peak_absolute_error": 1.9077839851379395
+        }
+      },
+      "other_full_cross_core_links": {
+        "dlpfc_stn": {
+          "source_dim": 200,
+          "target_dim": 2,
+          "samples": 2250,
+          "source_logical_events": 2250
+        },
+        "strd2_gpe": {
+          "source_dim": 8,
+          "target_dim": 8,
+          "samples": 2250,
+          "source_logical_events": 6019
+        },
+        "stn_gpe": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 2250,
+          "source_logical_events": 1934
+        },
+        "strd1_gpi": {
+          "source_dim": 8,
+          "target_dim": 8,
+          "samples": 2250,
+          "source_logical_events": 1539
+        },
+        "stn_gpi": {
+          "source_dim": 2,
+          "target_dim": 8,
+          "samples": 2250,
+          "source_logical_events": 1934
+        },
+        "gpe_stn": {
+          "source_dim": 8,
+          "target_dim": 2,
+          "samples": 2250,
+          "source_logical_events": 4443
+        },
+        "gpi_thalamus": {
+          "source_dim": 8,
+          "target_dim": 8,
+          "samples": 2250,
+          "source_logical_events": 3740
+        },
+        "dlpfc_thalamus": {
+          "source_dim": 200,
+          "target_dim": 8,
+          "samples": 2250,
+          "source_logical_events": 2250
+        }
+      }
+    },
+    "simple_hardware_link_proxy": null,
+    "communication_refit_count": 0,
+    "coverage_audit": {
+      "continuous_distance_threshold_m": 0.006,
+      "teacher_labeled_state_count": 0,
+      "teacher_conflicting_state_count": 0,
+      "teacher_mean_label_entropy_bits": 0.0,
+      "student_during_curriculum": {
+        "decisions": 0
+      },
+      "student_dagger_against_initial_teacher": {
+        "decisions": 0
+      },
+      "student_evaluation": {
+        "decisions": 75,
+        "state_out_of_demo_rate": 1.0,
+        "continuous_out_of_demo_rate": 1.0,
+        "both_out_of_demo_rate": 1.0,
+        "mean_nearest_teacher_distance_m": null,
+        "network_teacher_agreement_rate": 0.7733333333333333,
+        "executed_teacher_agreement_rate": 0.7733333333333333,
+        "option_decisions": {
+          "align": 75,
+          "descend": 0,
+          "close": 0,
+          "lift": 0,
+          "recover": 0
+        }
+      },
+      "student_deployment": {
+        "decisions": 75,
+        "state_out_of_demo_rate": 1.0,
+        "continuous_out_of_demo_rate": 1.0,
+        "both_out_of_demo_rate": 1.0,
+        "mean_nearest_teacher_distance_m": null,
+        "network_teacher_agreement_rate": 0.7733333333333333,
+        "executed_teacher_agreement_rate": 0.7733333333333333,
+        "option_decisions": {
+          "align": 75,
+          "descend": 0,
+          "close": 0,
+          "lift": 0,
+          "recover": 0
+        }
+      },
+      "per_option_xy_error_histograms": {
+        "align": {
+          "teacher_count": 0,
+          "deployment_count": 75,
+          "xy_error_histogram_teacher": [],
+          "xy_error_histogram_deployment": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              7.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              9.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              35.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              6.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "descend": {
+          "teacher_count": 0,
+          "deployment_count": 0,
+          "xy_error_histogram_teacher": [],
+          "xy_error_histogram_deployment": []
+        },
+        "close": {
+          "teacher_count": 0,
+          "deployment_count": 0,
+          "xy_error_histogram_teacher": [],
+          "xy_error_histogram_deployment": []
+        },
+        "lift": {
+          "teacher_count": 0,
+          "deployment_count": 0,
+          "xy_error_histogram_teacher": [],
+          "xy_error_histogram_deployment": []
+        },
+        "recover": {
+          "teacher_count": 0,
+          "deployment_count": 0,
+          "xy_error_histogram_teacher": [],
+          "xy_error_histogram_deployment": []
+        }
+      }
+    },
+    "pm_offline_training": null,
+    "phase_success": {
+      "teacher": {
+        "episodes": 0,
+        "lift_successes": 0
+      },
+      "dagger": {
+        "episodes": 0,
+        "lift_successes": 0
+      },
+      "evaluation": {
+        "episodes": 1,
+        "lift_successes": 1
+      }
+    }
+  }
+}

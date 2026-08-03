@@ -1,0 +1,25 @@
+{
+  "source": "results/binary_latent_extended20_pairedrng_seed0/lift_bdm_snn_decision_traces.json",
+  "phase": "evaluation",
+  "align_labeled_records": 3284,
+  "binary_pattern_width": 180,
+  "unique_patterns": 712,
+  "cross_label_pattern_collisions": 19,
+  "cross_label_collision_fraction": 0.026685393258426966,
+  "mean_hamming_distance_within_teacher_action": {
+    "0": 71.82803783132624,
+    "1": 88.01243912456727,
+    "2": 45.687687687687685,
+    "3": 85.29468100780905
+  },
+  "mean_hamming_distance_between_teacher_actions": {
+    "0_1": 90.3874130546184,
+    "0_2": 71.51936025348446,
+    "0_3": 89.0571909414688,
+    "1_2": 86.8194811352706,
+    "1_3": 89.34882181141671,
+    "2_3": 85.83884532831048
+  },
+  "interpretation": "Patterns preserve the ordered binary D1/D2 latent events over one fixed decision window. This audit diagnoses code collisions and residual-phase sensitivity; it does not measure packet bits or establish a nonlinear manifold."
+}
+saved: results/binary_latent_extended20_pairedrng_seed0/latent_pattern_audit.json

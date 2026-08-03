@@ -1,0 +1,206 @@
+{
+  "source": "results/topology_placecells_fixed_extended20_seed2/lift_bdm_snn_decision_traces.json",
+  "phase": "evaluation",
+  "align_labeled_records": 1107,
+  "binary_pattern_width": 180,
+  "unique_patterns": 135,
+  "cross_label_pattern_collisions": 5,
+  "cross_label_collision_fraction": 0.037037037037037035,
+  "mean_hamming_distance_within_teacher_action": {
+    "0": 30.435729847494553,
+    "1": 23.38814008964197,
+    "2": 0.0,
+    "3": 60.13709677419355
+  },
+  "mean_hamming_distance_between_teacher_actions": {
+    "0_1": 44.75497300369423,
+    "0_2": 38.41304347826087,
+    "0_3": 89.90489130434783,
+    "1_2": 12.619281045751634,
+    "1_3": 87.01266339869281,
+    "2_3": 87.4375
+  },
+  "state_action_pattern_stability": {
+    "(0,)|1": {
+      "samples": 6,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8333333333333334,
+      "mean_hamming_distance": 20.0
+    },
+    "(10, 20)|1": {
+      "samples": 8,
+      "unique_patterns": 6,
+      "dominant_pattern_fraction": 0.375,
+      "mean_hamming_distance": 45.142857142857146
+    },
+    "(20, 30)|1": {
+      "samples": 6,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.6666666666666666,
+      "mean_hamming_distance": 15.666666666666666
+    },
+    "(30, 40)|1": {
+      "samples": 30,
+      "unique_patterns": 12,
+      "dominant_pattern_fraction": 0.6,
+      "mean_hamming_distance": 30.080459770114942
+    },
+    "(40, 50)|1": {
+      "samples": 393,
+      "unique_patterns": 34,
+      "dominant_pattern_fraction": 0.9134860050890585,
+      "mean_hamming_distance": 7.478111855429194
+    },
+    "(41, 42, 51, 52)|1": {
+      "samples": 10,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(42, 43, 52, 53)|1": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(43, 44, 53, 54)|1": {
+      "samples": 5,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(44, 45, 54, 55)|1": {
+      "samples": 3,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(45, 46, 55, 56)|0": {
+      "samples": 12,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(46, 47, 56, 57)|0": {
+      "samples": 2,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(50, 60)|1": {
+      "samples": 45,
+      "unique_patterns": 25,
+      "dominant_pattern_fraction": 0.4,
+      "mean_hamming_distance": 45.903030303030306
+    },
+    "(51, 52, 61, 62)|1": {
+      "samples": 9,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(52, 53, 62, 63)|1": {
+      "samples": 20,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(53, 54, 63, 64)|1": {
+      "samples": 13,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(54, 55, 64, 65)|1": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(55, 56, 65, 66)|0": {
+      "samples": 31,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(56, 57, 66, 67)|0": {
+      "samples": 47,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(57, 58, 67, 68)|0": {
+      "samples": 58,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8275862068965517,
+      "mean_hamming_distance": 2.9038112522686026
+    },
+    "(58, 68)|0": {
+      "samples": 30,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.3333333333333333,
+      "mean_hamming_distance": 15.632183908045977
+    },
+    "(59, 69)|0": {
+      "samples": 280,
+      "unique_patterns": 24,
+      "dominant_pattern_fraction": 0.07142857142857142,
+      "mean_hamming_distance": 3.9708141321044548
+    },
+    "(60, 70)|1": {
+      "samples": 10,
+      "unique_patterns": 8,
+      "dominant_pattern_fraction": 0.3,
+      "mean_hamming_distance": 60.977777777777774
+    },
+    "(63, 64, 73, 74)|1": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(70, 80)|1": {
+      "samples": 7,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.5714285714285714,
+      "mean_hamming_distance": 41.714285714285715
+    },
+    "(80,)|1": {
+      "samples": 3,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.6666666666666666,
+      "mean_hamming_distance": 120.0
+    },
+    "(90,)|1": {
+      "samples": 32,
+      "unique_patterns": 19,
+      "dominant_pattern_fraction": 0.15625,
+      "mean_hamming_distance": 83.10685483870968
+    },
+    "(100,)|3": {
+      "samples": 31,
+      "unique_patterns": 14,
+      "dominant_pattern_fraction": 0.22580645161290322,
+      "mean_hamming_distance": 58.12903225806452
+    },
+    "(144, 145, 154, 155)|3": {
+      "samples": 1,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": null
+    },
+    "(154, 155, 164, 165)|2": {
+      "samples": 1,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": null
+    },
+    "(155, 156, 165, 166)|2": {
+      "samples": 2,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    }
+  },
+  "interpretation": "Patterns preserve the ordered binary D1/D2 latent events over one fixed decision window. This audit diagnoses code collisions and residual-phase sensitivity; it does not measure packet bits or establish a nonlinear manifold."
+}

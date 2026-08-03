@@ -1,0 +1,25 @@
+{
+  "source": "results/topology_placecells_neighbor_y125_seed2/lift_bdm_snn_decision_traces.json",
+  "phase": "evaluation",
+  "align_labeled_records": 2384,
+  "binary_pattern_width": 180,
+  "unique_patterns": 363,
+  "cross_label_pattern_collisions": 9,
+  "cross_label_collision_fraction": 0.024793388429752067,
+  "mean_hamming_distance_within_teacher_action": {
+    "0": 13.791641268915804,
+    "1": 39.61770714850432,
+    "2": 0.0,
+    "3": 63.78260869565217
+  },
+  "mean_hamming_distance_between_teacher_actions": {
+    "0_1": 40.191651378346094,
+    "0_2": 23.13624678663239,
+    "0_3": 87.33976006855184,
+    "1_2": 22.885902358749313,
+    "1_3": 85.24707441945512,
+    "2_3": 86.5
+  },
+  "interpretation": "Patterns preserve the ordered binary D1/D2 latent events over one fixed decision window. This audit diagnoses code collisions and residual-phase sensitivity; it does not measure packet bits or establish a nonlinear manifold."
+}
+saved: results/topology_placecells_neighbor_y125_seed2/latent_pattern_audit.json

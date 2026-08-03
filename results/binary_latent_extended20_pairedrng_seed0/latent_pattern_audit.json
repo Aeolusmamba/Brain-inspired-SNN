@@ -1,0 +1,392 @@
+{
+  "source": "results/binary_latent_extended20_pairedrng_seed0/lift_bdm_snn_decision_traces.json",
+  "phase": "evaluation",
+  "align_labeled_records": 3284,
+  "binary_pattern_width": 180,
+  "unique_patterns": 712,
+  "cross_label_pattern_collisions": 19,
+  "cross_label_collision_fraction": 0.026685393258426966,
+  "mean_hamming_distance_within_teacher_action": {
+    "0": 71.82803783132624,
+    "1": 88.01243912456727,
+    "2": 45.687687687687685,
+    "3": 85.29468100780905
+  },
+  "mean_hamming_distance_between_teacher_actions": {
+    "0_1": 90.3874130546184,
+    "0_2": 71.51936025348446,
+    "0_3": 89.0571909414688,
+    "1_2": 86.8194811352706,
+    "1_3": 89.34882181141671,
+    "2_3": 85.83884532831048
+  },
+  "state_action_pattern_stability": {
+    "(0,)|1": {
+      "samples": 752,
+      "unique_patterns": 162,
+      "dominant_pattern_fraction": 0.017287234042553192,
+      "mean_hamming_distance": 88.73554763860952
+    },
+    "(9,)|0": {
+      "samples": 92,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.6521739130434783,
+      "mean_hamming_distance": 13.485666507405638
+    },
+    "(10,)|1": {
+      "samples": 155,
+      "unique_patterns": 13,
+      "dominant_pattern_fraction": 0.2967741935483871,
+      "mean_hamming_distance": 67.43879346459991
+    },
+    "(11,)|1": {
+      "samples": 15,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.6,
+      "mean_hamming_distance": 68.68571428571428
+    },
+    "(18,)|0": {
+      "samples": 15,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.6666666666666666,
+      "mean_hamming_distance": 13.6
+    },
+    "(19,)|0": {
+      "samples": 87,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.5172413793103449,
+      "mean_hamming_distance": 15.156375300721733
+    },
+    "(20,)|1": {
+      "samples": 93,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.3225806451612903,
+      "mean_hamming_distance": 54.186535764375876
+    },
+    "(21,)|1": {
+      "samples": 28,
+      "unique_patterns": 16,
+      "dominant_pattern_fraction": 0.17857142857142858,
+      "mean_hamming_distance": 84.64550264550265
+    },
+    "(22,)|1": {
+      "samples": 13,
+      "unique_patterns": 6,
+      "dominant_pattern_fraction": 0.46153846153846156,
+      "mean_hamming_distance": 52.666666666666664
+    },
+    "(27,)|0": {
+      "samples": 7,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(28,)|0": {
+      "samples": 19,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.5789473684210527,
+      "mean_hamming_distance": 15.43859649122807
+    },
+    "(29,)|0": {
+      "samples": 78,
+      "unique_patterns": 6,
+      "dominant_pattern_fraction": 0.5769230769230769,
+      "mean_hamming_distance": 14.532134532134533
+    },
+    "(30,)|1": {
+      "samples": 12,
+      "unique_patterns": 9,
+      "dominant_pattern_fraction": 0.25,
+      "mean_hamming_distance": 53.303030303030305
+    },
+    "(31,)|1": {
+      "samples": 4,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.75,
+      "mean_hamming_distance": 13.5
+    },
+    "(32,)|1": {
+      "samples": 16,
+      "unique_patterns": 9,
+      "dominant_pattern_fraction": 0.3125,
+      "mean_hamming_distance": 87.90833333333333
+    },
+    "(33,)|1": {
+      "samples": 9,
+      "unique_patterns": 5,
+      "dominant_pattern_fraction": 0.3333333333333333,
+      "mean_hamming_distance": 98.38888888888889
+    },
+    "(36,)|0": {
+      "samples": 2,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(37,)|0": {
+      "samples": 2,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(38,)|0": {
+      "samples": 6,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(43,)|1": {
+      "samples": 8,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.5,
+      "mean_hamming_distance": 38.57142857142857
+    },
+    "(44,)|1": {
+      "samples": 45,
+      "unique_patterns": 45,
+      "dominant_pattern_fraction": 0.022222222222222223,
+      "mean_hamming_distance": 51.10505050505051
+    },
+    "(45,)|0": {
+      "samples": 15,
+      "unique_patterns": 15,
+      "dominant_pattern_fraction": 0.06666666666666667,
+      "mean_hamming_distance": 70.83809523809524
+    },
+    "(46,)|0": {
+      "samples": 51,
+      "unique_patterns": 15,
+      "dominant_pattern_fraction": 0.1568627450980392,
+      "mean_hamming_distance": 79.69725490196079
+    },
+    "(47,)|0": {
+      "samples": 15,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.6,
+      "mean_hamming_distance": 58.857142857142854
+    },
+    "(51,)|1": {
+      "samples": 15,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(52,)|1": {
+      "samples": 8,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(53,)|1": {
+      "samples": 4,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.5,
+      "mean_hamming_distance": 32.0
+    },
+    "(54,)|1": {
+      "samples": 16,
+      "unique_patterns": 16,
+      "dominant_pattern_fraction": 0.0625,
+      "mean_hamming_distance": 19.066666666666666
+    },
+    "(55,)|0": {
+      "samples": 27,
+      "unique_patterns": 22,
+      "dominant_pattern_fraction": 0.07407407407407407,
+      "mean_hamming_distance": 62.06837606837607
+    },
+    "(56,)|0": {
+      "samples": 75,
+      "unique_patterns": 59,
+      "dominant_pattern_fraction": 0.02666666666666667,
+      "mean_hamming_distance": 74.04900900900901
+    },
+    "(57,)|0": {
+      "samples": 125,
+      "unique_patterns": 43,
+      "dominant_pattern_fraction": 0.088,
+      "mean_hamming_distance": 42.257548387096776
+    },
+    "(58,)|0": {
+      "samples": 254,
+      "unique_patterns": 77,
+      "dominant_pattern_fraction": 0.14960629921259844,
+      "mean_hamming_distance": 45.82873237683234
+    },
+    "(59,)|0": {
+      "samples": 563,
+      "unique_patterns": 31,
+      "dominant_pattern_fraction": 0.035523978685612786,
+      "mean_hamming_distance": 57.64950095763039
+    },
+    "(63,)|1": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(100,)|3": {
+      "samples": 245,
+      "unique_patterns": 14,
+      "dominant_pattern_fraction": 0.2571428571428571,
+      "mean_hamming_distance": 70.2835731013717
+    },
+    "(101,)|3": {
+      "samples": 49,
+      "unique_patterns": 5,
+      "dominant_pattern_fraction": 0.7142857142857143,
+      "mean_hamming_distance": 37.093537414965986
+    },
+    "(102,)|3": {
+      "samples": 6,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(103,)|3": {
+      "samples": 4,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(104,)|3": {
+      "samples": 13,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.6153846153846154,
+      "mean_hamming_distance": 15.076923076923077
+    },
+    "(107,)|3": {
+      "samples": 4,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.5,
+      "mean_hamming_distance": 16.166666666666668
+    },
+    "(108,)|3": {
+      "samples": 29,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8620689655172413,
+      "mean_hamming_distance": 7.389162561576355
+    },
+    "(109,)|3": {
+      "samples": 19,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8947368421052632,
+      "mean_hamming_distance": 5.964912280701754
+    },
+    "(111,)|3": {
+      "samples": 15,
+      "unique_patterns": 11,
+      "dominant_pattern_fraction": 0.2,
+      "mean_hamming_distance": 90.4952380952381
+    },
+    "(112,)|3": {
+      "samples": 9,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.5555555555555556,
+      "mean_hamming_distance": 40.55555555555556
+    },
+    "(113,)|3": {
+      "samples": 6,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(114,)|3": {
+      "samples": 3,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(118,)|3": {
+      "samples": 1,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": null
+    },
+    "(122,)|3": {
+      "samples": 9,
+      "unique_patterns": 5,
+      "dominant_pattern_fraction": 0.3333333333333333,
+      "mean_hamming_distance": 47.77777777777778
+    },
+    "(123,)|3": {
+      "samples": 18,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.5555555555555556,
+      "mean_hamming_distance": 30.34640522875817
+    },
+    "(124,)|3": {
+      "samples": 6,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.8333333333333334,
+      "mean_hamming_distance": 50.0
+    },
+    "(126,)|3": {
+      "samples": 6,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.6666666666666666,
+      "mean_hamming_distance": 10.2
+    },
+    "(127,)|3": {
+      "samples": 3,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(133,)|3": {
+      "samples": 21,
+      "unique_patterns": 19,
+      "dominant_pattern_fraction": 0.09523809523809523,
+      "mean_hamming_distance": 85.07619047619048
+    },
+    "(134,)|3": {
+      "samples": 43,
+      "unique_patterns": 30,
+      "dominant_pattern_fraction": 0.11627906976744186,
+      "mean_hamming_distance": 90.14174972314507
+    },
+    "(135,)|3": {
+      "samples": 9,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.2222222222222222,
+      "mean_hamming_distance": 91.77777777777777
+    },
+    "(136,)|3": {
+      "samples": 2,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(144,)|3": {
+      "samples": 78,
+      "unique_patterns": 77,
+      "dominant_pattern_fraction": 0.02564102564102564,
+      "mean_hamming_distance": 58.764235764235764
+    },
+    "(145,)|3": {
+      "samples": 19,
+      "unique_patterns": 18,
+      "dominant_pattern_fraction": 0.10526315789473684,
+      "mean_hamming_distance": 74.67836257309942
+    },
+    "(154,)|2": {
+      "samples": 9,
+      "unique_patterns": 9,
+      "dominant_pattern_fraction": 0.1111111111111111,
+      "mean_hamming_distance": 43.111111111111114
+    },
+    "(155,)|2": {
+      "samples": 27,
+      "unique_patterns": 25,
+      "dominant_pattern_fraction": 0.07407407407407407,
+      "mean_hamming_distance": 40.04558404558404
+    },
+    "(163,)|2": {
+      "samples": 1,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": null
+    }
+  },
+  "interpretation": "Patterns preserve the ordered binary D1/D2 latent events over one fixed decision window. This audit diagnoses code collisions and residual-phase sensitivity; it does not measure packet bits or establish a nonlinear manifold."
+}

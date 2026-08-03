@@ -1,0 +1,343 @@
+{
+  "source": "results/residual_reset_pairedrng_seed2",
+  "phase": "evaluation",
+  "all_align_decisions": {
+    "decisions": 1245,
+    "teacher_agreement_rate": 0.36305220883534134,
+    "unique_pm_winner_rate": 0.41445783132530123,
+    "mean_pm_tie_count": 2.2602409638554217,
+    "zero_pm_window_rate": 0.0
+  },
+  "by_final_outcome": {
+    "success": {
+      "decisions": 45,
+      "teacher_agreement_rate": 0.9555555555555556,
+      "unique_pm_winner_rate": 0.8888888888888888,
+      "mean_pm_tie_count": 1.2,
+      "zero_pm_window_rate": 0.0
+    },
+    "failure": {
+      "decisions": 1200,
+      "teacher_agreement_rate": 0.3408333333333333,
+      "unique_pm_winner_rate": 0.39666666666666667,
+      "mean_pm_tie_count": 2.3,
+      "zero_pm_window_rate": 0.0
+    }
+  },
+  "first_errors": [
+    {
+      "episode": 0,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 30,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.04419796727334723,
+        "xy_error_after_m": 0.043536483187279075
+      }
+    },
+    {
+      "episode": 1,
+      "outcome": "success",
+      "first_error": {
+        "decision": 35,
+        "state": [
+          57
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 1,
+        "xy_error_before_m": 0.028595356079296204,
+        "xy_error_after_m": 0.026444657589524998
+      }
+    },
+    {
+      "episode": 2,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 31,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 6,
+        "xy_error_before_m": 0.04105819979194467,
+        "xy_error_after_m": 0.0403961922260285
+      }
+    },
+    {
+      "episode": 3,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 31,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 6,
+        "xy_error_before_m": 0.04105819979194467,
+        "xy_error_after_m": 0.0403961922260285
+      }
+    },
+    {
+      "episode": 4,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 31,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 6,
+        "xy_error_before_m": 0.04105819979194467,
+        "xy_error_after_m": 0.0403961922260285
+      }
+    },
+    {
+      "episode": 5,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 30,
+        "state": [
+          58
+        ],
+        "teacher_action": 0,
+        "network_action": 1,
+        "pm_tie_count": 3,
+        "xy_error_before_m": 0.04419796727488285,
+        "xy_error_after_m": 0.04353648318881413
+      }
+    }
+  ],
+  "first_error_state_action_counts": {
+    "(58,)|0": 5,
+    "(57,)|0": 1
+  },
+  "by_state_teacher_action": {
+    "(0,)|1": {
+      "decisions": 135,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.5185185185185185,
+      "mean_pm_tie_count": 1.4814814814814814,
+      "zero_pm_window_rate": 0.0
+    },
+    "(10,)|1": {
+      "decisions": 71,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.676056338028169,
+      "mean_pm_tie_count": 1.323943661971831,
+      "zero_pm_window_rate": 0.0
+    },
+    "(20,)|1": {
+      "decisions": 80,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.725,
+      "mean_pm_tie_count": 1.275,
+      "zero_pm_window_rate": 0.0
+    },
+    "(30,)|1": {
+      "decisions": 36,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.6944444444444444,
+      "mean_pm_tie_count": 1.3055555555555556,
+      "zero_pm_window_rate": 0.0
+    },
+    "(31,)|1": {
+      "decisions": 9,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.6666666666666666,
+      "mean_pm_tie_count": 1.3333333333333333,
+      "zero_pm_window_rate": 0.0
+    },
+    "(32,)|1": {
+      "decisions": 6,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 1.0,
+      "mean_pm_tie_count": 1.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(33,)|1": {
+      "decisions": 1,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 1.0,
+      "mean_pm_tie_count": 1.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(40,)|1": {
+      "decisions": 33,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.696969696969697,
+      "mean_pm_tie_count": 1.303030303030303,
+      "zero_pm_window_rate": 0.0
+    },
+    "(41,)|1": {
+      "decisions": 11,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.36363636363636365,
+      "mean_pm_tie_count": 1.6363636363636365,
+      "zero_pm_window_rate": 0.0
+    },
+    "(42,)|1": {
+      "decisions": 35,
+      "teacher_agreement_rate": 0.37142857142857144,
+      "unique_pm_winner_rate": 0.0,
+      "mean_pm_tie_count": 3.257142857142857,
+      "zero_pm_window_rate": 0.0
+    },
+    "(43,)|1": {
+      "decisions": 5,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.4,
+      "mean_pm_tie_count": 1.6,
+      "zero_pm_window_rate": 0.0
+    },
+    "(44,)|1": {
+      "decisions": 1,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 1.0,
+      "mean_pm_tie_count": 1.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(50,)|1": {
+      "decisions": 3,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.3333333333333333,
+      "mean_pm_tie_count": 1.6666666666666667,
+      "zero_pm_window_rate": 0.0
+    },
+    "(51,)|1": {
+      "decisions": 12,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.5833333333333334,
+      "mean_pm_tie_count": 1.4166666666666667,
+      "zero_pm_window_rate": 0.0
+    },
+    "(52,)|1": {
+      "decisions": 136,
+      "teacher_agreement_rate": 0.19117647058823528,
+      "unique_pm_winner_rate": 0.022058823529411766,
+      "mean_pm_tie_count": 3.551470588235294,
+      "zero_pm_window_rate": 0.0
+    },
+    "(53,)|1": {
+      "decisions": 75,
+      "teacher_agreement_rate": 0.3466666666666667,
+      "unique_pm_winner_rate": 0.17333333333333334,
+      "mean_pm_tie_count": 1.8533333333333333,
+      "zero_pm_window_rate": 0.0
+    },
+    "(54,)|1": {
+      "decisions": 17,
+      "teacher_agreement_rate": 0.23529411764705882,
+      "unique_pm_winner_rate": 0.058823529411764705,
+      "mean_pm_tie_count": 5.9411764705882355,
+      "zero_pm_window_rate": 0.0
+    },
+    "(55,)|0": {
+      "decisions": 14,
+      "teacher_agreement_rate": 1.0,
+      "unique_pm_winner_rate": 1.0,
+      "mean_pm_tie_count": 1.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(56,)|0": {
+      "decisions": 23,
+      "teacher_agreement_rate": 0.9130434782608695,
+      "unique_pm_winner_rate": 0.8695652173913043,
+      "mean_pm_tie_count": 1.1304347826086956,
+      "zero_pm_window_rate": 0.0
+    },
+    "(57,)|0": {
+      "decisions": 22,
+      "teacher_agreement_rate": 0.9090909090909091,
+      "unique_pm_winner_rate": 0.9545454545454546,
+      "mean_pm_tie_count": 1.0454545454545454,
+      "zero_pm_window_rate": 0.0
+    },
+    "(58,)|0": {
+      "decisions": 278,
+      "teacher_agreement_rate": 0.5179856115107914,
+      "unique_pm_winner_rate": 0.025179856115107913,
+      "mean_pm_tie_count": 3.316546762589928,
+      "zero_pm_window_rate": 0.0
+    },
+    "(59,)|0": {
+      "decisions": 172,
+      "teacher_agreement_rate": 1.0,
+      "unique_pm_winner_rate": 1.0,
+      "mean_pm_tie_count": 1.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(60,)|1": {
+      "decisions": 1,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.0,
+      "mean_pm_tie_count": 2.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(63,)|1": {
+      "decisions": 1,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 0.0,
+      "mean_pm_tie_count": 2.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(70,)|1": {
+      "decisions": 1,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 1.0,
+      "mean_pm_tie_count": 1.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(100,)|3": {
+      "decisions": 2,
+      "teacher_agreement_rate": 0.0,
+      "unique_pm_winner_rate": 1.0,
+      "mean_pm_tie_count": 1.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(154,)|2": {
+      "decisions": 38,
+      "teacher_agreement_rate": 0.15789473684210525,
+      "unique_pm_winner_rate": 0.0,
+      "mean_pm_tie_count": 5.552631578947368,
+      "zero_pm_window_rate": 0.0
+    },
+    "(155,)|2": {
+      "decisions": 15,
+      "teacher_agreement_rate": 0.06666666666666667,
+      "unique_pm_winner_rate": 0.6666666666666666,
+      "mean_pm_tie_count": 1.6,
+      "zero_pm_window_rate": 0.0
+    },
+    "(163,)|2": {
+      "decisions": 1,
+      "teacher_agreement_rate": 1.0,
+      "unique_pm_winner_rate": 0.0,
+      "mean_pm_tie_count": 2.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(164,)|2": {
+      "decisions": 9,
+      "teacher_agreement_rate": 0.3333333333333333,
+      "unique_pm_winner_rate": 0.0,
+      "mean_pm_tie_count": 2.0,
+      "zero_pm_window_rate": 0.0
+    },
+    "(165,)|2": {
+      "decisions": 2,
+      "teacher_agreement_rate": 0.5,
+      "unique_pm_winner_rate": 0.0,
+      "mean_pm_tie_count": 2.0,
+      "zero_pm_window_rate": 0.0
+    }
+  },
+  "interpretation": "Teacher actions are counterfactual diagnostic labels during autonomous evaluation. This report distinguishes first policy disagreements and PM tie readout ambiguity; it does not establish causality or measure latent-code separation."
+}

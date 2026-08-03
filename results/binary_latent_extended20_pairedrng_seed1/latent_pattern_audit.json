@@ -1,0 +1,326 @@
+{
+  "source": "results/binary_latent_extended20_pairedrng_seed1/lift_bdm_snn_decision_traces.json",
+  "phase": "evaluation",
+  "align_labeled_records": 3348,
+  "binary_pattern_width": 180,
+  "unique_patterns": 1399,
+  "cross_label_pattern_collisions": 19,
+  "cross_label_collision_fraction": 0.013581129378127233,
+  "mean_hamming_distance_within_teacher_action": {
+    "0": 67.6050598330512,
+    "1": 88.67048338352534,
+    "2": 48.359941944847606,
+    "3": 86.66213968351244
+  },
+  "mean_hamming_distance_between_teacher_actions": {
+    "0_1": 88.10540368517042,
+    "0_2": 68.88909491014304,
+    "0_3": 87.82675965362023,
+    "1_2": 86.35364964567962,
+    "1_3": 90.22314227659892,
+    "2_3": 86.61545582789631
+  },
+  "state_action_pattern_stability": {
+    "(0,)|1": {
+      "samples": 1392,
+      "unique_patterns": 912,
+      "dominant_pattern_fraction": 0.009339080459770116,
+      "mean_hamming_distance": 88.57710693538924
+    },
+    "(10,)|1": {
+      "samples": 70,
+      "unique_patterns": 13,
+      "dominant_pattern_fraction": 0.21428571428571427,
+      "mean_hamming_distance": 87.67329192546583
+    },
+    "(11,)|1": {
+      "samples": 6,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.6666666666666666,
+      "mean_hamming_distance": 35.0
+    },
+    "(20,)|1": {
+      "samples": 97,
+      "unique_patterns": 9,
+      "dominant_pattern_fraction": 0.29896907216494845,
+      "mean_hamming_distance": 66.72594501718213
+    },
+    "(21,)|1": {
+      "samples": 7,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.5714285714285714,
+      "mean_hamming_distance": 51.42857142857143
+    },
+    "(22,)|1": {
+      "samples": 3,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(30,)|1": {
+      "samples": 81,
+      "unique_patterns": 13,
+      "dominant_pattern_fraction": 0.4074074074074074,
+      "mean_hamming_distance": 80.18765432098765
+    },
+    "(31,)|1": {
+      "samples": 22,
+      "unique_patterns": 8,
+      "dominant_pattern_fraction": 0.2727272727272727,
+      "mean_hamming_distance": 78.7965367965368
+    },
+    "(32,)|1": {
+      "samples": 21,
+      "unique_patterns": 6,
+      "dominant_pattern_fraction": 0.2857142857142857,
+      "mean_hamming_distance": 80.47619047619048
+    },
+    "(33,)|1": {
+      "samples": 16,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.375,
+      "mean_hamming_distance": 77.29166666666667
+    },
+    "(40,)|1": {
+      "samples": 13,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.6923076923076923,
+      "mean_hamming_distance": 28.923076923076923
+    },
+    "(41,)|1": {
+      "samples": 5,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.4,
+      "mean_hamming_distance": 42.0
+    },
+    "(42,)|1": {
+      "samples": 13,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.7692307692307693,
+      "mean_hamming_distance": 23.076923076923077
+    },
+    "(43,)|1": {
+      "samples": 15,
+      "unique_patterns": 9,
+      "dominant_pattern_fraction": 0.2,
+      "mean_hamming_distance": 87.08571428571429
+    },
+    "(44,)|1": {
+      "samples": 27,
+      "unique_patterns": 27,
+      "dominant_pattern_fraction": 0.037037037037037035,
+      "mean_hamming_distance": 50.81481481481482
+    },
+    "(45,)|0": {
+      "samples": 18,
+      "unique_patterns": 18,
+      "dominant_pattern_fraction": 0.05555555555555555,
+      "mean_hamming_distance": 70.48366013071896
+    },
+    "(46,)|0": {
+      "samples": 53,
+      "unique_patterns": 15,
+      "dominant_pattern_fraction": 0.2641509433962264,
+      "mean_hamming_distance": 61.425253991291726
+    },
+    "(47,)|0": {
+      "samples": 3,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(50,)|1": {
+      "samples": 31,
+      "unique_patterns": 6,
+      "dominant_pattern_fraction": 0.45161290322580644,
+      "mean_hamming_distance": 34.04731182795699
+    },
+    "(51,)|1": {
+      "samples": 14,
+      "unique_patterns": 9,
+      "dominant_pattern_fraction": 0.21428571428571427,
+      "mean_hamming_distance": 72.54945054945055
+    },
+    "(52,)|1": {
+      "samples": 11,
+      "unique_patterns": 9,
+      "dominant_pattern_fraction": 0.18181818181818182,
+      "mean_hamming_distance": 94.58181818181818
+    },
+    "(53,)|1": {
+      "samples": 19,
+      "unique_patterns": 13,
+      "dominant_pattern_fraction": 0.15789473684210525,
+      "mean_hamming_distance": 84.49122807017544
+    },
+    "(54,)|1": {
+      "samples": 78,
+      "unique_patterns": 70,
+      "dominant_pattern_fraction": 0.02564102564102564,
+      "mean_hamming_distance": 17.10989010989011
+    },
+    "(55,)|0": {
+      "samples": 39,
+      "unique_patterns": 24,
+      "dominant_pattern_fraction": 0.10256410256410256,
+      "mean_hamming_distance": 61.630229419703106
+    },
+    "(56,)|0": {
+      "samples": 85,
+      "unique_patterns": 26,
+      "dominant_pattern_fraction": 0.09411764705882353,
+      "mean_hamming_distance": 71.43529411764706
+    },
+    "(57,)|0": {
+      "samples": 108,
+      "unique_patterns": 8,
+      "dominant_pattern_fraction": 0.18518518518518517,
+      "mean_hamming_distance": 39.906368985808236
+    },
+    "(58,)|0": {
+      "samples": 60,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.3333333333333333,
+      "mean_hamming_distance": 22.598870056497177
+    },
+    "(59,)|0": {
+      "samples": 560,
+      "unique_patterns": 28,
+      "dominant_pattern_fraction": 0.03571428571428571,
+      "mean_hamming_distance": 60.728341426015845
+    },
+    "(100,)|3": {
+      "samples": 97,
+      "unique_patterns": 62,
+      "dominant_pattern_fraction": 0.07216494845360824,
+      "mean_hamming_distance": 88.43084192439862
+    },
+    "(101,)|3": {
+      "samples": 37,
+      "unique_patterns": 29,
+      "dominant_pattern_fraction": 0.10810810810810811,
+      "mean_hamming_distance": 88.86186186186187
+    },
+    "(102,)|3": {
+      "samples": 32,
+      "unique_patterns": 20,
+      "dominant_pattern_fraction": 0.15625,
+      "mean_hamming_distance": 87.11290322580645
+    },
+    "(103,)|3": {
+      "samples": 32,
+      "unique_patterns": 26,
+      "dominant_pattern_fraction": 0.125,
+      "mean_hamming_distance": 72.74596774193549
+    },
+    "(104,)|3": {
+      "samples": 20,
+      "unique_patterns": 14,
+      "dominant_pattern_fraction": 0.15,
+      "mean_hamming_distance": 49.93157894736842
+    },
+    "(111,)|3": {
+      "samples": 14,
+      "unique_patterns": 8,
+      "dominant_pattern_fraction": 0.2857142857142857,
+      "mean_hamming_distance": 54.9010989010989
+    },
+    "(112,)|3": {
+      "samples": 12,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.3333333333333333,
+      "mean_hamming_distance": 93.74242424242425
+    },
+    "(113,)|3": {
+      "samples": 15,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.3333333333333333,
+      "mean_hamming_distance": 80.11428571428571
+    },
+    "(114,)|3": {
+      "samples": 16,
+      "unique_patterns": 4,
+      "dominant_pattern_fraction": 0.3125,
+      "mean_hamming_distance": 67.5
+    },
+    "(115,)|3": {
+      "samples": 8,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.75,
+      "mean_hamming_distance": 6.857142857142857
+    },
+    "(122,)|3": {
+      "samples": 2,
+      "unique_patterns": 2,
+      "dominant_pattern_fraction": 0.5,
+      "mean_hamming_distance": 90.0
+    },
+    "(123,)|3": {
+      "samples": 13,
+      "unique_patterns": 5,
+      "dominant_pattern_fraction": 0.5384615384615384,
+      "mean_hamming_distance": 42.30769230769231
+    },
+    "(124,)|3": {
+      "samples": 14,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.2857142857142857,
+      "mean_hamming_distance": 80.37362637362638
+    },
+    "(125,)|3": {
+      "samples": 12,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    },
+    "(133,)|3": {
+      "samples": 4,
+      "unique_patterns": 3,
+      "dominant_pattern_fraction": 0.5,
+      "mean_hamming_distance": 72.5
+    },
+    "(134,)|3": {
+      "samples": 25,
+      "unique_patterns": 8,
+      "dominant_pattern_fraction": 0.28,
+      "mean_hamming_distance": 81.89333333333333
+    },
+    "(135,)|3": {
+      "samples": 17,
+      "unique_patterns": 7,
+      "dominant_pattern_fraction": 0.47058823529411764,
+      "mean_hamming_distance": 23.41176470588235
+    },
+    "(144,)|3": {
+      "samples": 46,
+      "unique_patterns": 46,
+      "dominant_pattern_fraction": 0.021739130434782608,
+      "mean_hamming_distance": 58.247342995169085
+    },
+    "(145,)|3": {
+      "samples": 12,
+      "unique_patterns": 12,
+      "dominant_pattern_fraction": 0.08333333333333333,
+      "mean_hamming_distance": 74.56060606060606
+    },
+    "(154,)|2": {
+      "samples": 35,
+      "unique_patterns": 33,
+      "dominant_pattern_fraction": 0.05714285714285714,
+      "mean_hamming_distance": 43.721008403361346
+    },
+    "(155,)|2": {
+      "samples": 16,
+      "unique_patterns": 14,
+      "dominant_pattern_fraction": 0.125,
+      "mean_hamming_distance": 40.708333333333336
+    },
+    "(164,)|2": {
+      "samples": 2,
+      "unique_patterns": 1,
+      "dominant_pattern_fraction": 1.0,
+      "mean_hamming_distance": 0.0
+    }
+  },
+  "interpretation": "Patterns preserve the ordered binary D1/D2 latent events over one fixed decision window. This audit diagnoses code collisions and residual-phase sensitivity; it does not measure packet bits or establish a nonlinear manifold."
+}

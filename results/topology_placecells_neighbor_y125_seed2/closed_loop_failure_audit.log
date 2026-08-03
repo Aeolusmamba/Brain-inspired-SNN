@@ -1,0 +1,210 @@
+{
+  "source": "results/topology_placecells_neighbor_y125_seed2",
+  "phase": "evaluation",
+  "all_align_decisions": {
+    "decisions": 2384,
+    "teacher_agreement_rate": 0.16778523489932887,
+    "unique_pm_winner_rate": 0.8427013422818792,
+    "mean_pm_tie_count": 1.2898489932885906,
+    "zero_pm_window_rate": 0.0
+  },
+  "by_final_outcome": {
+    "success": {
+      "decisions": 0
+    },
+    "failure": {
+      "decisions": 2384,
+      "teacher_agreement_rate": 0.16778523489932887,
+      "unique_pm_winner_rate": 0.8427013422818792,
+      "mean_pm_tie_count": 1.2898489932885906,
+      "zero_pm_window_rate": 0.0
+    }
+  },
+  "first_errors": [
+    {
+      "episode": 0,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 38,
+        "state": [
+          166,
+          167,
+          176,
+          177
+        ],
+        "teacher_action": 2,
+        "network_action": 0,
+        "pm_tie_count": 8,
+        "xy_error_before_m": 0.02660868067516971,
+        "xy_error_after_m": 0.024542761080831234
+      }
+    },
+    {
+      "episode": 1,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 38,
+        "state": [
+          166,
+          167,
+          176,
+          177
+        ],
+        "teacher_action": 2,
+        "network_action": 1,
+        "pm_tie_count": 8,
+        "xy_error_before_m": 0.02660868067535622,
+        "xy_error_after_m": 0.02614452545832077
+      }
+    },
+    {
+      "episode": 2,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 37,
+        "state": [
+          66,
+          67,
+          76,
+          77
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.028877752932374875,
+        "xy_error_after_m": 0.026644802963256033
+      }
+    },
+    {
+      "episode": 3,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 38,
+        "state": [
+          166,
+          167,
+          176,
+          177
+        ],
+        "teacher_action": 2,
+        "network_action": 1,
+        "pm_tie_count": 8,
+        "xy_error_before_m": 0.02660868067516971,
+        "xy_error_after_m": 0.02614452545813095
+      }
+    },
+    {
+      "episode": 4,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 38,
+        "state": [
+          166,
+          167,
+          176,
+          177
+        ],
+        "teacher_action": 2,
+        "network_action": 0,
+        "pm_tie_count": 8,
+        "xy_error_before_m": 0.02660868067516971,
+        "xy_error_after_m": 0.024542761080831234
+      }
+    },
+    {
+      "episode": 5,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 37,
+        "state": [
+          66,
+          67,
+          76,
+          77
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.028877752932374875,
+        "xy_error_after_m": 0.026644802963256033
+      }
+    },
+    {
+      "episode": 6,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 37,
+        "state": [
+          66,
+          67,
+          76,
+          77
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.028877752932374875,
+        "xy_error_after_m": 0.026644802963256033
+      }
+    },
+    {
+      "episode": 7,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 37,
+        "state": [
+          66,
+          67,
+          76,
+          77
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.028877752932374875,
+        "xy_error_after_m": 0.026644802963256033
+      }
+    },
+    {
+      "episode": 8,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 38,
+        "state": [
+          166,
+          167,
+          176,
+          177
+        ],
+        "teacher_action": 2,
+        "network_action": 1,
+        "pm_tie_count": 8,
+        "xy_error_before_m": 0.026608680675140252,
+        "xy_error_after_m": 0.026144525458101513
+      }
+    },
+    {
+      "episode": 9,
+      "outcome": "failure",
+      "first_error": {
+        "decision": 37,
+        "state": [
+          66,
+          67,
+          76,
+          77
+        ],
+        "teacher_action": 0,
+        "network_action": 2,
+        "pm_tie_count": 2,
+        "xy_error_before_m": 0.02887775293237703,
+        "xy_error_after_m": 0.026644802963258534
+      }
+    }
+  ],
+  "first_error_state_action_counts": {
+    "(166, 167, 176, 177)|2": 5,
+    "(66, 67, 76, 77)|0": 5
+  }
+}
+saved: results/topology_placecells_neighbor_y125_seed2/closed_loop_failure_audit.json
